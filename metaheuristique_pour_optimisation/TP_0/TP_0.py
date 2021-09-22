@@ -78,24 +78,34 @@ def biasedDice_biasedCoin(P, n):
 
     roll = 0
     while roll < n:
-
         if len(P_temp) == 0:
             P_temp = copy.copy(P)
         sumP = np.sum(P_temp)
         if sumP != 1.0:
             P_temp = [P_temp[i] / sumP for i in range(len(P_temp))]
 
-        # print("P_  ->   ", P_temp, " --- SUM -> ", np.sum(P_temp))
         first = P_temp.pop(0)
         if coinToss(first, 1, 1) == 1:
-            # print("P   -> ", len(P), P)
-            # print("P_t -> ", len(P_temp), P_temp)
             arr.append(len(P) - (len(P_temp) + 1))
             roll += 1
 
-    # print()
     for i in range(0, len(P)):
         print("val -> ", i, " : ", arr.count(i))
 
 
-biasedDice_biasedCoin([1 / 4, 1 / 4, 1 / 4, 1 / 8, 1 / 16, 1 / 16], 1000)
+biasedDice_biasedCoin([1 / 4, 1 / 4, 1 / 4, 1 / 8, 1 / 16, 1 / 16], 10000)
+
+
+# n -> number of rolls, P -> probabilities
+def rouletteMethod(P, n):
+    P_comul = []
+    for j in range(len(P)):
+        for i in range(j):
+            P_comul.append(np.sum(P[0:i + 1]))
+    print(P_comul)
+    # np.sum(P[0:1]) -> only 1 element
+    # print(np.sum(P[0:1]))
+    # print()
+
+
+rouletteMethod([1 / 4, 1 / 4, 1 / 4, 1 / 8, 1 / 16, 1 / 16], 10000)
