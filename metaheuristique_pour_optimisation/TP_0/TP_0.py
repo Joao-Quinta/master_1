@@ -13,11 +13,11 @@ def exo_1(N, n):
     arr = [functions.balancedDice(N) for _ in range(n)]
 
     for i in range(0, N):
-        print("val -> ", i, " : ", arr.count(i))
+        print("val -> ", i, " : ", arr.count(i)/n)
 
 
-exo_1(6, 1000)
-
+exo_1(6, 100)
+"""
 
 # P -> array of probabilities, n -> number of rolls
 def exo_2(P, n):
@@ -89,3 +89,4 @@ def exo_5(P, n):
 
 
 exo_5([1 / 4, 1 / 4, 1 / 4, 1 / 8, 1 / 16, 1 / 16], 1000)
+"""
