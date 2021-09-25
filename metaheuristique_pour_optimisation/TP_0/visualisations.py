@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import copy
 import math
 import random
-
+"""
 x = np.arange(0, 1, 1 / 1000)
 n1 = 6
 n2 = 12
@@ -21,6 +21,28 @@ ax1.set_xticks([0, 0.5, 1])
 ax1.plot(x, y1, label='n = 6')
 ax1.plot(x, y2, label='n = 12')
 ax1.legend()
+"""
+x = np.arange(0, 1, 1 / 10)
+p1 = 0.3
+p2 = 0.7
+y1 = []
+y2 = []
+
+for i in range(len(x)):
+    y1.append(math.floor(x[i] + p1))
+    y2.append(math.floor(x[i] + p2))
+
+print(np.unique(y1))
 
 
+fig = plt.figure()
+ax1 = fig.add_subplot()
+ax1.set_ylabel('result')
+ax1.set_xlabel('[ 0 , 1 )')
+ax1.set_yticks([0, 1])
+ax1.set_xticks([0, 0.3, 0.7, 1])
+ax1.plot(x, y1, label='p = 0.3')
+ax1.plot(x, y2, label='p = 0.7')
+ax1.legend()
 plt.show()
+

@@ -4,7 +4,7 @@
 import numpy as np
 import functions
 
-
+"""
 # N -> number of faces, n -> number of rolls
 def exo_1(N, n):
     print()
@@ -17,7 +17,7 @@ def exo_1(N, n):
 
 
 exo_1(6, 100)
-"""
+
 
 # P -> array of probabilities, n -> number of rolls
 def exo_2(P, n):
@@ -31,10 +31,11 @@ def exo_2(P, n):
     arr = [transformed_dice[functions.balancedDice(number_of_faces)] for _ in range(n)]
 
     for i in range(0, len(P)):
-        print("val -> ", i, " : ", arr.count(i))
+        print("val -> ", i, " : ", arr.count(i)/n)
 
 
-exo_2([1 / 4, 1 / 4, 1 / 4, 1 / 8, 1 / 16, 1 / 16], 1000)
+exo_2([1 / 4, 1 / 4, 1 / 4, 1 / 8, 1 / 16, 1 / 16], 10000)
+
 
 
 # p = probability of tail, n = number o tosses, type -> fast use with other function
@@ -49,14 +50,14 @@ def exo_3(p, n):
     # 1 is tail, 0 is head
     arr = [functions.coinToss(p) for _ in range(n)]
 
-    print("tail -> ", arr.count(1))
-    print("head -> ", arr.count(0))
+    print("tail -> ", arr.count(1) / n)
+    print("head -> ", arr.count(0) / n)
 
-    arr = np.array(arr)
-    arr = arr * p + (1 - arr) * (1 - p)
+    # arr = np.array(arr)
+    # arr = arr * p + (1 - arr) * (1 - p)
 
 
-exo_3(0.7, 1000)
+exo_3(0.3, 10000)
 
 
 # n -> number of rolls, P -> probabilities
@@ -68,11 +69,11 @@ def exo_4(P, n):
     arr = [functions.biasedDice_biasedCoin(P) for _ in range(n)]
 
     for i in range(0, len(P)):
-        print("val -> ", i, " : ", arr.count(i))
+        print("val -> ", i, " : ", arr.count(i) / n)
 
 
-exo_4([1 / 4, 1 / 4, 1 / 4, 1 / 8, 1 / 16, 1 / 16], 1000)
-
+exo_4([1 / 4, 1 / 4, 1 / 4, 1 / 8, 1 / 16, 1 / 16], 10000)
+"""
 
 # n -> number of rolls, P -> probabilities
 def exo_5(P, n):
@@ -89,4 +90,4 @@ def exo_5(P, n):
 
 
 exo_5([1 / 4, 1 / 4, 1 / 4, 1 / 8, 1 / 16, 1 / 16], 1000)
-"""
+""""""
