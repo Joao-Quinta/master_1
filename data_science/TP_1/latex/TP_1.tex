@@ -85,7 +85,10 @@
 \subsection*{.1}
 When the number of equations, here 3, is strictly larger than the number of variables, here 2, the equations system has no solution.
 \subsection*{.2}
-
+$$\begin{cases}x + ay = 2\\ bx + 2y = 3\end{cases} \Leftrightarrow \begin{cases}x = 2 - ay\\ bx + 2y = 3\end{cases}$$
+We can now insert the $1^{st}$ equation into the $2^{nd}$ equation as follows:\\
+$b(2 - ay) + 2y = 3 \Leftrightarrow 2b - aby + 2y = 3 \Leftrightarrow 2b - y(ab -2) = 3 \Leftrightarrow y = (-1) * \left( \frac{3 - 2b}{(ab - 2)} \right) $\\
+With given $a$ and $b$ values we can easily compute $y$,b, then we reinsert $y$ into the first equation to get $x$.
 % ----------------------------------
 \section*{2 - The importance of the mathematical concept behind a code}
 \subsection*{.1}
