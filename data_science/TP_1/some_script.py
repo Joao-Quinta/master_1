@@ -10,8 +10,7 @@ import numpy as np
 print('START - %s' % datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3])
 
 # parameters
-N = 2  # the dimension choosen
-data_1 = np.load("._tp1_artificialdata1.npz", allow_pickle=True, fix_imports=True)
+N = 2  # the dimension chosen
 
 # functions
 def scalar_product(u, v):
@@ -63,6 +62,15 @@ def orthogonal_norm_on_first(u, v):
     return w_2_norm
 
 
+def exercise_3_3():
+    artificialdata_1 = np.load("data_tp1/tp1_artificialdata1/data.npy")
+    artificialdata_2 = np.load("data_tp1/tp1_artificialdata1/data.npy")
+    artificialdata_3 = np.load("data_tp1/tp1_artificialdata1/data.npy")
+    artificialdata_4 = np.load("data_tp1/tp1_artificialdata1/data.npy")
+    digit_data_2 = np.load("data_tp1/tp1_digit2/data.npy")
+    frey_faces_data = np.load("data_tp1/tp1_freyfaces/data.npy")
+
+
 u = np.zeros(N)
 u[np.random.randint(N)] = 1  # random canonic vector of dimension N
 v = np.random.randn(N)  # random vector of dimension N
@@ -73,12 +81,11 @@ print('Result = %.1f' % scalar_product(u, w))
 
 print('END - %s\n' % datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3])
 
-
 u1 = np.random.randn(5)
 v1 = np.random.randn(5)
 
 w_2_norm = orthogonal_norm_on_first(u1, v1)
 
-print("norm of u        -> ", np.linalg.norm(u1))
-print("norm of w_2_norm -> ", np.linalg.norm(w_2_norm))
-print("scalar product of u and w_2_norm", np.dot(u1, w_2_norm))
+# print("norm of u        -> ", np.linalg.norm(u1))
+# print("norm of w_2_norm -> ", np.linalg.norm(w_2_norm))
+# print("scalar product of u and w_2_norm", np.dot(u1, w_2_norm))

@@ -122,6 +122,13 @@ $\alpha$ = $||\vec{u}^{\,}||$ / $||\vec{w_{2}}^{\,}||$
 % ----------------------------------
 \section*{3 - Computing Eigenvalues, Eigenvectors, and Determinants}
 \subsection*{.1}
+$$ Det(A) = Det\left( \begin{matrix} 1 & 1 & 3 \\ 1 & 5 & 1 \\ 3 & 1 & 1 \end{matrix} \right)$$
+$1 * Det \left( \begin{matrix} 5 & 1 \\ 1 & 1 \end{matrix} \right) - 1 * Det \left( \begin{matrix} 1 & 1 \\ 3 & 1 \end{matrix} \right) + 3 * Det \left( \begin{matrix} 1 & 5 \\ 3 & 1 \end{matrix} \right) = 1 * (5 - 1) -1 * (1 - 3) + 3 * (1 - 15) = 4 + 2 -42 = -36$\\
+The computer returned the same value.\\
+To compute eigenvalues and eigenvectors we have to compute the characteristic polynomial, P(A):\\
+$$ P(A) = Det(A - I\lambda)= 0 <=> Det\left( \begin{matrix} (1 - \lambda) & 1 & 3 \\ 1 & (5 - \lambda) & 1 \\ 3 & 1 & (1 - \lambda) \end{matrix} \right) = 0$$
+
+$(1 - \lambda) * Det \left( \begin{matrix} (5 - \lambda) & 1 \\ 1 & (1 - \lambda) \end{matrix} \right) - 1 * Det \left( \begin{matrix} 1 & 1 \\ 3 & (1 - \lambda) \end{matrix} \right) + 3 * Det \left( \begin{matrix} 1 & (5 - \lambda) \\ 3 & 1 \end{matrix} \right) $\\$= (1 - \lambda) * (4 - 6\lambda + \lambda^{2}) - 1 * (2 + \lambda) + 3 * (1 - 15 + 3\lambda) = -36 + 7\lambda^{2} - \lambda^{3} $\\
 \subsection*{.2}
 \subsection*{.3}
 
