@@ -81,8 +81,55 @@
 % ============================================
 % ----------------------------------
 \newpage
-\section*{1}
-\subsection*{1.1}
+\section*{1 - Matrix}
+\subsection*{.1}
+When the number of equations, here 3, is strictly larger than the number of variables, here 2, the equations system has no solution.
+\subsection*{.2}
+
+% ----------------------------------
+\section*{2 - The importance of the mathematical concept behind a code}
+\subsection*{.1}
+\textbf{$def \ project\_on\_first(u, v)$} receives two column vectors as an argument, and it projects v onto u, the projected vector is usually called v'. Visually, it means that v' and u are collinear. This also means that: $\exists\ \alpha$ tq. $v'*\alpha = u$.
+\begin{figure}[H]
+\center
+\includegraphics[width=0.3\textwidth]{images/projection.PNG}
+\caption{Projection of $\vec{v}^{\,}$ onto $\vec{u}^{\,}$ = $\vec{w_{1}}^{\,}$}
+\end{figure}
+\subsection*{.2}
+\textbf{zip()} function takes as argument two python lists of same size. It then merges one value from the first list, with another value from the second list (same index), creating a list of tuples. \\
+Let's see an example:
+\begin{center}
+x = zip([1,2], [3,4]) -> x = [(1,3),(2,4)]
+\end{center}
+This means that the three last lines of code perform a simple dot operation between the two vectors given as argument to zip().
+\begin{center}
+It can be rewritten as: r = np.dot(u,v)
+\end{center}
+\subsection*{.3}
+Step 1: find the vector $\vec{w_{2}}^{\,}$ orthogonal to $\vec{u}^{\,}$\\
+If we look at Figure 1, we can see that $\vec{w_{1}}^{\,}$ is collinear to $\vec{u}^{\,}$, and that $\vec{w_{2}}^{\,}$ is orthogonal to $\vec{u}^{\,}$. Moreover, $\vec{v}^{\,}$ = $\vec{w_{1}}^{\,}$ + $\vec{w_{2}}^{\,}$, which means we can easily compute $\vec{w_{2}}^{\,}$ if we have already computed $\vec{w_{1}}^{\,}$. 
+\begin{center}
+$\vec{w_{2}}^{\,}$ = $\vec{v}^{\,}$ - $\vec{w_{1}}^{\,}$
+\end{center}
+Step 2: Make it so the orthogonal vector $\vec{w_{2}}^{\,}$ has the same norm as vector $\vec{u}^{\,}$\\
+We must first compute $||\vec{u}^{\,}||$ as well as $||\vec{w_{2}}^{\,}||$.\\
+By multiplying $\vec{w_{2}}^{\,}$ by a given real value $\alpha$ we can find a new vector $\vec{w_{2}'}^{\,}$ that is collinear to $\vec{w_{2}}^{\,}$, but of different norm.
+\begin{center}
+$\alpha$ = $||\vec{u}^{\,}||$ / $||\vec{w_{2}}^{\,}||$
+\end{center}
+\textbf{$def\ orthogonal\_norm\_on\_first(u, v)$} is the function inside $some\_script.py$ that does this computation.
+
+% ----------------------------------
+\section*{3 - Computing Eigenvalues, Eigenvectors, and Determinants}
+\subsection*{.1}
+\subsection*{.2}
+\subsection*{.3}
+
+% ----------------------------------
+\section*{4 - Computing Projection Onto a Line}
+\subsection*{.1}
+\subsection*{.2}
+
 
 
 \end{document}
