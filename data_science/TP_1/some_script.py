@@ -62,15 +62,6 @@ def orthogonal_norm_on_first(u, v):
     return w_2_norm
 
 
-def exercise_3_3():
-    artificialdata_1 = np.load("data_tp1/tp1_artificialdata1/data.npy")
-    artificialdata_2 = np.load("data_tp1/tp1_artificialdata1/data.npy")
-    artificialdata_3 = np.load("data_tp1/tp1_artificialdata1/data.npy")
-    artificialdata_4 = np.load("data_tp1/tp1_artificialdata1/data.npy")
-    digit_data_2 = np.load("data_tp1/tp1_digit2/data.npy")
-    frey_faces_data = np.load("data_tp1/tp1_freyfaces/data.npy")
-
-
 u = np.zeros(N)
 u[np.random.randint(N)] = 1  # random canonic vector of dimension N
 v = np.random.randn(N)  # random vector of dimension N
