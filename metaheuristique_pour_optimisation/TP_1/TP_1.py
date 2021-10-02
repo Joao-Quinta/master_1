@@ -79,6 +79,26 @@ def find_best_in_neighborhood(array_neighbors, k):
     return best_x, max_fitness_value
 
 
+def compute_probabilistic_neighborhood(array_neighbors, k, best_ever):
+    array_neighbors_fitness = [compute_fitness(neighbor, k) for neighbor in array_neighbors]
+    if best_ever < np.max(array_neighbors_fitness):
+        return array_neighbors[np.argmax(array_neighbors_fitness)], np.max(array_neighbors_fitness)
+    array_neighbors_fitness = array_neighbors_fitness / np.sum(array_neighbors_fitness)
+    return array_neighbors_fitness
+
+
+def compute_P_comul(P):
+    return [np.sum(P[0:j + 1]) for j in range(len(P))]
+
+
+def rouletteMethod(P_comul):
+    val = random.random()
+    for i in range(len(P_comul)):
+        # we look for the first value larger than the random value we got
+        if P_comul[i] > val:
+            return i
+
+
 def hamming_distance(str1, str2):
     dif = 0
     for i in range(len(str1)):
@@ -92,7 +112,7 @@ def deterministic_hill_climb(N, k):
     X_fitness = compute_fitness(X, k)
     X_neighbors = generate_neighbors(X)
     while True:
-        X_neighbors_fitness_str, X_neighbors_fitness_val, = find_best_in_neighborhood(X_neighbors, k)
+        X_neighbors_fitness_str, X_neighbors_fitness_val = find_best_in_neighborhood(X_neighbors, k)
         if X_neighbors_fitness_val > X_fitness:
             X = X_neighbors_fitness_str
             X_fitness = X_neighbors_fitness_val
@@ -103,7 +123,24 @@ def deterministic_hill_climb(N, k):
 
 
 def probabilistic_hill_climb(N, k):
-    return
+    X = generate_X(N)
+    X_fitness = compute_fitness(X, k)
+    X_neighbors = generate_neighbors(X)
+    all_time_X = [X]
+    all_time_fitness = [X_fitness]
+    all_time_best_fitness = X_fitness
+    for _ in range(10):
+        X_neighbors_fitness = compute_probabilistic_neighborhood(X_neighbors, k, all_time_best_fitness)
+        if type(X_neighbors_fitness) is tuple:
+            X = X_neighbors_fitness[0]
+            all_time_best_fitness = X_neighbors_fitness[1]
+        else:
+            p_comul = compute_P_comul(X_neighbors_fitness)
+            X = X_neighbors[rouletteMethod(p_comul)]
+        all_time_X.append(X)
+        all_time_fitness.append(compute_fitness(X, k))
+        X_neighbors = generate_neighbors(X)
+    return all_time_X[np.argmax(all_time_fitness)]
 
 
 """
@@ -112,5 +149,12 @@ print(X)
 X_neighbors = generate_neighbors(X)
 print(X_neighbors)
 
-"""
+
+array_neighbors1 = ["001", "001", "000", "111"]
+k1 = 0
 print(deterministic_hill_climb(50, 0))
+x = compute_probabilistic_neighborhood(array_neighbors1, k1, 0)
+print(x)
+if type(x) is tuple:
+    print("sa")
+"""
