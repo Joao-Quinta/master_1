@@ -79,22 +79,31 @@ def find_best_in_neighborhood(array_neighbors, k):
     return best_x, max_fitness_value
 
 
+def hamming_distance(str1, str2):
+    dif = 0
+    for i in range(len(str1)):
+        if str1[i] != str2[i]:
+            dif += 1
+    return dif
+
+
 def deterministic_hill_climb(N, k):
     X = generate_X(N)
     X_fitness = compute_fitness(X, k)
     X_neighbors = generate_neighbors(X)
-    com = 0
     while True:
         X_neighbors_fitness_str, X_neighbors_fitness_val, = find_best_in_neighborhood(X_neighbors, k)
         if X_neighbors_fitness_val > X_fitness:
             X = X_neighbors_fitness_str
             X_fitness = X_neighbors_fitness_val
             X_neighbors = generate_neighbors(X)
-            com = com + 1
         else:
-            print(com)
             break
     return X
+
+
+def probabilistic_hill_climb(N, k):
+    return
 
 
 """
@@ -102,5 +111,6 @@ X = generate_X(5)
 print(X)
 X_neighbors = generate_neighbors(X)
 print(X_neighbors)
+
 """
-print(deterministic_hill_climb(50, 2))
+print(deterministic_hill_climb(50, 0))
