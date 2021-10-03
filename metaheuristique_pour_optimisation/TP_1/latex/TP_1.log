@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.24)  28 SEP 2021 11:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.24)  3 OCT 2021 21:38
 entering extended mode
 **./TP_1.tex
 (TP_1.tex
@@ -788,7 +788,7 @@ Package: lipsum 2021-08-01 v2.5 150 paragraphs of Lorem Ipsum dummy text
 \l__lipsum_b_int=\count337
 
 (C:\Users\Joao\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex))
-No file TP_1.aux.
+(TP_1.aux)
 \openout1 = `TP_1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
@@ -809,6 +809,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
+
 (C:\Users\Joao\AppData\Local\Programs\MiKTeX\tex/latex/ucs\ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
@@ -894,6 +895,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 53.
 LaTeX Info: Redefining \pageref on input line 53.
 LaTeX Info: Redefining \nameref on input line 53.
+ (TP_1.out) (TP_1.out)
 \@outlinefile=\write4
 \openout4 = `TP_1.out'.
 
@@ -904,7 +906,7 @@ Package caption Info: End \AtBeginDocument code.
 (C:\Users\Joao\AppData\Local\Programs\MiKTeX\tex/latex/ucs\uni-0.def
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
-<images/unige_csd.png, id=6, 147.4308pt x 74.9199pt>
+<images/unige_csd.png, id=38, 147.4308pt x 74.9199pt>
 File: images/unige_csd.png Graphic file (type png)
 <use images/unige_csd.png>
 Package pdftex.def Info: images/unige_csd.png  used on input line 76.
@@ -912,29 +914,68 @@ Package pdftex.def Info: images/unige_csd.png  used on input line 76.
  [1
 
 {C:/Users/Joao/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./images/unige_c
-sd.png>]pdfTeX warning (ext4): destination with the same identifier (name{page.
-1}) has been already used, duplicate ignored
+sd.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--92
+
+ []
+
+<images/simple_representation.PNG, id=51, 1108.14pt x 333.49594pt>
+File: images/simple_representation.PNG Graphic file (type png)
+<use images/simple_representation.PNG>
+Package pdftex.def Info: images/simple_representation.PNG  used on input line 9
+9.
+(pdftex.def)             Requested size: 386.95897pt x 116.45561pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.91 \end{document}
-                    [1] (TP_1.aux)
+l.110 \item[(3)]
+                 generate its neighbourhood or $V(x)$ [1 <./images/simple_repre
+sentation.PNG>]
+<images/hill_climb_deter.PNG, id=67, 1411.52344pt x 380.92313pt>
+File: images/hill_climb_deter.PNG Graphic file (type png)
+<use images/hill_climb_deter.PNG>
+Package pdftex.def Info: images/hill_climb_deter.PNG  used on input line 144.
+(pdftex.def)             Requested size: 483.69687pt x 130.53513pt.
+ [2]
+<images/hill_climb_proba.PNG, id=72, 1411.52344pt x 380.92313pt>
+File: images/hill_climb_proba.PNG Graphic file (type png)
+<use images/hill_climb_proba.PNG>
+Package pdftex.def Info: images/hill_climb_proba.PNG  used on input line 150.
+(pdftex.def)             Requested size: 483.69687pt x 130.53513pt.
 
-Package rerunfilecheck Warning: File `TP_1.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
 
-Package rerunfilecheck Info: Checksums for `TP_1.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
+
+ []
+
+<images/proba_vs_deter.PNG, id=73, 940.26282pt x 351.56343pt>
+File: images/proba_vs_deter.PNG Graphic file (type png)
+<use images/proba_vs_deter.PNG>
+Package pdftex.def Info: images/proba_vs_deter.PNG  used on input line 163.
+(pdftex.def)             Requested size: 483.69687pt x 180.85065pt.
+[3 <./images/hill_climb_deter.PNG> <./images/hill_climb_proba.PNG>] [4 <./image
+s/proba_vs_deter.PNG>] (TP_1.aux)
+Package rerunfilecheck Info: File `TP_1.out' has not changed.
+(rerunfilecheck)             Checksum: 172B5D45CA879F718E5C0A293305E9C1;1159.
  ) 
 Here is how much of TeX's memory you used:
- 24272 strings out of 478927
- 443483 string characters out of 2853009
- 841357 words of memory out of 3000000
- 41703 multiletter control sequences out of 15000+600000
- 411533 words of font info for 38 fonts, out of 8000000 for 9000
+ 24342 strings out of 478927
+ 445102 string characters out of 2853009
+ 853528 words of memory out of 3000000
+ 41749 multiletter control sequences out of 15000+600000
+ 413521 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,11n,117p,471b,617s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,12n,117p,471b,617s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1
 200.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
 ecbx1440.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dp
@@ -943,10 +984,18 @@ ec/dpi600\ecrm1200.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/ljfour/jkna
 ppen/ec/dpi600\ecti1200.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/ljfour
 /jknappen/ec/dpi600\ecbx2074.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/l
 jfour/jknappen/ec/dpi600\eccc1440.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts
-/pk/ljfour/jknappen/ec/dpi600\eccc1728.pk>
-Output written on TP_1.pdf (2 pages, 75573 bytes).
+/pk/ljfour/jknappen/ec/dpi600\eccc1728.pk><C:/Users/Joao/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Joao/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Joao/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Joao
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Use
+rs/Joao/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><
+C:/Users/Joao/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb><C:/Users/Joao/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmsy7.pfb>
+Output written on TP_1.pdf (5 pages, 687703 bytes).
 PDF statistics:
- 200 PDF objects out of 1000 (max. 8388607)
- 7 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 346 PDF objects out of 1000 (max. 8388607)
+ 17 named destinations out of 1000 (max. 500000)
+ 102 words of extra memory for PDF output out of 10000 (max. 10000000)
 
