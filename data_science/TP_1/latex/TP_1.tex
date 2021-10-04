@@ -28,6 +28,7 @@
 \usepackage{xcolor}
 \usepackage{fancyhdr}
 \usepackage{lipsum}
+\usepackage{amsfonts} 
 
 %% definitions 
 \definecolor{darkgreen}{rgb}{0.0, 0.4, 0.0}
@@ -83,16 +84,27 @@
 \newpage
 \section*{1 - Matrix}
 \subsection*{.1}
-When the number of equations, here 3, is strictly larger than the number of variables, here 2, the equations system has no solution.
+$$\begin{cases}a + b + c = 1\\ 4a + 2b + c = 9 \\ 9a + 3b + c =27\end{cases} \Leftrightarrow  \begin{cases} a=5\\b=-7\\c=3\end{cases}$$
+\begin{itemize}
+\item[(1)] We can start by writing the first equation: ${\color{red}\longrightarrow} c = 1 -a -b$
+\item[(2)] insert step (1) in equation 2 and write it: ${\color{red}\longrightarrow} 4a +2b +1 -a -b = 9 \Leftrightarrow 3a + b = 8 \Leftrightarrow b = 8 - 3a$
+\item[(3)] Rewrite $c = 1 -a -b$: ${\color{red}\longrightarrow} c = 1 -a -(8 - 3a) \Leftrightarrow c = -7 + 2a$
+\item[(4)] Insert equations from (3) and (2) into equation 3:${\color{red}\longrightarrow} 9a + 3*(8 - 3a) + (-7 + 2a) = 27$
+\item[(5)] Solve step (4): ${\color{red}\longrightarrow} 9a + 24 -9a -7 +2a = 27 \Leftrightarrow a = 5$
+\item[(6)] Insert step (5) into step (2):${\color{red}\longrightarrow} b = 8 -3*5 \Leftrightarrow b = -7$
+\item[(7)] Insert steps (5) and (6) into step (1): ${\color{red}\longrightarrow} c = 1 - 5 + 7 \Leftrightarrow c = 3$
+\end{itemize}
+
+
 \subsection*{.2}
 $$\begin{cases}x + ay = 2\\ bx + 2y = 3\end{cases} \Leftrightarrow \begin{cases}x = 2 - ay\\ bx + 2y = 3\end{cases}$$
 We can now insert the $1^{st}$ equation into the $2^{nd}$ equation as follows:\\
 $b(2 - ay) + 2y = 3 \Leftrightarrow 2b - aby + 2y = 3 \Leftrightarrow 2b - y(ab -2) = 3 \Leftrightarrow y = (-1) * \left( \frac{3 - 2b}{(ab - 2)} \right) $\\
-With given $a$ and $b$ values we can easily compute $y$,b, then we reinsert $y$ into the first equation to get $x$.
+With given $a$ and $b$ values we can easily compute $y$, then we reinsert $y$ into the first equation to get $x$.
 % ----------------------------------
 \section*{2 - The importance of the mathematical concept behind a code}
 \subsection*{.1}
-\textbf{$def \ project\_on\_first(u, v)$} receives two column vectors as an argument, and it projects v onto u, the projected vector is usually called v'. Visually, it means that v' and u are collinear. This also means that: $\exists\ \alpha$ tq. $v'*\alpha = u$.
+\textbf{$def \ project\_on\_first(u, v)$} receives two column vectors as an argument, and it projects v onto u, the projected vector is usually called v', in the image bellow it is represented by $\vec{w_{1}}^{\,}$. Visually, it means that v' and u are collinear. This also means that: $\exists\ \alpha \in \mathbb{R}$ tq. $v'*\alpha = u$.
 \begin{figure}[H]
 \center
 \includegraphics[width=0.3\textwidth]{images/projection.PNG}
@@ -132,20 +144,27 @@ To compute eigenvalues and eigenvectors we have to compute the characteristic po
 $$ P(A) = Det(A - I\lambda)= 0 <=> Det\left( \begin{matrix} (1 - \lambda) & 1 & 3 \\ 1 & (5 - \lambda) & 1 \\ 3 & 1 & (1 - \lambda) \end{matrix} \right) = 0$$
 
 $(1 - \lambda) * Det \left( \begin{matrix} (5 - \lambda) & 1 \\ 1 & (1 - \lambda) \end{matrix} \right) - 1 * Det \left( \begin{matrix} 1 & 1 \\ 3 & (1 - \lambda) \end{matrix} \right) + 3 * Det \left( \begin{matrix} 1 & (5 - \lambda) \\ 3 & 1 \end{matrix} \right) $\\$= (1 - \lambda) * (4 - 6\lambda + \lambda^{2}) - 1 * (2 + \lambda) + 3 * (1 - 15 + 3\lambda) = -36 + 7\lambda^{2} - \lambda^{3} = -(\lambda + 2)(\lambda - 3)(\lambda - 6)$\\
-This means our eigenvalues are: $\{-2, +3, +6\}$, now we just have to compute the respective eigenvectors.
+This means our eigenvalues are: $\{-2, +3, +6\}$, now we just have to compute the respective eigenvectors. This is done in the following way:
+$$(A - I\lambda) = \left(\begin{matrix} x \\ y \\ z \end{matrix}\right) = \left(\begin{matrix} 0 \\ 0 \\ 0 \end{matrix}\right), \lambda = \{-2, +3, +6\} $$
+Once we solve it we get the respective eigenvectors:
+$$\lambda = 6 \longrightarrow \left(\begin{matrix} 1 \\ 2 \\ 1 \end{matrix}\right), \lambda = 3 \longrightarrow \left(\begin{matrix} 1 \\ -1 \\ 1 \end{matrix}\right), \lambda = -2 \longrightarrow \left(\begin{matrix} -1 \\ 0 \\ 1 \end{matrix}\right)$$
+
 \subsection*{.2}
 \subsection*{.3}
+\textbf{$tp\_1\_exercise\_3\_3.ipynb$} is the file with all the code for this exercise.
 
 % ----------------------------------
 \section*{4 - Computing Projection Onto a Line}
 \subsection*{.1}
+The distance is $~3.61$.\\
+\textbf{$def\ compute\_distance\_line\_a()$} is the function inside $some\_script.py$ that does this computation.
 \subsection*{.2}
 We have a function $\alpha : 3x - 2y = -6$ that describes a line, and we have a point $A(5, 4)$. Let's see the steps required to compute the distance between $A$ and $f$, figure 2 is a sketch of what is explained in the item bellow:
 \begin{itemize}
-\item[(1)] We can rewrite it as $f(x) = \frac{-6 +2y}{3}$
+\item[(1)] We can rewrite it as $y = f(x) = \frac{-6 -3x}{-2}$
 \item[(2)] Choose two values for x, and compute the respective images: $f(x_{1}) = y_{1}$ and $f(x_{2}) = y_{2}$
 \item[(3)] Compute a vector $\vec{u}^{\,}$ that is collinear to our function $f$, $\vec{u}^{\,} = \begin{bmatrix} x_{2} - x_{1}\\y_{2} - y_{1} \end{bmatrix}$
-\item[(4)] Compute $\vec{v}^{\,}$, vector between a point of the function $f$ and our point $A$, $\vec{v}^{\,} = \begin{bmatrix} x_{1} - A_{x}\\y_{1} - A_{y} \end{bmatrix}$
+\item[(4)] Compute $\vec{v}^{\,}$, vector between a point of the function $f$ and our point $A$, $\vec{v}^{\,} = \begin{bmatrix}  A_{x} - x_{1}\\ A_{y} - y_{1} \end{bmatrix}$
 \item[(5)] Compute $\vec{w_{1}}^{\,}$ the projection of $\vec{v}^{\,}$ onto $\vec{u}^{\,}$, $\vec{w_{1}}^{\,}$ and $\vec{u}^{\,}$ are collinear
 \item[(6)] Compute $\vec{w_{2}}^{\,}$ = $\vec{v}^{\,}$ - $\vec{w_{1}}^{\,}$, $\vec{w_{2}}^{\,}$ is orthogonal to $\vec{u}^{\,}$
 \item[(7)] Compute $||\vec{w_{2}}^{\,}||$, which is the distance between the point $A$ and the line represented by the function $f$
@@ -153,7 +172,7 @@ We have a function $\alpha : 3x - 2y = -6$ that describes a line, and we have a 
 
 \begin{figure}[H]
 \center
-\includegraphics[width=0.5\textwidth]{images/projection_exo_4.PNG}
+\includegraphics[width=0.7\textwidth]{images/projection_exo_4.PNG}
 \caption{Distance between line and a point A}
 \end{figure}
 

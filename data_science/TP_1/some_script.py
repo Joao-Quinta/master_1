@@ -12,6 +12,7 @@ print('START - %s' % datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3])
 # parameters
 N = 2  # the dimension chosen
 
+
 # functions
 def scalar_product(u, v):
     """
@@ -62,6 +63,19 @@ def orthogonal_norm_on_first(u, v):
     return w_2_norm
 
 
+def compute_distance_line_a():
+    x1 = 0  # we choose 2 random points in x axis
+    x2 = 2
+    y1 = (-6 - 3 * x1) / -2  # compute the respective images
+    y2 = (-6 - 3 * x2) / -2
+    u = np.array([x2 - x1, y2 - y1])  # compute u as explained in the pdf file
+    v = np.array([5 - x1, 4 - y1])  # compute v as explained in the pdf file
+    w1 = project_on_first(u, v)  # compute w1 the projection of v onto u
+    w2 = v - w1  # compute w2, orthogonal to u
+    norm_w2 = np.linalg.norm(w2)  # norm of w2 is the distance
+    print("norme of w2 -> or distance between A and the line -> ", norm_w2)
+
+
 u = np.zeros(N)
 u[np.random.randint(N)] = 1  # random canonic vector of dimension N
 v = np.random.randn(N)  # random vector of dimension N
@@ -76,7 +90,7 @@ u1 = np.random.randn(5)
 v1 = np.random.randn(5)
 
 w_2_norm = orthogonal_norm_on_first(u1, v1)
-
+compute_distance_line_a()
 # print("norm of u        -> ", np.linalg.norm(u1))
 # print("norm of w_2_norm -> ", np.linalg.norm(w_2_norm))
 # print("scalar product of u and w_2_norm", np.dot(u1, w_2_norm))
