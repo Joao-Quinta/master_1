@@ -10,6 +10,8 @@ key = ["0x54", "0x68", "0x61", "0x74",
 rc = ["0x01", "0x02", "0x04", "0x08", "0x10", "0x20", "0x40", "0x80", "0x1b", "0x36", "0x00", "0x00", "0x00", ]
 # N = number of 32 bit words of the key -> 128 bit key = 4 * 32 bits
 N = 4
+# R = number of keys needed
+R = 11
 
 
 # input : k hexadecimal values (str -> "0xa1"), output : a str of bits (-> "0b10100001")
@@ -25,7 +27,6 @@ def binary_list_to_hex(binary):
 # generate [k_{0}, k_{1}, .... , k_{N-1}]
 def generate_k_n_1(key_input, n):
     k = []
-
     for i in range(n):
         ki = []
         for j in range(4):
@@ -35,6 +36,27 @@ def generate_k_n_1(key_input, n):
     return k
 
 
+# rotation de 8 bits or 2 hex
+def rotation():
+    return
+
+
+# S box operation
+def sBox():
+    return
+
+
+# calcule xor de deux chaines binaires
+def xor_operation(b1, b2):
+    return bin(int(b1, 2) ^ int(b2, 2))
+
+
 # key expansion, key is in hex -> need to create nb of rounds + 1 key -> 11 keys
-def key_expansion(key_):
+def key_expansion(key_input):
     return null
+
+
+# on transforme la cle hex en une cle binaire
+key_binary = [hex_to_binary_list(f) for f in key]
+# Ki -> K0 = Ki[0] ... KN-1 = Ki[-1]
+Ki = generate_k_n_1(key_binary, N)
