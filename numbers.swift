@@ -20,45 +20,45 @@ public class Nat: ADT{
     
     // TODO: mul (multiplication)
     self.add_operator("*", Nat.mul,[
-      Rule(Nat.mul(Variable(named: "x"), Nat.zero()), Nat.zero()),
+      Rule(Nat.mul(Variable(named: "x"), Nat.zero()), Nat.zero()), // x*0 = 0
       Rule(
               Nat.mul(Variable(named: "x"), Nat.succ(Variable(named: "y"))),
               Nat.add(Variable(named: "x"), Nat.mul(Variable(named: "x"), Variable(named: "y")))
-      )
+      ) // x*(y+1) = x+(x*y)
     ],["nat", "nat"])
     
     // TODO: pre (predecessor) (pre(5) = 4)
     self.add_operator("pre", Nat.pre,[
-      Rule(Nat.pre(Nat.succ(Variable(named: "x"))), Variable(named: "x"))
+      Rule(Nat.pre(Nat.succ(Variable(named: "x"))), Variable(named: "x")) // pre(x+1) = x
     ],["nat"])
     
     // TODO: sub (substraction)
     self.add_operator("-", Nat.sub,[
-      Rule(Nat.sub(Variable(named: "x"), Nat.zero()), Variable(named: "x")),
+      Rule(Nat.sub(Variable(named: "x"), Nat.zero()), Variable(named: "x")), // x-0 = x
       Rule(
               Nat.sub(Variable(named: "x"), Nat.succ(Variable(named: "y"))),
               Nat.pre(Nat.sub(Variable(named: "x"), Variable(named: "y")))
-      )
+      ) // x-(y+1) = (x-y)-1
     ],["nat", "nat"])
     
     // TODO: lt (lesser than) (4 < 3 -> False)
     self.add_operator("<", Nat.lt,[
-      Rule(Nat.lt(Variable(named: "x"), Nat.zero()), Boolean.False()),
-      Rule(Nat.lt(Nat.zero(), Variable(named: "x")), Boolean.True()),
+      Rule(Nat.lt(Variable(named: "x"), Nat.zero()), Boolean.False()), // x<0 -> False (=> case x=0 False)
+      Rule(Nat.lt(Nat.zero(), Variable(named: "x")), Boolean.True()), // 0<x -> True
       Rule(
               Nat.lt(Nat.succ(Variable(named: "x")), Nat.succ(Variable(named: "y"))),
               Nat.lt(Variable(named: "x"), Variable(named: "y"))
-      )
+      ) // (x+1)<(y+1) -> x<y
     ],["nat", "nat"])
     
     // TODO: gt (greater than)
     self.add_operator(">", Nat.gt,[
-      Rule(Nat.gt(Variable(named: "x"), Nat.zero()), Boolean.True()),
-      Rule(Nat.gt(Nat.zero(), Variable(named: "x")), Boolean.False()),
+      Rule(Nat.gt(Nat.zero(), Variable(named: "x")), Boolean.False()), // 0>x -> False (=> case x=0 False)
+      Rule(Nat.gt(Variable(named: "x"), Nat.zero()), Boolean.True()), // x>0 -> True
       Rule(
               Nat.gt(Nat.succ(Variable(named: "x")), Nat.succ(Variable(named: "y"))),
               Nat.gt(Variable(named: "x"), Variable(named: "y"))
-      )
+      ) // (x+1)>(y+1) -> x>y
     ],["nat", "nat"])
     
     // TODO: eq (equal)
@@ -66,24 +66,52 @@ public class Nat: ADT{
       Rule(
               Nat.eq(Variable(named: "x"), Variable(named: "y")),
               Boolean.not(Boolean.or(Nat.lt(Variable(named: "x"), Variable(named: "y")), Nat.gt(Variable(named: "x"), Variable(named: "y"))))
-      )
+      ) // x==y -> !((x<y) or (x>y))
     ],["nat", "nat"])
     
     // TODO: mod (modulo) (10 % 4 = 2)
     // You can return vFail if it's undefined
     self.add_operator("%", Nat.mod,[
-      // Here
+      Rule(Nat.mod(Variable(named: "x"), Nat.zero()), vFail), // div by 0 not defined
+      Rule(Nat.mod(Variable(named: "x"), Variable(named: "y")), Nat.zero(), Nat.eq(Variable(named: "x"), Variable(named: "y"))), // case x=y : x%y = 0
+      Rule(Nat.mod(Variable(named: "x"), Variable(named: "y")), Variable(named: x), Nat.lt(Variable(named: "x"), Variable(named: "y"))), // case x<y : x%y = x
+      Rule(
+              Nat.mod(Variable(named: "x"), Variable(named: "y")),
+              Nat.mod(Nat.sub(Variable(named: "x"), Variable(named: "y")), Variable(named: "y")),
+              Nat.gt(Variable(named: "x"), Variable(named: "y"))
+      ) // case x>y : x%y = (x-y)%y
     ],["nat", "nat"])
     
     // TODO: gcd (Greatest common divisor) (gcd(20, 12) = 4)
     self.add_operator("gcd", Nat.gcd,[
-      // Here
+      Rule(Nat.gcd(Variable(named: "x"), Nat.zero()), Variable(named: "x")), // gcd(x,0) = x
+      Rule(Nat.gcd(Nat.zero(), Variable(named: "x")), Variable(named: "x")), // gcd(o,x) = x
+      Rule(
+              Nat.gcd(Variable(named: "x"), Variable(named: "y")),
+              Variable(named: "y"),
+              Nat.eq(Nat.mod(Variable(named: "x"), Variable(named: "y")), Nat.zero())
+      ), // case x%y=0 : gcd(x,y) = y
+      Rule(
+              Nat.gcd(Variable(named: "x"), Variable(named: "y")),
+              Nat.gcd(Variable(named: "y"), Nat.mod(Variable(named: "x"), Variable(named: "y"))),
+              Nat.gt(Nat.mod(Variable(named: "x"), Variable(named: "y")), Nat.zero())
+      ) // case x%y>0 : gcd(x,y) = gcd(y, x%y)
     ],["nat", "nat"])
     
     // TODO: div (euclidean division) (div(10/3) = 3)
     // You can return vFail if it's undefined
     self.add_operator("/", Nat.div,[
-      // Here
+      Rule(Nat.div(Variable(named: "x"), Nat.zero()), vFail), // div by 0 not defined
+      Rule(
+              Nat.div(Variable(named: "x"), Variable(named: "y")),
+              Nat.zero(),
+              Boolean.or(Nat.lt(Variable(named: "x"), Variable(named: "y")), Nat.eq(Variable(named: "x"), Variable(named: "y")))
+      ), // case x<=y : x/y = 0
+      Rule(
+              Nat.div(Variable(named: "x"), Variable(named: "y")),
+              Nat.succ(Nat.div(Nat.sub(Variable(named: "x"), Variable(named: "y")), Variable(named: "y"))),
+              Nat.gt(Variable(named: "x"), Variable(named: "y"))
+      ) // case x>y : x/y = ((x-y)/y)+1
     ],["nat", "nat"])
   }
 
@@ -208,20 +236,6 @@ public class Integer: ADT{
         )
       )
     ], ["int", "int"])
-    
-    // TODO: sub (substraction)
-    self.add_operator("-", Integer.sub, [
-        Rule(
-                Integer.sub(
-                        Integer.int(Variable(named: "a"),Variable(named: "b")),
-                        Integer.int(Variable(named: "c"),Variable(named: "d"))
-                ),
-                Integer.add(
-                        Nat.int(Variable(named: "a"),Variable(named: "b")),
-                        Nat.int(Variable(named: "d"),Variable(named: "c"))
-                )
-        )
-    ], ["int", "int"])
 
  // TODO: sub (substraction)
     self.add_operator("-", Integer.sub, [
@@ -231,32 +245,44 @@ public class Integer: ADT{
                         Integer.int(Variable(named: "c"),Variable(named: "d"))
                 ),
                 Integer.add(
-                        Nat.int(Variable(named: "a"),Variable(named: "b")),
-                        Nat.int(Variable(named: "d"),Variable(named: "c"))
+                        InNatteger.int(Variable(named: "a"),Variable(named: "b")),
+                        Integer.int(Variable(named: "d"),Variable(named: "c"))
                 )
-        )
+        ) // (a-b)-(c-d) = (a-b)+(d-c)
     ], ["int", "int"])
 
     // TODO: abs (absolute value) (abs(-3)) = 3
     // In the case of Integer: abs(0,3) = (3,0)
     self.add_operator("abs", Integer.abs, [
-      Rule(Integer.abs(Integer.int(Variable(named: "x"), Nat.zero())), Integer.int(Variable(named: "x"), Nat.zero())),
-      Rule(Integer.abs(Integer.int(Nat.zero(),Variable(named: "x"))), Integer.int(Variable(named: "x"), Nat.zero())),
+      Rule(Integer.abs(Integer.int(Variable(named: "x"), Nat.zero())), Integer.int(Variable(named: "x"), Nat.zero())), // abs(x-0) = x
+      Rule(Integer.abs(Integer.int(Nat.zero(),Variable(named: "x"))), Integer.int(Variable(named: "x"), Nat.zero())), // abs(0-x) = x
       Rule(
               Integer.abs(Integer.int(Variable(named: "x"), Variable(named: "y"))),
-              Integer.abs(Integer.int(Nat.pre(Variable(named: "x")), Nat.pre(Variable(named: "y"))))
-      )
+              Integer.int(Nat.sub(Variable(named: "x"), Variable(named: "y")), Nat.zero()),
+              Boolean.or(Nat.gt(Variable(named: "x"), Variable(named: "y")), Nat.eq(Variable(named: "x"), Variable(named: "y")))
+      ), // case x>=y : abs(x-y) = ((x-y)-0)
+      Rule(
+              Integer.abs(Integer.int(Variable(named: "x"), Variable(named: "y"))),
+              Integer.int(Nat.sub(Variable(named: "y"), Variable(named: "x")), Nat.zero()),
+              Nat.lt(Variable(named: "x"), Variable(named: "y"))
+      ) // case x<y : abs(x-y) = ((y-x)-0)
     ], ["int"])
     
     // TODO: normalize (normalize(4,2) = (2,0)
     // normalize(3,10) = (0,7))
     self.add_operator("normalize", Integer.normalize, [
-        Rule(Integer.normalize(Integer.int(Variable(named: "x"), Nat.zero())), Integer.int(Variable(named: "x"), Nat.zero())),
-        Rule(Integer.normalize(Integer.int(Nat.zero(),Variable(named: "x")), Integer.int(Nat.zero(),Variable(named: "x")))),
+        Rule(Integer.normalize(Integer.int(Variable(named: "x"), Nat.zero())), Integer.int(Variable(named: "x"), Nat.zero())), // norm(x-0) = (x-0)
+        Rule(Integer.normalize(Integer.int(Nat.zero(),Variable(named: "x"))), Integer.int(Nat.zero(),Variable(named: "x"))), // norm(0-x) = (0-x)
         Rule(
                 Integer.normalize(Integer.int(Variable(named: "x"), Variable(named: "y"))),
-                Integer.normalize(Integer.int(Nat.pre(Variable(named: "x")), Nat.pre(Variable(named: "y"))))
-        )
+                Integer.int(Nat.sub(Variable(named: "x"), Variable(named: "y")), Nat.zero()),
+                Boolean.or(Nat.gt(Variable(named: "x"), Variable(named: "y")), Nat.eq(Variable(named: "x"), Variable(named: "y")))
+        ), // case x>=y : norm(x,y) = ((x-y)-0)
+        Rule(
+                Integer.normalize(Integer.int(Variable(named: "x"), Variable(named: "y"))),
+                Integer.int(Nat.zero(), Nat.sub(Variable(named: "y"), Variable(named: "x"))),
+                Nat.lt(Variable(named: "x"), Variable(named: "y"))
+        ) // case x<y : norm(x,y) = (0-(y-x))
     ], ["int"])
     
     // TODO: mul (multiplication)
@@ -264,43 +290,43 @@ public class Integer: ADT{
       Rule(
               Integer.mul(Integer.int(Variable(named: "a"), Variable(named: "b")), Integer.int(Variable(named: "c"), Variable(named: "d"))),
               Integer.int(Nat.add(Nat.mul(Variable(named: "a"), Variable(named: "c")), Nat.mul(Variable(named: "b"), Variable(named: "a"))), Nat.add(Nat.mul(Variable(named: "a"), Variable(named: "d")), Nat.mul(Variable(named: "b"), Variable(named: "c"))))
-      )
+      ) // (a-b)*(c-d) = (a*c+b*d)-(a*d+b*c)
     ], ["int", "int"])
     
     // TODO: eq (equal)
     self.add_operator("==", Integer.eq, [
-      Rule(Integer.eq(Integer.int(Variable(named: "x"), Nat.zero()), Integer.int(Variable(named: "y"), Nat.zero())), Nat.eq(Variable(named: "x"), Variable(named: "y"))),
-      Rule(Integer.eq(Integer.int(Nat.zero(), Variable(named: "x")), Integer.int(Nat.zero(), Variable(named: "y"))), Nat.eq(Variable(named: "x"), Variable(named: "y"))),
-      Rule(Integer.eq(Integer.int(Nat.zero(), Variable(named: "x")), Integer.int(Variable(named: "y"), Nat.zero())), Boolean.False()),
-      Rule(Integer.eq(Integer.int(Variable(named: "x"), Nat.zero()), Integer.int(Nat.zero(), Variable(named: "y"))), Boolean.False()),
+      Rule(Integer.eq(Integer.int(Variable(named: "x"), Nat.zero()), Integer.int(Variable(named: "y"), Nat.zero())), Nat.eq(Variable(named: "x"), Variable(named: "y"))), // (x-0)==(y-0) -> x==y
+      Rule(Integer.eq(Integer.int(Nat.zero(), Variable(named: "x")), Integer.int(Nat.zero(), Variable(named: "y"))), Nat.eq(Variable(named: "x"), Variable(named: "y"))), // (0-x)==(0-y) -> x==y
+      Rule(Integer.eq(Integer.int(Nat.zero(), Variable(named: "x")), Integer.int(Variable(named: "y"), Nat.zero())), Boolean.False()), // (0-x)==(y-0) -> False
+      Rule(Integer.eq(Integer.int(Variable(named: "x"), Nat.zero()), Integer.int(Nat.zero(), Variable(named: "y"))), Boolean.False()), // (x-0)==(0-y) -> False
       Rule(
               Integer.eq(Integer.int(Variable(named: "a"), Variable(named: "b")), Integer.int(Variable(named: "c"), Variable(named: "d"))),
               Integer.eq(Integer.normalize(Integer.int(Variable(named: "a"), Variable(named: "b"))), Integer.normalize(Integer.int(Variable(named: "c"), Variable(named: "d"))))
-      )
+      ) // (a-b)==(c-d) -> norm(a-b)==norm(c-d)
     ], ["int", "int"])
     
     // TODO: lt (lesser than)
     self.add_operator("<", Integer.lt, [
-      Rule(Integer.lt(Integer.int(Variable(named: "x"), Nat.zero()), Integer.int(Variable(named: "y"), Nat.zero())), Nat.lt(Variable(named: "x"), Variable(named: "y"))),
-      Rule(Integer.lt(Integer.int(Nat.zero(), Variable(named: "x")), Integer.int(Nat.zero(), Variable(named: "y"))), Nat.gt(Variable(named: "x"), Variable(named: "y"))),
-      Rule(Integer.lt(Integer.int(Nat.zero(), Variable(named: "x")), Integer.int(Variable(named: "y"), Nat.zero())), Boolean.True()),
-      Rule(Integer.lt(Integer.int(Variable(named: "x"), Nat.zero()), Integer.int(Nat.zero(), Variable(named: "y"))), Boolean.False()),
+      Rule(Integer.lt(Integer.int(Variable(named: "x"), Nat.zero()), Integer.int(Variable(named: "y"), Nat.zero())), Nat.lt(Variable(named: "x"), Variable(named: "y"))), // (x-0)<(y-0) -> x<y
+      Rule(Integer.lt(Integer.int(Nat.zero(), Variable(named: "x")), Integer.int(Nat.zero(), Variable(named: "y"))), Nat.gt(Variable(named: "x"), Variable(named: "y"))), // (0-x)>(0-y) -> x>y
+      Rule(Integer.lt(Integer.int(Variable(named: "x"), Nat.zero()), Integer.int(Nat.zero(), Variable(named: "y"))), Boolean.False()), // (x-0)<(0-y) -> False
+      Rule(Integer.lt(Integer.int(Nat.zero(), Variable(named: "x")), Integer.int(Variable(named: "y"), Nat.zero())), Boolean.True()), // (0-x)<(y-0) -> True
       Rule(
               Integer.lt(Integer.int(Variable(named: "a"), Variable(named: "b")), Integer.int(Variable(named: "c"), Variable(named: "d"))),
               Integer.lt(Integer.normalize(Integer.int(Variable(named: "a"), Variable(named: "b"))), Integer.normalize(Integer.int(Variable(named: "c"), Variable(named: "d"))))
-      )
+      ) // (a-b)<(c-d) -> norm(a-b)<norm(c-d)
     ], ["int", "int"])
     
     // TODO: gt (greater than)
     self.add_operator(">", Integer.gt, [
-      Rule(Integer.gt(Integer.int(Variable(named: "x"), Nat.zero()), Integer.int(Variable(named: "y"), Nat.zero())), Nat.gt(Variable(named: "x"), Variable(named: "y"))),
-      Rule(Integer.gt(Integer.int(Nat.zero(), Variable(named: "x")), Integer.int(Nat.zero(), Variable(named: "y"))), Nat.lt(Variable(named: "x"), Variable(named: "y"))),
-      Rule(Integer.gt(Integer.int(Nat.zero(), Variable(named: "x")), Integer.int(Variable(named: "y"), Nat.zero())), Boolean.False()),
-      Rule(Integer.gt(Integer.int(Variable(named: "x"), Nat.zero()), Integer.int(Nat.zero(), Variable(named: "y"))), Boolean.True()),
+      Rule(Integer.gt(Integer.int(Variable(named: "x"), Nat.zero()), Integer.int(Variable(named: "y"), Nat.zero())), Nat.gt(Variable(named: "x"), Variable(named: "y"))), // (x-0)>(y-0) -> x>y
+      Rule(Integer.gt(Integer.int(Nat.zero(), Variable(named: "x")), Integer.int(Nat.zero(), Variable(named: "y"))), Nat.lt(Variable(named: "x"), Variable(named: "y"))), // (0-x)>(0-y) -> x<y
+      Rule(Integer.gt(Integer.int(Nat.zero(), Variable(named: "x")), Integer.int(Variable(named: "y"), Nat.zero())), Boolean.False()), // (0-x)>(y-0) -> False
+      Rule(Integer.gt(Integer.int(Variable(named: "x"), Nat.zero()), Integer.int(Nat.zero(), Variable(named: "y"))), Boolean.True()), // (x-0)>(0-y) -> True
       Rule(
                 Integer.gt(Integer.int(Variable(named: "a"), Variable(named: "b")), Integer.int(Variable(named: "c"), Variable(named: "d"))),
                 Integer.gt(Integer.normalize(Integer.int(Variable(named: "a"), Variable(named: "b"))), Integer.normalize(Integer.int(Variable(named: "c"), Variable(named: "d"))))
-      )
+      ) // (a-b)>(c-d) -> norm(a-b)>norm(c-d)
     ], ["int", "int"])
     
     // TODO: sign (sign(6,2) = True, sign(4,10) = False)
@@ -309,14 +335,29 @@ public class Integer: ADT{
       Rule(
               Integer.sign(Integer.int(Variable(named: "x"), Variable(named: "y"))),
               Integer.gt(Integer.int(Variable(named: "x"), Variable(named: "y")), Integer.int(Nat.zero(), Nat.zero()))
-      )
+      ) // sign(x-y) -> (x-y)>(0-0)
     ], ["int"])
     
     // TODO: div (euclidian division)
     // Help: Condition for the division is a simple xor which verify
     // a < b xor c < d (with integer1 = (a,b) and integer2 = (c,d)
     self.add_operator("/", Integer.div, [
-      // Here
+      Rule(Integer.div(Integer.int(Variable(named: "x"), Variable(named: "y")), Integer.int(Nat.zero(), Nat.zero())), vFail), // div by 0 not defined
+      Rule(
+              Integer.div(Integer.int(Variable(named: "a"), Variable(named: "b")), Integer.int(Variable(named: "c"), Variable(named: "d"))),
+              Integer.int(Nat.zero(), Nat.div(Nat.sub(Variable(named: "b"), Variable(named: "a")), Nat.sub(Variable(named: "c"), Variable(named: "d")))),
+              Boolean.and(Nat.lt(Variable(named: "a"), Variable(named: "b")), Boolean.or(Nat.gt(Variable(named: "c"), Variable(named: "d")), Nat.eq(Variable(named: "c"), Variable(named: "d"))))
+      ), // case a<b and c>=d : (a-b)/(c-d) = (0-((b-a)/(c-d)))
+      Rule(
+              Integer.div(Integer.int(Variable(named: "a"), Variable(named: "b")), Integer.int(Variable(named: "c"), Variable(named: "d"))),
+              Integer.int(Nat.zero(), Nat.div(Nat.sub(Variable(named: "a"), Variable(named: "b")), Nat.sub(Variable(named: "d"), Variable(named: "c")))),
+              Boolean.and(Nat.gt(Variable(named: "c"), Variable(named: "d")), Nat.lt(Variable(named: "a"), Variable(named: "b")))
+      ), // case a>=b and c<d : (a-b)/(c-d) = (0-((a-b)/(d-c)))
+      Rule(
+              Integer.div(Integer.int(Variable(named: "a"), Variable(named: "b")), Integer.int(Variable(named: "c"), Variable(named: "d"))),
+              Integer.int(Nat.div(Nat.sub(Variable(named: "a"), Variable(named: "b")), Nat.sub(Variable(named: "c"), Variable(named: "d"))), Nat.zero()),
+              Boolean.and(Boolean.not(Nat.lt(Variable(named: "a"), Variable(named: "b"))), Boolean.not(Nat.lt(Variable(named: "c"), Variable(named: "d"))))
+      ) // case a>=b and c>=d : (a-b)/(c-d) = (((a-b)/(c-d))-0)
     ], ["int", "int"])
   }
 
