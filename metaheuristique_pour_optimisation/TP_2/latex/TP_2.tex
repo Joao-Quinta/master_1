@@ -1,0 +1,99 @@
+\documentclass[a4paper]{article}
+%\documentclass[8pt]{report}
+%%%%%%%% CREATE DOCUMENT STRUCTURE %%%%%%%%
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%\usepackage{subfig}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+%\usepackage{caption}
+\usepackage[justification=centering]{caption}
+\usepackage{subcaption}
+\usepackage{sectsty}
+\usepackage{float}
+\usepackage{titling} 
+\usepackage{blindtext}
+\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+
+%% definitions 
+\definecolor{darkgreen}{rgb}{0.0, 0.4, 0.0}
+
+%% Define your personal info here %%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\TPid{2}
+\newcommand\TPname{The Quadratic Assignement Problem}
+\newcommand\Firstname{Joao Filipe}
+\newcommand\Familyname{Costa da Quinta}
+\newcommand\Email{Joao.Costa@etu.unige.ch}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%% Page header %%%%%%
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{TP \TPid: \TPname}
+\lhead{\Firstname \Familyname}
+\rfoot{Page \thepage}
+
+
+%%%%%%%% DOCUMENT %%%%%%%%
+\begin{document}
+
+%%%% Title Page
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 							% horizontal line and its thickness
+
+\center 
+ 
+% University
+\textsc{\LARGE Université de Genève}\\[1cm]
+
+% Document info
+\textsc{\Large Metaheuristics for optimization}\\[0.2cm]									% Course Code
+\HRule \\[0.8cm]
+{ \huge \bfseries TP \TPid : \TPname}\\[0.7cm]								% Assignment
+\HRule \\[2cm]
+\large
+\emph{Author:} \Firstname \; \Familyname\\[0.5cm]		
+\emph{E-mail:} {\color{blue}\Email}\\[7cm]		
+% Author info
+% Author info
+{\large \today}\\[2cm]
+\includegraphics[width=0.4\textwidth]{images/unige_csd.png}\\[1cm] 	% University logo
+\vfill 
+\end{titlepage}
+
+
+% ============================================
+% ----------------------------------
+\newpage
+\section{Introduction}
+The Quadratic Assignment Problem or (QAP) is a combinatorial optimization problem, which we will tackle during this TP. QAP is best described by the problem of assigning a set of facilities to a set of locations, where locations have a given distance from each other, and facilities a given flow. For example, it would be smart to have a car factory as close to the dealership as possible, so that the distance to deliver the cars manufactured is minimized. This is a NP-hard problem.\\\\
+We must note that the number of facilities is the same as the number of locations. For this TP we will set n=12 the number of locations/facilities. and two matrices $D = [d_{rs}]$ where $d_{rs}$ is the distance between locations $r$ and $s$, as well as $W = [w_{ij}]$ where $w_{ij}$ is the flow between facilities $i$ and $j$.\\\\
+Let $S(n)$ be the search space, which is the set of all permutations of size $n!$ in our case $12!$. We are looking for $v \in S(n)$ that minimizes a given fitness function. $v$ is of size n, and $vi$ corresponds to the location of facility $i$ in the current solution $v \in S(n)$. \\
+$$ fitness\_function: I(v) =  \sum_{i,j=1}^{n} w_{ij} \times d_{vi,vj} $$
+
+\section{Tabu Search}
+As we saw in the previous TP, with a deterministic hill climbing algorithm, we would easily get stuck in a local maximum. Tabu search (TS) has an approach that is quite like the deterministic hill climb, but when we are at a maximum, we don't stop, we keep going, and thanks to TS we are sure that we don't go back the mountain the same way. Basically, TS prevents us from choosing the same transition that we choose L moves ago. For example, let's assume L=1, if we are at an initial state $s_{0}$ and find a transition $t_1$ that brings us to $s_{1}$, then TS prevents us from going back to $s_0$ with $t_2$ for at least L=1 moves.\\\\
+During deterministic hill climbing method we always choose the best neighbour of our state $s$, in TS we choose the best neighbour that is not forbidden by TS.\\\\
+The goal during this TP is to use TS method to solve QAP.
+
+\section{TS for QAP}
+Let's see how we will use TS to solve QAP, 
+
+
+\end{document}

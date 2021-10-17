@@ -92,8 +92,7 @@ def decimal_binary(decimal):  # VERIFIED
 
 
 # S box operation
-def sBox(list_binary, i):  # VERIFIED
-    print("############################################ SBOX ->", i)
+def sBox(list_binary):  # VERIFIED
     pos_sbox = []
     for bi in list_binary:
         a_bi = bi[2:]
@@ -103,7 +102,7 @@ def sBox(list_binary, i):  # VERIFIED
         dec_val = Sboxes.Sbox[index]
         binary = decimal_binary(dec_val)
         pos_sbox.append(binary)
-    print(pos_sbox)
+    # print(pos_sbox)
     return pos_sbox
 
 
@@ -128,17 +127,20 @@ def key_expansion(Ki):
         if i < N:
             to_app = Ki[i]
         elif i >= N and i % N == 0:
-            print("ici - > ", i)
+            # print("ici - > ", i)
             l = Wi[i - N] # GOOD
-            print("LEFT -> ", l, " ## ", [binary_str_to_hex(s) for s in l])
-            print("MIDDLE : ")
-            print("wi-1 -> ", Wi[i - 1], " ## ", [binary_str_to_hex(s) for s in Wi[i - 1]]) # GOOD
-            print("rot(wi-1) -> ", rotation(Wi[i - 1]), " ## ", [binary_str_to_hex(s) for s in rotation(Wi[i - 1])]) # GOOD
-            m = sBox(rotation(Wi[i - 1]), i)
-            print("MIDDLE ALL  -> ", m, " ## ", [binary_str_to_hex(s) for s in m])
+            # print("LEFT -> ", l, " ## ", [binary_str_to_hex(s) for s in l])
+            # print("MIDDLE : ")
+            # print("wi-1 -> ", Wi[i - 1], " ## ", [binary_str_to_hex(s) for s in Wi[i - 1]]) # GOOD
+            # print("rot(wi-1) -> ", rotation(Wi[i - 1]), " ## ", [binary_str_to_hex(s) for s in rotation(Wi[i - 1])]) # GOOD
+            m = sBox(rotation(Wi[i - 1]))
+            # print("MIDDLE ALL  -> ", m, " ## ", [binary_str_to_hex(s) for s in m])
             r = get_rc(int(i / N) - 1)
-            print("RIGHT -> ", r, " ## ", [binary_str_to_hex(s) for s in r])
-            print("TOO APP -> ", xor_operation(xor_operation(l, m), r), " ## ", [binary_str_to_hex(s) for s in xor_operation(xor_operation(l, m), r)])
+            # print("RIGHT -> ", r, " ## ", [binary_str_to_hex(s) for s in r])
+            # this = xor_operation(l, m)
+            # print(" FIRST XOR -> ", xor_operation(l, m), " ## ", [binary_str_to_hex(s) for s in xor_operation(l, m)])
+            # print(" SECOND XOR -> ", xor_operation(this, r), " ## ", [binary_str_to_hex(s) for s in xor_operation(this, r)])
+            # print("TOO APP -> ", xor_operation(xor_operation(l, m), r), " ## ", [binary_str_to_hex(s) for s in xor_operation(xor_operation(l, m), r)])
             # print(r)
             to_app = xor_operation(xor_operation(l, m), r)
         elif i >= N > 6 and i % N == 4:
@@ -146,7 +148,7 @@ def key_expansion(Ki):
             r = sBox(Wi[i - 1])
             to_app = xor_operation(l, r)
         else:
-            print("ici 2222 - > ", i)
+            # print("ici 2222 - > ", i)
             l = Wi[i - N]
             r = Wi[i - 1]
             # the fuck here ?
@@ -174,6 +176,3 @@ while i < 44:
     v4 = [binary_str_to_hex(s) for s in x[i + 3]]
     print(v1, v2, v3, v4)
     i = i + 4
-
-print(x[24])
-print(x[28])
