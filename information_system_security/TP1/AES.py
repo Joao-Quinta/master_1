@@ -10,7 +10,7 @@ key = ["0x54", "0x68", "0x61", "0x74",
 
 # on fait 128 bits key -> 10 rounds
 # lets define rconi
-rc = ["0x01", "0x02", "0x04", "0x08", "0x10", "0x20", "0x40", "0x80", "0x1b", "0x36", "0x00", "0x00", "0x00", ]
+rc = ["0x01", "0x02", "0x04", "0x08", "0x10", "0x20", "0x40", "0x80", "0x1b", "0x36"]
 # N = number of 32 bit words of the key -> 128 bit key = 4 * 32 bits
 N = 4
 # R = number of keys needed
@@ -44,13 +44,11 @@ def binary_str_to_hex(binary):
 
 # generate [k_{0}, k_{1}, .... , k_{N-1}]
 def generate_k_n_1(key_input, n):
-    ##########################################################################################################
-    # COMPLETEMENT FAUX -> FAUT FIX
     k = []
     for i in range(n):
         ki = []
         for j in range(4):
-            s = i * len(k)
+            s = n * len(k)
             ki.append(key_input[s + j])
         k.append(ki)
     return k
@@ -93,12 +91,14 @@ def xor_operation(b1, b2):
 def key_expansion(Ki):
     Wi = []
     for i in range(4 * R):
+        to_app = 0
         if i < N:
             to_app = Ki[i]
         elif i >= N and i % N == 0:
             # print("ici - > ", i)
             l = Wi[i - N]
             m = sBox(rotation(Wi[i - 1]))
+            # HAVE TO REDO THIS -> IT IS WRONG, FULL 0'S
             r = [rc_binary[int(i / N)] for _ in range(4)]
             # print(r)
             to_app = xor_operation(xor_operation(l, m), r)
@@ -122,16 +122,19 @@ rc_binary = [hex_to_binary_str(f) for f in key]
 
 # K_i -> K0 = K_i[0] ... KN-1 = K_i[-1]
 K_i = generate_k_n_1(key_binary, N)
-print([binary_str_to_hex(s) for s in K_i[0]],[binary_str_to_hex(s) for s in K_i[1]],[binary_str_to_hex(s) for s in K_i[2]],[binary_str_to_hex(s) for s in K_i[3]])
+print()
+print([binary_str_to_hex(s) for s in K_i[0]], [binary_str_to_hex(s) for s in K_i[1]],
+      [binary_str_to_hex(s) for s in K_i[2]], [binary_str_to_hex(s) for s in K_i[3]])
+print()
 
 x = key_expansion(K_i)
-#print(x)
+# print(x)
 """"""
 i = 0
 while i < 44:
     v1 = [binary_str_to_hex(s) for s in x[i]]
-    v2 = [binary_str_to_hex(s) for s in x[i+1]]
-    v3 = [binary_str_to_hex(s) for s in x[i+2]]
-    v4 = [binary_str_to_hex(s) for s in x[i+3]]
+    v2 = [binary_str_to_hex(s) for s in x[i + 1]]
+    v3 = [binary_str_to_hex(s) for s in x[i + 2]]
+    v4 = [binary_str_to_hex(s) for s in x[i + 3]]
     print(v1, v2, v3, v4)
     i = i + 4
