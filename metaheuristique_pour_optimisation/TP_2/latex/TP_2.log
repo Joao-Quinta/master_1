@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.24)  17 OCT 2021 20:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.24)  17 OCT 2021 23:00
 entering extended mode
 **./TP_2.tex
 (TP_2.tex
@@ -930,12 +930,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--88
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--94
+Underfull \hbox (badness 10000) in paragraph at lines 91--95
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--94
+Underfull \hbox (badness 10000) in paragraph at lines 91--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--99
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--99
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
@@ -943,15 +973,15 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.99 \end{document}
-                    [1] (TP_2.aux)
+l.106 \end{document}
+                     [1] (TP_2.aux)
 Package rerunfilecheck Info: File `TP_2.out' has not changed.
 (rerunfilecheck)             Checksum: 9B2AA1E50DE543965F6B493A2F6A8D43;303.
  ) 
 Here is how much of TeX's memory you used:
  24287 strings out of 478927
  443861 string characters out of 2853009
- 847535 words of memory out of 3000000
+ 851535 words of memory out of 3000000
  41712 multiletter control sequences out of 15000+600000
  412745 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -970,10 +1000,11 @@ al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Joao/AppD
 ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Jo
 ao/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Us
 ers/Joao/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b>
-Output written on TP_2.pdf (2 pages, 146008 bytes).
+b><C:/Users/Joao/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+msy7.pfb>
+Output written on TP_2.pdf (2 pages, 157330 bytes).
 PDF statistics:
- 256 PDF objects out of 1000 (max. 8388607)
+ 263 PDF objects out of 1000 (max. 8388607)
  5 named destinations out of 1000 (max. 500000)
  42 words of extra memory for PDF output out of 10000 (max. 10000000)
 
