@@ -97,17 +97,70 @@ From $T^*(s)$ we easily compute all the legal neighbours $N^*(s)$, then just lik
 After choosing a neighbour we had the respective transition to the Tabu List for a duratin of L moves/iterations. Tabu List is also known as a short term memory, as the last transitions choosen by the algorithm can't be used again in the near future.\\\\
 The goal during this TP is to use TS method to solve QAP.
 
+% ============================================
+% ----------------------------------
+\newpage
 \section{TS for QAP}
 Let's see how we will use TS to solve QAP.\\\\
 Let initial random state be the following:
 \begin{figure}[H]
 \center
-\includegraphics[width=0.8\textwidth]{images/state_image.PNG}
+\includegraphics[width=0.4\textwidth]{images/state_image.PNG}
 \caption{Initial random state}
 \end{figure}
-This state means that the facility number 11 is in position 0, facility 6 is in position 1 ... 
+This state means that the facility number 11 is in location 0, facility 9 is in location 1 ... \\\\
+Transitions are simply a swap of two facilities between two locations, so from the random state $s$ we could have a transition that would change the position of the facility 11 with the facility 9, this transition would be represented by $T(0,1) \longrightarrow$  we change the facility at location 0 with the facility at location 1, which results in $s'$\\\\
+Let's see the effect of this transition in the state $s$:
+\begin{figure}[H]
+\center
+\includegraphics[width=0.6\textwidth]{images/state_transition.PNG}
+\caption{Effect of T(0,1) and T(0,2) onto initial state $s$}
+\end{figure}
+This also means that at each step we have at least $ \sum_{i=1}^{n-1} $ transitions.\\\\
+Suppose that the best transition is T(0,1), let's see how it will affect the Tabu List.\\
+As we start the algorithm we initialize an array : $tabu\_list$ of size $(n \times n)$ full of zeroes. To update the $tabu\_list$ according to the transition T(0,1), we have to set $T_{s[0],0} = L$ and $T_{s[1],1} = L$, this means that the facility in $s[0]$ was in position $0$ $L$ iterations ago, and we want to block a transition that would place facility $s[0]$ in position $0$ for the next $L$ iterations.\\\\
+Since we want to be able to place $s[0]$ in position $0$ in $L$ iterations, we have to update the values in $tabu\_list$ at each iteration: $$\textbf{if}\ (tabu\_list_{i,j} > 0) \textbf{ then : } tabu\_list_{i,j} = tabu\_list_{i,j} - 1 $$\\
 
+This use of the $tabu\_list$ is the short item memory of the algorithm, but TS also has a variation that uses a long term memory to try and force transitions, as oppose to the short term memory that prevents some transitions.\\\\
 
+The variation is called the diversification mechanism, this variation forces transitions that haven't been done in a $U$ iterations, just like $tabu\_list$ prevents transitions that were done $L$ iterations ago. In the same way we initialise $tabu\_list$ at the start of the algorithm, we also start a second array $diver\_list$ of size $(n \times n)$ full of zeroes. Each time we are trying to compute the neighbourhood of a given state, we first check if $diver\_list_{i,j} = U$ if we find such a value in $diver\_list_{i,j}$, then we force any transition that would place facility $i$ into position $j$. This helps the algorithm get unstuck or discover new horizons, after doing a forced transition, we set $diver\_list_{i,j} = 0$. We have to update $diver\_list$ at each iteration just like we did $tabu\_list$, so at each iteration:
+$$\textbf{if}\ (tabu\_list_{i,j} < U) \textbf{ then : } diver\_list_{i,j} = diver\_list_{i,j} + 1 $$\\
+We set $U = n^{2}$.
+\begin{figure}[H]
+\center
+\includegraphics[width=1\textwidth]{images/with_without.PNG}
+\caption{Exploration of $Z^{2}$ plane, left without diversification, right with diversification}
+\end{figure}
 
+The blue transitions are simple transitions from a state to it's close neighbour, and the green transitions symbolise a jump due to the diversification method.
+\section{Results}
+
+To test our algorithm and its variant we will implement what was explained in the previous section, and execute it 10 times with 20000 iterations, for each value of $L = \{1,6,10\}$ as well as with and without the use of the $diver\_list$. Before seeing the results I must say that I expect the use of $diver\_list$ to boost our results, as it will allow us to get unstuck from certain areas of the search space.
+
+Let's first see the fitness found for each settings, we will only consider the best value of each setting in the table: \\
+(first column is the best fitness of the 10 executions, second column is the average of the best fitnesses of the 10 executions, third column is the average fitness of the 20000 iterations in the best run, forth column is the max fitness - min fitness of the best run)
+\begin{center}
+Table 1 : Without Diversification\\
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+&    best fitness   & average best fitnesses     &  average fitnesses   & max-min    \\ \hline
+L = 1   & 664   & 737  & 664.0   & 22   \\ \hline
+L = 6  & 684  & 730  & 694.2  & 54   \\ \hline
+L = 10 & 684 & 737 & 727.6 & 74 \\ \hline
+\end{tabular}
+\end{center}
+\begin{center}
+Table 2 : With Diversification\\
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+&    best fitness   & average best fitnesses     &  average fitnesses   & max-min    \\ \hline
+L = 1   & 680   & 719  & 720.2   & 186   \\ \hline
+L = 6  & 654  & 711  & 704.4  & 184   \\ \hline
+L = 10 & 678 & 728 & 749.5 & 212 \\ \hline
+\end{tabular}
+\end{center}
+
+The results aren't as I expected them, they show that the best settings were $L=6$ with the use of diversification, however I did expect a bigger difference in result. We see that on average the results with the use of diversification are better, but they best results aren't that much better than those without diversification.\\\\
+I think this can be explained by looking at the last column of the table, we see that with the use of diversification, we explore much worse states, as the max-min is much larger, which means that the diversification method can lead us in the wrong direction, to compensate that we should increase the number of iterations. Diversification simply assures us that the search isn't located around the initial random state as it can be seen in Figure 3 from the previous section.
 
 \end{document}

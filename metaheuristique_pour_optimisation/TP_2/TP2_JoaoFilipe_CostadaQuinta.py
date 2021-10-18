@@ -1,3 +1,5 @@
+# TP2_JoaoFilipe_CostadaQuinta
+# meta
 import numpy as np
 import math
 import random
@@ -5,8 +7,8 @@ import copy
 
 # size of problem
 n = 12
-l = 10
-t_max = 20000
+l = 1
+t_max = 5000
 
 # drs is a distance between locations r and s
 D = np.array([[0, 1, 2, 3, 1, 2, 3, 4, 2, 3, 4, 5],
@@ -75,7 +77,6 @@ def generate_random_state():
         i = balancedDice(len(facilities))
         s.append(facilities[i])
         facilities.pop(i)
-    # s = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
     return s
 
 
@@ -130,9 +131,9 @@ def check_transitions(s, transitions):
 
 # compute all transitions -> checks if there are forced and forbidden transitions
 def compute_transitions(s):
-    #transitions = check_forced_transitions(s)
-    #if len(transitions) > 0:
-    #    return transitions
+    transitions = check_forced_transitions(s)
+    if len(transitions) > 0:
+        return transitions
     transitions = []
     for i in range(len(s)):
         for j in range(i + 1, len(s)):
@@ -157,12 +158,12 @@ def update_tabu_diversification_meca(s, transition):
         for j in range(tabu_list.shape[1]):
             if tabu_list[i][j] > 0:
                 tabu_list[i][j] = tabu_list[i][j] - 1
-            #if diversification_meca[i][j] < n * n:
-            #    diversification_meca[i][j] = diversification_meca[i][j] + 1
+            if diversification_meca[i][j] < n * n:
+                diversification_meca[i][j] = diversification_meca[i][j] + 1
     tabu_list[s[transition[0]]][transition[0]] = l
     tabu_list[s[transition[1]]][transition[1]] = l
-    #diversification_meca[s[transition[0]]][transition[0]] = 0
-    #diversification_meca[s[transition[1]]][transition[1]] = 0
+    diversification_meca[s[transition[0]]][transition[0]] = 0
+    diversification_meca[s[transition[1]]][transition[1]] = 0
 
 
 # compute fitness but FASTER -> CODE GO BRRRRR!
@@ -217,14 +218,14 @@ for i in range(10):
     states.append(s)
     fitness.append(fit)
     all_time_list.append(all_time)
-    print("######################################             -> ", i)
 
 for i in range(len(states)):
-    print("state->", states[i], " || fit -> ",fitness[i], " || avg -> ", np.sum(all_time_list[i])/len(all_time_list[i]), " || np.max/np.min -> ", np.max(all_time_list[i]), " / ", np.min(all_time_list[i]))
-
+    print("state->", states[i], " || fit -> ", fitness[i], " || avg -> ",
+          np.sum(all_time_list[i]) / len(all_time_list[i]), " || np.max/np.min -> ", np.max(all_time_list[i]), " / ",
+          np.min(all_time_list[i]))
 
 """
-without thingy
+without diversification
 
 l = 1
 
@@ -267,9 +268,8 @@ state-> [11, 8, 5, 4, 3, 6, 0, 9, 7, 10, 1, 2]  || fit ->  686  || avg ->  744.7
 
 """
 
-
 """
-with thingy
+with diversification
 
 l = 1
 

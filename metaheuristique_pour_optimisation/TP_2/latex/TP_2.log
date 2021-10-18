@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.24)  17 OCT 2021 23:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.24)  18 OCT 2021 02:13
 entering extended mode
 **./TP_2.tex
 (TP_2.tex
@@ -906,7 +906,7 @@ Package caption Info: End \AtBeginDocument code.
 (C:\Users\Joao\AppData\Local\Programs\MiKTeX\tex/latex/ucs\uni-0.def
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
-<images/unige_csd.png, id=18, 147.4308pt x 74.9199pt>
+<images/unige_csd.png, id=22, 147.4308pt x 74.9199pt>
 File: images/unige_csd.png Graphic file (type png)
 <use images/unige_csd.png>
 Package pdftex.def Info: images/unige_csd.png  used on input line 76.
@@ -959,52 +959,105 @@ Underfull \hbox (badness 10000) in paragraph at lines 95--99
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 101--102
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 101--102
-
- []
-
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.106 \end{document}
-                     [1] (TP_2.aux)
+l.102 \newpage
+               [1]
+<images/state_image.PNG, id=47, 653.44125pt x 81.30376pt>
+File: images/state_image.PNG Graphic file (type png)
+<use images/state_image.PNG>
+Package pdftex.def Info: images/state_image.PNG  used on input line 108.
+(pdftex.def)             Requested size: 193.47578pt x 24.07246pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--110
+
+ []
+
+<images/state_transition.PNG, id=48, 782.925pt x 461.47406pt>
+File: images/state_transition.PNG Graphic file (type png)
+<use images/state_transition.PNG>
+Package pdftex.def Info: images/state_transition.PNG  used on input line 116.
+(pdftex.def)             Requested size: 290.22107pt x 171.06664pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--122
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--122
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+
+ []
+
+[2 <./images/state_image.PNG> <./images/state_transition.PNG>]
+<images/with_without.PNG, id=58, 1109.64563pt x 443.40656pt>
+File: images/with_without.PNG Graphic file (type png)
+<use images/with_without.PNG>
+Package pdftex.def Info: images/with_without.PNG  used on input line 131.
+(pdftex.def)             Requested size: 483.69687pt x 193.27948pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--165
+
+ []
+
+[3 <./images/with_without.PNG>] [4] (TP_2.aux)
 Package rerunfilecheck Info: File `TP_2.out' has not changed.
-(rerunfilecheck)             Checksum: 9B2AA1E50DE543965F6B493A2F6A8D43;303.
+(rerunfilecheck)             Checksum: DE183C6188B019380C47258F4C5843F1;381.
  ) 
 Here is how much of TeX's memory you used:
- 24287 strings out of 478927
- 443861 string characters out of 2853009
- 851535 words of memory out of 3000000
- 41712 multiletter control sequences out of 15000+600000
- 412745 words of font info for 41 fonts, out of 8000000 for 9000
+ 24330 strings out of 478927
+ 444711 string characters out of 2853009
+ 854534 words of memory out of 3000000
+ 41741 multiletter control sequences out of 15000+600000
+ 415081 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,11n,117p,669b,617s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,12n,117p,869b,617s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1
-440.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
-ecrm1000.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dp
-i600\ecrm1200.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/
-ec/dpi600\ecti1200.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/ljfour/jkna
-ppen/ec/dpi600\ecbx2074.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\eccc1440.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/l
-jfour/jknappen/ec/dpi600\eccc1728.pk><C:/Users/Joao/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Joao/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Joao/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Joao/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Jo
-ao/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Us
-ers/Joao/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b><C:/Users/Joao/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-msy7.pfb>
-Output written on TP_2.pdf (2 pages, 157330 bytes).
+000.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
+ecbx1440.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dp
+i600\ecrm1000.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/
+ec/dpi600\ecrm1200.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/ljfour/jkna
+ppen/ec/dpi600\ecti1200.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecbx2074.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/l
+jfour/jknappen/ec/dpi600\eccc1440.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts
+/pk/ljfour/jknappen/ec/dpi600\eccc1728.pk><C:/Users/Joao/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Joao/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Joao/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Joao
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Use
+rs/Joao/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><
+C:/Users/Joao/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb><C:/Users/Joao/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmsy7.pfb>
+Output written on TP_2.pdf (5 pages, 274813 bytes).
 PDF statistics:
- 263 PDF objects out of 1000 (max. 8388607)
- 5 named destinations out of 1000 (max. 500000)
- 42 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 316 PDF objects out of 1000 (max. 8388607)
+ 12 named destinations out of 1000 (max. 500000)
+ 65 words of extra memory for PDF output out of 10000 (max. 10000000)
 
