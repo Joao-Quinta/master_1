@@ -1,13 +1,12 @@
 import copy
+import numpy as np
 import Sboxes
+import tables
 
 # AES -> Joao Filipe Costa da Quinta
 
-# TO DO: ASK FOR KEY AS INPUT
-key = ["0x54", "0x68", "0x61", "0x74",
-       "0x73", "0x20", "0x6d", "0x79",
-       "0x20", "0x4b", "0x75", "0x6e",
-       "0x67", "0x20", "0x46", "0x75"]
+message = "Two One Nine Two"
+key_text = "Thats my Kung Fu"
 
 # on fait 128 bits key -> 10 rounds
 # lets define rconi
@@ -16,6 +15,17 @@ rc = ["0x01", "0x02", "0x04", "0x08", "0x10", "0x20", "0x40", "0x80", "0x1b", "0
 N = 4
 # R = number of keys needed
 R = 11
+
+
+# creates a 4x4 array of '0b0'
+def new_4_4_array():
+    arr = []
+    for i in range(4):
+        sub_arr = []
+        for j in range(4):
+            sub_arr.append('0b0')
+        arr.append(sub_arr)
+    return arr
 
 
 # fill binary with 0's
@@ -68,6 +78,17 @@ def rotation(liste_bits):  # VERIFIED
     return liste_copy[1:] + liste_copy[:1]
 
 
+# compute row shifts
+def byte_shift_4_4_matrix(m):
+    res_array = []
+    for i in range(len(m)):
+        arr = m[i]
+        for j in range(i):
+            arr = rotation(arr)
+        res_array.append(arr)
+    return res_array
+
+
 # input binary -> decimal value as output
 def binary_decimal(binary):  # VERIFIED
     split_bits = [int(s) for s in binary]
@@ -106,6 +127,14 @@ def sBox(list_binary):  # VERIFIED
     return pos_sbox
 
 
+# sbox for 4x4 matrix
+def sBox_4_4_matrix(m):
+    res_array = []
+    for i in range(len(m)):
+        res_array.append(sBox(m[i]))
+    return res_array
+
+
 # calcule xor de deux listes avec des chaines binaires
 def xor_operation(b1, b2):  # VERIFIED
     xor_d = []
@@ -120,6 +149,62 @@ def xor_operation(b1, b2):  # VERIFIED
     return xor_d
 
 
+# xor operation for 4x4 matrix
+def xor_operation_4_4_matrix(m1, m2):
+    res_array = []
+    for i in range(len(m1)):
+        res_array.append(xor_operation(m1[i], m2[i]))
+    return res_array
+
+
+# returns mix column matrix
+def get_mix_column_matrix(type):
+    if type == "encr":
+        return [[2, 3, 1, 1],
+                [1, 2, 3, 1],
+                [1, 1, 2, 3],
+                [3, 1, 1, 2]]
+    else:
+        return [[14, 11, 13, 9],
+                [9, 14, 11, 13],
+                [13, 9, 14, 11],
+                [11, 13, 9, 14]]
+
+
+def get_from_table(v, t):
+    if t == 1:
+        return binary_decimal(v[2:])
+    elif t == 2:
+        return tables.table_2[binary_decimal(v[2:])]
+    elif t == 3:
+        return tables.table_3[binary_decimal(v[2:])]
+    elif t == 9:
+        return tables.table_9[binary_decimal(v[2:])]
+    elif t == 11:
+        return tables.table_11[binary_decimal(v[2:])]
+    elif t == 13:
+        return tables.table_13[binary_decimal(v[2:])]
+    elif t == 14:
+        return tables.table_14[binary_decimal(v[2:])]
+
+
+def dot_multiplication(a1, a2):
+    val_0 = decimal_binary(get_from_table(a2[0], a1[0]))
+    val_1 = decimal_binary(get_from_table(a2[1], a1[1]))
+    val_2 = decimal_binary(get_from_table(a2[2], a1[2]))
+    val_3 = decimal_binary(get_from_table(a2[3], a1[3]))
+    return xor_operation(xor_operation(xor_operation([val_0], [val_1]), [val_2]), [val_3])[0]
+
+
+def compute_mix_column_matrix(m, type):
+    res = [[], [], [], []]
+    mix_matrix = get_mix_column_matrix(type)
+    for i in range(len(type)):
+        for j in range(len(m)):
+            res[i].append(dot_multiplication(mix_matrix[i], [m[0][j], m[1][j], m[2][j], m[3][j]]))
+    return res
+
+
 # key expansion, key is in hex -> need to create nb of rounds + 1 key -> 11 keys
 def key_expansion(Ki):
     Wi = []
@@ -127,52 +212,185 @@ def key_expansion(Ki):
         if i < N:
             to_app = Ki[i]
         elif i >= N and i % N == 0:
-            # print("ici - > ", i)
-            l = Wi[i - N] # GOOD
-            # print("LEFT -> ", l, " ## ", [binary_str_to_hex(s) for s in l])
-            # print("MIDDLE : ")
-            # print("wi-1 -> ", Wi[i - 1], " ## ", [binary_str_to_hex(s) for s in Wi[i - 1]]) # GOOD
-            # print("rot(wi-1) -> ", rotation(Wi[i - 1]), " ## ", [binary_str_to_hex(s) for s in rotation(Wi[i - 1])]) # GOOD
+            l = Wi[i - N]
             m = sBox(rotation(Wi[i - 1]))
-            # print("MIDDLE ALL  -> ", m, " ## ", [binary_str_to_hex(s) for s in m])
             r = get_rc(int(i / N) - 1)
-            # print("RIGHT -> ", r, " ## ", [binary_str_to_hex(s) for s in r])
-            # this = xor_operation(l, m)
-            # print(" FIRST XOR -> ", xor_operation(l, m), " ## ", [binary_str_to_hex(s) for s in xor_operation(l, m)])
-            # print(" SECOND XOR -> ", xor_operation(this, r), " ## ", [binary_str_to_hex(s) for s in xor_operation(this, r)])
-            # print("TOO APP -> ", xor_operation(xor_operation(l, m), r), " ## ", [binary_str_to_hex(s) for s in xor_operation(xor_operation(l, m), r)])
-            # print(r)
             to_app = xor_operation(xor_operation(l, m), r)
         elif i >= N > 6 and i % N == 4:
             l = Wi[i - N]
             r = sBox(Wi[i - 1])
             to_app = xor_operation(l, r)
         else:
-            # print("ici 2222 - > ", i)
             l = Wi[i - N]
             r = Wi[i - 1]
-            # the fuck here ?
             to_app = xor_operation(l, r)
         Wi.append(to_app)
     return Wi
 
 
-key_binary = [hex_to_binary_str(f) for f in key]
-# K_i -> K0 = K_i[0] ... KN-1 = K_i[-1]
-K_i = generate_k_n_1(key_binary, N)
-print()
-print([binary_str_to_hex(s) for s in K_i[0]], [binary_str_to_hex(s) for s in K_i[1]],
-      [binary_str_to_hex(s) for s in K_i[2]], [binary_str_to_hex(s) for s in K_i[3]])
-print()
+# #################################### inv operations
 
-x = key_expansion(K_i)
-# print(x)
-""""""
-i = 0
-while i < 44:
-    v1 = [binary_str_to_hex(s) for s in x[i]]
-    v2 = [binary_str_to_hex(s) for s in x[i + 1]]
-    v3 = [binary_str_to_hex(s) for s in x[i + 2]]
-    v4 = [binary_str_to_hex(s) for s in x[i + 3]]
-    print(v1, v2, v3, v4)
-    i = i + 4
+# input : liste de 4 elements, chaque élément 8 bits
+def rotation_inv(liste_bits):  # VERIFIED
+    liste_copy = liste_bits.copy()
+    return liste_copy[3:] + liste_copy[0:3]
+
+
+# compute row shifts
+def byte_shift_4_4_matrix_inv(m):
+    res_array = []
+    for i in range(len(m)):
+        arr = m[i]
+        for j in range(i):
+            arr = rotation_inv(arr)
+        res_array.append(arr)
+    return res_array
+
+
+# S box operation
+def sBox_inv(list_binary):  # VERIFIED
+    pos_sbox = []
+    for bi in list_binary:
+        a_bi = bi[2:]
+        while len(a_bi) < 8:
+            a_bi = "0" + a_bi
+        index = binary_decimal(a_bi)
+        dec_val = Sboxes.Sbox_inv[index]
+        binary = decimal_binary(dec_val)
+        pos_sbox.append(binary)
+    # print(pos_sbox)
+    return pos_sbox
+
+
+# sbox for 4x4 matrix
+def sBox_4_4_matrix_inv(m):
+    res_array = []
+    for i in range(len(m)):
+        res_array.append(sBox_inv(m[i]))
+    return res_array
+
+
+# just to print a matrix in hexadecimal
+def print_4_4_matrix_hex(m):
+    for i in range(len(m)):
+        print(binary_str_to_hex(m[i][0]), " ", binary_str_to_hex(m[i][1]), " ", binary_str_to_hex(m[i][2]), " ",
+              binary_str_to_hex(m[i][3]))
+
+
+# computes and prints 1st result matrix
+def compute_initialization_sept(message, key_0):
+    result = xor_operation_4_4_matrix(message, key_0)
+    print("result after 1st operation : ")
+    print_4_4_matrix_hex(result)
+    print()
+    return result
+
+
+def compute_rounds(matrix_pre_round, k):
+    matrix_pre_round = compute_initialization_sept(matrix_pre_round, key_block[0])
+    for i in range(10):
+        matrix_pos_sbox = sBox_4_4_matrix(matrix_pre_round)
+        matrix_pos_shift = byte_shift_4_4_matrix(matrix_pos_sbox)
+        if i < 9:
+            matrix_pos_column = compute_mix_column_matrix(matrix_pos_shift, "encr")
+            matrix_pos_xor = xor_operation_4_4_matrix(matrix_pos_column, k[i + 1])
+            matrix_pre_round = matrix_pos_xor
+        else:
+            matrix_pos_xor = xor_operation_4_4_matrix(matrix_pos_shift, k[i + 1])
+            matrix_pre_round = matrix_pos_xor
+        print("result after round ", i + 1, " : ")
+        print_4_4_matrix_hex(matrix_pos_xor)
+        print()
+    return matrix_pre_round
+
+
+def compute_rounds_(ciphertext, k):
+    for i in range(10):
+        if i == 0:
+            post_xor = xor_operation_4_4_matrix(ciphertext, k[-1])
+        else:
+            post_xor = xor_operation_4_4_matrix(ciphertext, k[-1-i])
+            post_xor = compute_mix_column_matrix(post_xor, "else")
+        matrix_pos_shift = byte_shift_4_4_matrix_inv(post_xor)
+        matrix_pos_sbox = sBox_4_4_matrix_inv(matrix_pos_shift)
+        ciphertext = matrix_pos_sbox
+    ciphertext = xor_operation_4_4_matrix(ciphertext, k[0])
+    return ciphertext
+
+
+def pad_message(m):  # VERIFIED
+    k = 2
+    L = len(m)
+    if L < 16:
+        X = 16 - L
+    else:
+        while L > k * 16:
+            k = k + 1
+        X = k * 16 - L
+    binary_m = []
+    for i in range(len(m)):
+        binary_m.append(decimal_binary(ord(m[i])))
+    for i in range(X):
+        binary_m.append(decimal_binary(X))
+    return binary_m, k
+
+
+def generate_plaintext_blocks(b, n):  # VERIFIED
+    blocks = []
+    for t in range(n):
+        message = new_4_4_array()
+        for i in range(len(message)):
+            for j in range(len(message)):
+                message[i][j] = b[(t * 16) + i + (4 * j)]
+        blocks.append(message)
+    return blocks
+
+
+def generate_key_block(k):
+    binary_k = []
+    for i in range(len(k)):
+        binary_k.append(decimal_binary(ord(k[i])))
+    # K_i -> K0 = K_i[0] ... KN-1 = K_i[-1]
+    K_i = generate_k_n_1(binary_k, N)
+    x = key_expansion(K_i)
+    keys = []
+    i = 0
+    while i < 44:
+        key_run = new_4_4_array()
+        for j in range(len(key_run)):
+            for l in range(len(key_run)):
+                key_run[l][j] = x[i][l]
+            i = i + 1
+        keys.append(key_run)
+    return keys
+
+
+# create blocks of plaintext padded and in the correct format
+print("######### PLAINTEXT AND KEY BLOCK #########")
+print()
+binary_vals, number_blocks = pad_message(message)
+plaintext_blocks = generate_plaintext_blocks(binary_vals, number_blocks)
+key_block = generate_key_block(key_text)
+
+for i in range(len(plaintext_blocks)):
+    print(" -> block", i + 1, "of plaintext : ")
+    print_4_4_matrix_hex(plaintext_blocks[i])
+    print()
+print(" -> block of key: ")
+print_4_4_matrix_hex(key_block[0])
+print()
+print("######### PLAINTEXT AND KEY BLOCK DONE #########")
+print()
+ciphertexts = []
+for i in range(len(plaintext_blocks)):
+    print("######### ENCRIPTION OF PLAINTEXT BLOCK ", i + 1, " #########")
+    print()
+    ciphertexts.append(compute_rounds(plaintext_blocks[i], key_block))
+
+plaintexts = []
+for i in range(len(ciphertexts)):
+    print("######### DECREPTION OF CIPHERTEXT BLOCK ", i + 1, " #########")
+    print()
+    plaintexts.append(compute_rounds_(ciphertexts[i], key_block))
+    print("result decription block  : ", i + 1)
+    print_4_4_matrix_hex(plaintexts[-1])
