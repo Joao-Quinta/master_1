@@ -4,9 +4,9 @@ import Sboxes
 import tables
 
 # AES -> Joao Filipe Costa da Quinta
-
-message = "Two One Nine Two"
-key_text = "Thats my Kung Fu"
+# il suffit de mettre un message et une clé, si la clé a len()!= 16 ca ne marchera pas
+message = "Can you smell what the Rock is cooking?"
+key_text = "You can't see me"
 
 # on fait 128 bits key -> 10 rounds
 # lets define rconi
@@ -280,9 +280,6 @@ def print_4_4_matrix_hex(m):
 # computes and prints 1st result matrix
 def compute_initialization_sept(message, key_0):
     result = xor_operation_4_4_matrix(message, key_0)
-    print("result after 1st operation : ")
-    print_4_4_matrix_hex(result)
-    print()
     return result
 
 
@@ -298,9 +295,10 @@ def compute_rounds(matrix_pre_round, k):
         else:
             matrix_pos_xor = xor_operation_4_4_matrix(matrix_pos_shift, k[i + 1])
             matrix_pre_round = matrix_pos_xor
-        print("result after round ", i + 1, " : ")
-        print_4_4_matrix_hex(matrix_pos_xor)
-        print()
+
+    print("result after 10 rounds : ")
+    print_4_4_matrix_hex(matrix_pre_round)
+    print()
     return matrix_pre_round
 
 
@@ -309,7 +307,7 @@ def compute_rounds_(ciphertext, k):
         if i == 0:
             post_xor = xor_operation_4_4_matrix(ciphertext, k[-1])
         else:
-            post_xor = xor_operation_4_4_matrix(ciphertext, k[-1-i])
+            post_xor = xor_operation_4_4_matrix(ciphertext, k[-1 - i])
             post_xor = compute_mix_column_matrix(post_xor, "else")
         matrix_pos_shift = byte_shift_4_4_matrix_inv(post_xor)
         matrix_pos_sbox = sBox_4_4_matrix_inv(matrix_pos_shift)
@@ -323,6 +321,7 @@ def pad_message(m):  # VERIFIED
     L = len(m)
     if L < 16:
         X = 16 - L
+        k = 1
     else:
         while L > k * 16:
             k = k + 1
@@ -365,32 +364,60 @@ def generate_key_block(k):
     return keys
 
 
-# create blocks of plaintext padded and in the correct format
-print("######### PLAINTEXT AND KEY BLOCK #########")
-print()
-binary_vals, number_blocks = pad_message(message)
-plaintext_blocks = generate_plaintext_blocks(binary_vals, number_blocks)
-key_block = generate_key_block(key_text)
+if len(key_text) == 16:
+    # create blocks of plaintext padded and in the correct format
+    print("######### PLAINTEXT AND KEY BLOCK #########")
+    print()
+    binary_vals, number_blocks = pad_message(message)
+    plaintext_blocks = generate_plaintext_blocks(binary_vals, number_blocks)
+    key_block = generate_key_block(key_text)
 
-for i in range(len(plaintext_blocks)):
-    print(" -> block", i + 1, "of plaintext : ")
-    print_4_4_matrix_hex(plaintext_blocks[i])
+    for i in range(len(plaintext_blocks)):
+        print(" -> block", i + 1, "of plaintext : ")
+        print_4_4_matrix_hex(plaintext_blocks[i])
+        print()
+    print(" -> block of key: ")
+    print_4_4_matrix_hex(key_block[0])
     print()
-print(" -> block of key: ")
-print_4_4_matrix_hex(key_block[0])
-print()
-print("######### PLAINTEXT AND KEY BLOCK DONE #########")
-print()
-ciphertexts = []
-for i in range(len(plaintext_blocks)):
-    print("######### ENCRIPTION OF PLAINTEXT BLOCK ", i + 1, " #########")
+    print("######### PLAINTEXT AND KEY BLOCK DONE #########")
     print()
-    ciphertexts.append(compute_rounds(plaintext_blocks[i], key_block))
+    ciphertexts = []
+    for i in range(len(plaintext_blocks)):
+        print("######### ENCRIPTION OF PLAINTEXT BLOCK ", i + 1, " #########")
+        print()
+        ciphertexts.append(compute_rounds(plaintext_blocks[i], key_block))
 
-plaintexts = []
-for i in range(len(ciphertexts)):
-    print("######### DECREPTION OF CIPHERTEXT BLOCK ", i + 1, " #########")
+    plaintexts = []
+    for i in range(len(ciphertexts)):
+        print()
+        print("######### DECREPTION OF CIPHERTEXT BLOCK ", i + 1, " #########")
+        print()
+        plaintexts.append(compute_rounds_(ciphertexts[i], key_block))
+        print("result decription block  : ", i + 1)
+        print_4_4_matrix_hex(plaintexts[-1])
+
     print()
-    plaintexts.append(compute_rounds_(ciphertexts[i], key_block))
-    print("result decription block  : ", i + 1)
-    print_4_4_matrix_hex(plaintexts[-1])
+    print("###############    RESULTS    ###############")
+    print()
+    print("ORIGINAL MESSAGE : ")
+    print(message)
+    print()
+    print("CIPHERTEXT :  -> in aschii")
+    for i in range(len(ciphertexts)):
+        string = ""
+        for j in range(len(ciphertexts[i])):
+            for t in range(len(ciphertexts[i][j])):
+                string = string + chr(binary_decimal(ciphertexts[i][t][j][2:]))
+        print(string)
+    print()
+    print("UNCODED MESSAGE")
+
+
+    for i in range(len(plaintexts)):
+        string = ""
+        for j in range(len(plaintexts[i])):
+            for t in range(len(plaintexts[i][j])):
+                string = string + chr(binary_decimal(plaintexts[i][t][j][2:]))
+        print(string)
+else:
+    print("KEY OF WRONG SIZE")
