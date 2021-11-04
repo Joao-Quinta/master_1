@@ -1,0 +1,58 @@
+Algorithmes probabiliste (14X004) - Chopard
+-> 4 crédits
+-> oral et TP
+-> lundi 11h-13h (+) lundi 14h-16h
+-> intéréssant mais probablement bcp de travail - surtout que c'est 4 crédits
+-> MAYBE
+
+Selected chapters (14X060) - Chanel
+-> 5 crédits
+-> control continus - CC
+-> jeudi 12h-14h (+) vencredi 8h-10h
+-> parle de sténographie, ca a l'air nice, bonus: CC
+-> MAYBE
+
+Concurrence et répartition(14X007) - Buchs
+-> 5 crédits
+-> control continus - CC
+-> jeudi 14h-16h (+) jeudi 16h-18h
+-> jsp trop, bonus: CC
+-> MAYBE
+
+Introduction à la finance computationnelle (14X030) - Dupuis
+-> 5 crédits
+-> oral
+-> mardi 12h-14h (+) mardi 10h-12h
+-> idk
+-> NO -> maybe good fit for rattrapage class
+
+Modélisation et simulation de phénomènes naturels (14X015) - Chopard
+-> 5 crédits
+-> oral et TP
+-> vendredi 12h-14h (+) vendredi 14h-16h
+-> would be nice to try modélisation
+-> MAYBE
+
+Outils formels avancés (14X014) - Buchs
+-> 5 crédits
+-> control continus - CC
+-> mardi 14h-16h
+-> jsp trop, bonus: CC
+-> MAYBE
+
+Information Retrieval (14X011) - Maillet
+-> 5 crédits
+-> oral
+-> lundi 9h-11h
+-> 
+-> NO
+
+Sécurité avancée (14X040) - Solana
+-> 5 crédits
+-> ecrit
+-> mardi 16h-18h
+-> looks very interesting, but probably very hard 
+-> MAYBE
+
+
+

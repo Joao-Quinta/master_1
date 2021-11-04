@@ -35,7 +35,6 @@ def plot_cities_path(path, x_cc, y_cc):
     ax1.set_title('Energy of path : ' + str(energy), fontsize=16)
     plt.xticks([])
     plt.yticks([])
-
     plt.show()
 
 
@@ -148,8 +147,19 @@ def simulated_annealing(state, temp, x_cc, y_cc, n):
 
 
 def generate_random_problem(n):
-    
-    return
+    x_cc = []
+    y_cc = []
+    couple = []
+    i = 0
+    while i < n:
+        x = balancedDice(20)
+        y = balancedDice(20)
+        if (x, y) not in couple:
+            couple.append((x, y))
+            x_cc.append(x)
+            y_cc.append(y)
+            i = i + 1
+    return x_cc, y_cc
 
 
 def greedy_implementation(n, file):
@@ -178,6 +188,8 @@ def main(n, file):
     if file == 'cities.dat' or file == 'cities2.dat':
         x_cc, y_cc = extractCities(file)
         n = len(x_cc)
+    elif file == 'random_gene':
+        x_cc, y_cc = generate_random_problem(n)
     else:
         x_cc, y_cc = compute_n_circle_coordinates(n)
     path = compute_random_state(n)
@@ -191,6 +203,60 @@ def main(n, file):
     plot_cities_path(chosen_path, x_cc, y_cc)
 
 
+# greedy_implementation(16, 'cities2.dat')
+main(50, 'cities.dat')
 
-#greedy_implementation(16, 'cities2.dat')
-#main(16, 'cities2.dat')
+"""
+n = 50
+greedy ->  136.10167235669732
+0  ->  121.8503322693159
+1  ->  120.23569535197426
+2  ->  115.85840238872018
+3  ->  130.1075458925273
+4  ->  129.53396256567947
+5  ->  130.48577741754957
+6  ->  118.1483092082967
+7  ->  121.44993783927099
+8  ->  129.8973765749438
+9  ->  118.996863174492
+123.65642026827702
+
+n = 100
+greedy ->  205.24900439280066
+0  ->  207.05111439506115
+1  ->  215.07642718196416
+2  ->  196.1505037106572
+3  ->  205.2212213745203
+4  ->  212.98420769220465
+5  ->  196.0480257665792
+6  ->  185.1802151759119
+7  ->  198.74040572714455
+8  ->  201.98329833938433
+9  ->  188.22224835558393
+200.66576677190113
+
+n = 150
+greedy ->  243.7793288034895
+0  ->  273.4503517572665
+1  ->  246.502732107357
+2  ->  264.9290836756653
+3  ->  258.1251233223197
+4  ->  273.4162694755884
+5  ->  266.30214090790764
+6  ->  266.9749686722609
+7  ->  240.9260684880397
+8  ->  253.8887905225519
+9  ->  252.35459311878077
+259.6870122047738
+
+
+it 
+for n :  50  || count was ->  166428
+for n :  100  || count was ->  417140
+for n :  150  || count was ->  668437
+
+it_2
+for n :  50  || count was ->  158229
+for n :  100  || count was ->  441456
+for n :  150  || count was ->  773288
+"""
