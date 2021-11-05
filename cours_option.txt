@@ -1,9 +1,4 @@
-Algorithmes probabiliste (14X004) - Chopard
--> 4 crédits
--> oral et TP
--> lundi 11h-13h (+) lundi 14h-16h
--> intéréssant mais probablement bcp de travail - surtout que c'est 4 crédits
--> MAYBE
+################# 1ere année
 
 Selected chapters (14X060) - Chanel
 -> 5 crédits
@@ -19,33 +14,12 @@ Concurrence et répartition(14X007) - Buchs
 -> jsp trop, bonus: CC
 -> MAYBE
 
-Introduction à la finance computationnelle (14X030) - Dupuis
--> 5 crédits
--> oral
--> mardi 12h-14h (+) mardi 10h-12h
--> idk
--> NO -> maybe good fit for rattrapage class
-
-Modélisation et simulation de phénomènes naturels (14X015) - Chopard
--> 5 crédits
--> oral et TP
--> vendredi 12h-14h (+) vendredi 14h-16h
--> would be nice to try modélisation
--> MAYBE
-
 Outils formels avancés (14X014) - Buchs
 -> 5 crédits
 -> control continus - CC
 -> mardi 14h-16h
 -> jsp trop, bonus: CC
 -> MAYBE
-
-Information Retrieval (14X011) - Maillet
--> 5 crédits
--> oral
--> lundi 9h-11h
--> 
--> NO
 
 Sécurité avancée (14X040) - Solana
 -> 5 crédits
@@ -54,5 +28,44 @@ Sécurité avancée (14X040) - Solana
 -> looks very interesting, but probably very hard 
 -> MAYBE
 
+Modélisation et simulation de phénomènes naturels (14X015) - Chopard
+-> 5 crédits
+-> oral et TP
+-> vendredi 12h-14h (+) vendredi 14h-16h
+-> would be nice to try modélisation
+-> MAYBE
 
+Sécurité et confidentialité de multimédia (14X016) - Svyatoslav
+-> 5 crédits
+-> oral
+-> 
+-> looks nice
+-> MAYBE
+
+
+################# good fit for rattrapage 1ère année
+
+Introduction à la finance computationnelle (14X030) - Dupuis
+-> 5 crédits
+-> oral
+-> mardi 12h-14h (+) mardi 10h-12h
+-> idk
+-> NO -> maybe good fit for rattrapage class
+
+
+################# 2eme année
+
+Algorithmes probabiliste (14X004) - Chopard
+-> 4 crédits
+-> oral et TP
+-> lundi 11h-13h (+) lundi 14h-16h
+-> intéréssant mais probablement bcp de travail - surtout que c'est 4 crédits
+-> MAYBE
+
+Méthodes empiriques en traitement de la langue (34C2046) - MERLO
+-> 4 crédits
+-> ecrit et TP
+-> 
+-> looks very interesting
+-> MAYBE
 
