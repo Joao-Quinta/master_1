@@ -284,7 +284,7 @@ def compute_initialization_sept(message, key_0):
 
 
 def compute_rounds(matrix_pre_round, k):
-    matrix_pre_round = compute_initialization_sept(matrix_pre_round, key_block[0])
+    matrix_pre_round = compute_initialization_sept(matrix_pre_round, k[0])
     for i in range(10):
         matrix_pos_sbox = sBox_4_4_matrix(matrix_pre_round)
         matrix_pos_shift = byte_shift_4_4_matrix(matrix_pos_sbox)
@@ -296,9 +296,9 @@ def compute_rounds(matrix_pre_round, k):
             matrix_pos_xor = xor_operation_4_4_matrix(matrix_pos_shift, k[i + 1])
             matrix_pre_round = matrix_pos_xor
 
-    print("result after 10 rounds : ")
-    print_4_4_matrix_hex(matrix_pre_round)
-    print()
+    #print("result after 10 rounds : ")
+    #print_4_4_matrix_hex(matrix_pre_round)
+    #print()
     return matrix_pre_round
 
 
@@ -371,6 +371,8 @@ if len(key_text) == 16:
     binary_vals, number_blocks = pad_message(message)
     plaintext_blocks = generate_plaintext_blocks(binary_vals, number_blocks)
     key_block = generate_key_block(key_text)
+    print(key_block)
+    # print_4_4_matrix_hex(key_block)
 
     for i in range(len(plaintext_blocks)):
         print(" -> block", i + 1, "of plaintext : ")
@@ -386,7 +388,7 @@ if len(key_text) == 16:
         print("######### ENCRIPTION OF PLAINTEXT BLOCK ", i + 1, " #########")
         print()
         ciphertexts.append(compute_rounds(plaintext_blocks[i], key_block))
-
+    
     plaintexts = []
     for i in range(len(ciphertexts)):
         print()
@@ -411,6 +413,7 @@ if len(key_text) == 16:
         print(string)
     print()
     print("UNCODED MESSAGE")
+
 
     for i in range(len(plaintexts)):
         string = ""
