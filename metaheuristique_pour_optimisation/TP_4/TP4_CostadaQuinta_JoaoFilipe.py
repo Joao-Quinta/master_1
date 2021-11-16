@@ -3,6 +3,7 @@ import random
 import copy
 import numpy as np
 import matplotlib.pyplot as plt
+import time
 
 
 def rouletteMethod(P_comul):
@@ -17,13 +18,37 @@ def compute_P_comul(P):
     return [np.sum(P[0:j + 1]) for j in range(len(P))]
 
 
-def extractCities(file):
-    data = np.genfromtxt(file, dtype=None, encoding=None, comments='#', delimiter=None)
+def balancedDice(N):
+    # same computation as shown in the TP question
+    return math.floor(random.random() * N)
+
+
+def generate_random_problem(n):
     x_cc = []
     y_cc = []
-    for d in data:
-        x_cc.append(d[1])
-        y_cc.append(d[2])
+    couple = []
+    i = 0
+    while i < n:
+        x = balancedDice(20)
+        y = balancedDice(20)
+        if (x, y) not in couple:
+            couple.append((x, y))
+            x_cc.append(x)
+            y_cc.append(y)
+            i = i + 1
+    return x_cc, y_cc
+
+
+def extractCities(file, m):
+    if file == 'unit_circle':
+        x_cc, y_cc = compute_n_circle_coordinates(m)
+    else:
+        data = np.genfromtxt(file, dtype=None, encoding=None, comments='#', delimiter=None)
+        x_cc = []
+        y_cc = []
+        for d in data:
+            x_cc.append(d[1])
+            y_cc.append(d[2])
     return x_cc, y_cc
 
 
@@ -114,7 +139,7 @@ def print_matrix(m):
 
 def greedy_implementation(n, file):
     if file == 'cities.dat' or file == 'cities2.dat':
-        x_cc, y_cc = extractCities(file)
+        x_cc, y_cc = extractCities(file, 1)
         n = len(x_cc)
     else:
         x_cc, y_cc = compute_n_circle_coordinates(n)
@@ -204,25 +229,78 @@ def ant_system_algorithm(a, b, p, Q, tao, tmax, k, i_distance, x_cc, y_cc):
         if cost_best_path < cost_best_over_path:
             cost_best_over_path = cost_best_path
             best_over_path = best_path
-        print("at iteration : ", t, " - cost of best path found is : ", cost_best_over_path)
+        # print("at iteration : ", t, " - cost of best path found is : ", cost_best_over_path)
 
     return best_over_path, cost_best_over_path
 
 
 # #### CONSTANTS ETC
-chosen_problem = 'cities2.dat'
-x_cc, y_cc = extractCities(chosen_problem)
-alpha = 1
-beta = 5
-small_p = 0.1
-path_greedy, dist_path_greedy = greedy_implementation(chosen_problem, chosen_problem)
-L_nn = dist_path_greedy
-tao_0 = 1 / L_nn
-tao_init = initialize_tao(len(x_cc), tao_0)
-distance_matrix = compute_distance_matrix(x_cc, y_cc)
-inverse_distance = compute_inverse_distance(distance_matrix)
-t_max = 5
-k = len(x_cc) * 50
+"""
+a = []
+for _ in range(10):
+    chosen_problem = 'cities2.dat'
+    x_cc, y_cc = extractCities(chosen_problem, 16)
 
-p, c = ant_system_algorithm(alpha, beta, small_p, L_nn, tao_init, t_max, k, inverse_distance, x_cc, y_cc)
-plot_cities_path(p, x_cc, y_cc)
+    alpha = 1
+    beta = 5
+    small_p = 0.1
+    path_greedy, dist_path_greedy = greedy_implementation(16, chosen_problem)
+    L_nn = dist_path_greedy
+    tao_0 = 1 / L_nn
+    tao_init = initialize_tao(len(x_cc), tao_0)
+    distance_matrix = compute_distance_matrix(x_cc, y_cc)
+    inverse_distance = compute_inverse_distance(distance_matrix)
+    t_max = 5
+    k = len(x_cc) *len(x_cc)
+
+    p, c = ant_system_algorithm(alpha, beta, small_p, L_nn, tao_init, t_max, k, inverse_distance, x_cc, y_cc)
+    a.append(c)
+    plot_cities_path(p, x_cc, y_cc)
+    print(_)
+
+print(a)
+print(np.sum(a)/len(a))
+"""
+
+
+def greedy_implementation2(x_cc, y_cc, n):
+    path = [0]
+    cities_left = []
+    for i in range(1, n):
+        cities_left.append(i)
+    while len(cities_left) > 0:
+        dists = []
+        for i in range(len(cities_left)):
+            dists.append(
+                compute_distance_points(x_cc[path[-1]], y_cc[path[-1]], x_cc[cities_left[i]], y_cc[cities_left[i]]))
+        index = int(np.argmin(dists))
+        path.append(cities_left[index])
+        cities_left.pop(index)
+    path.append(0)
+    dist = compute_energy(path, x_cc, y_cc)
+    return dist
+
+
+n = [20, 40, 60, 80, 100]
+for n_ in n:
+    x_cc, y_cc = generate_random_problem(n_)
+    d_g = greedy_implementation2(x_cc, y_cc, n_)
+    print("greedy for n = ", n_, " was : ", d_g)
+
+    a = []
+    for i in range(10):
+        alpha = 1
+        beta = 5
+        small_p = 0.1
+        L_nn = d_g
+        tao_0 = 1 / L_nn
+        tao_init = initialize_tao(len(x_cc), tao_0)
+        distance_matrix = compute_distance_matrix(x_cc, y_cc)
+        inverse_distance = compute_inverse_distance(distance_matrix)
+        t_max = 5
+        k = len(x_cc) * 10
+        p, c = ant_system_algorithm(alpha, beta, small_p, L_nn, tao_init, t_max, k, inverse_distance, x_cc, y_cc)
+        a.append(c)
+    print("AS for n = ", n_, " was : ", np.sum(a)/len(a))
+    print()
+

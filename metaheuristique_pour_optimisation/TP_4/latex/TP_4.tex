@@ -101,8 +101,11 @@ $$\tau_{ij}(t+1) = (1 - \rho) * \tau_{ij}(t) + \sum_{k=1}^{\#ants = m} \Delta \t
 where $\rho$ is the evaporation rate of the pheromones between each iteration, and $\Delta \tau_{ij}^k(t)$ is defined by the following equation:\\
 $$\Delta \tau_{ij}^k(t) = \begin{cases} \frac{Q}{L^k(t)}$ if ant $k$ used edge $(i,j)$ in its path $\\ 0$ otherwise$ \end{cases}$$
 where $Q$ is a predefined constant and $L^{k}$ is the length of the path taken by the ant. This means that a longer path will have a smaller $\frac{Q}{L^k(t)}$, which results in less pheromone for the next iterations.
-\item[(6)] Finally we have to implement a function that chooses which city we visit next in our path, this is done by following the next formula:
+\item[(6)] Finally we have to implement a function that chooses which city we visit next in our path, this is done by following the next formula:\\
+$$p_{ik}^k(t) = \begin{cases} \frac{(\tau_{ij}^k(t))^{\alpha} * (\eta_{ij})^{\beta}}{\sum_{l \in J} (\tau_{il}^k(t))^{\alpha} * (\eta_{il})^{\beta}}$ if $j \in J$ $\\ 0$ otherwise$ \end{cases}$$
+There are a couple of things to note in this formula. First there is a probability of 0 of choosing a city $c$ such that $c \not\in J$. Then there are the variables $\alpha$ and $ \beta$, they can be tuned to augment the importance we git to the pheromone in a given path or the visibility of a given city.
 \end{itemize}
+Now we simply put all the puzzle pieces together, and we have a working algorithm that copies a colony of ants.
 
 \newpage
 \section{Results}
@@ -113,27 +116,15 @@ For benchmark, we will use a simple greedy algorithm, this algorithm will go fro
 \includegraphics[width=1\textwidth]{images/algorithm_greedy.PNG}
 \caption{Path found by greedy algorithm. From left to right we have : unit circle, cities.dat, cities2.dat}
 \end{figure}
-We can see that the algorithm only works for a perfect case scenario, and as we increase difficulty, it begins to make a mess of its path
-\begin{figure}[H]
-\center
-\includegraphics[width=1\textwidth]{images/algorithm_sa_circle.PNG}
-\caption{Initial path and found solution found by SA algorithm for unit circle. The energy mean for 10 runs was : 6.69}
-\end{figure}
-\begin{figure}[H]
-\center
-\includegraphics[width=1\textwidth]{images/algorithm_sa_cities.PNG}
-\caption{Initial path and found solution found by SA algorithm for cities.dat. The energy mean for 10 runs was : 28.68}
-\end{figure}
-\begin{figure}[H]
-\center
-\includegraphics[width=1\textwidth]{images/algorithm_sa_cities2.PNG}
-\caption{Initial path and found solution found by SA algorithm for cities2.dat. The energy mean for 10 runs was :}
-\end{figure}
-
-We see that for every case the SA algorithm performed better than the greedy. However we also notice that the mean Energy result for SA algorithm wasn't as good as the best case scenario. This is not the fault of the algorithm itself, but because of the definition of neighbourhood that we use. As we saw in class, there was another possible permutation to find neighbours, the $2-opt$, this permutation would have given better mean results for every use case.\\\\
-To test our code further we had to generate a random problem of a larger size $n$.
-
+We can see that the algorithm only works for a perfect case scenario, and as we increase difficulty, it begins to make a mess of its path.\\\\
+Let's now recall the results that we got from Simulated Annealing algorithm for the TSP problem.\\
+\begin{itemize}
+\item[] Unit circle mean energy for 10 runs was: 6.69
+\item[] File cities.dat mean energy for 10 runs was: 28.68
+\item[] File cities2.dat mean energy for 10 runs was: 2.88
+\end{itemize}
 \begin{center}
+
 Random problem generator for $n = \{50, 100, 150\}$\\
 \begin{tabular}{|c|c|c|c|}
 \hline
@@ -143,7 +134,58 @@ Random problem generator for $n = \{50, 100, 150\}$\\
  n = 150 &  243.78          &     240.92           &  259.68         \\ \hline
 \end{tabular}
 \end{center}
-In every $n$ greedy algorithm was outperformed by SA, it must be noted that SA had difficulties with $n = 150$, and it's mean result is actually worse than greedy algorithm, out of 10 executions, only one was better than greedy algorithm. We have to take into account that the 150 cities were all in a plane of 20 by 20, which means there wasn't actually many possibilities for the greedy algorithm to go wrong, my assumption is that in a larger plane greedy algorithm wouldn't be as accurate. This being said, I didn't rerun the simulation in a larger plane as it took way too long.\\\\
-We do have to take into account the complexity of both algorithms, greedy has a time complexity of $O(2n)$, however SA algorithm has a much higher time complexity. If we look back at the flowchart of the algorithm, step (4) was iterated at least $n^{2}$ times, which means the complexity is at least $O(n^{2})$.\\\\
-With all the results having been discussed, I must admit I was very impressed at how well the algorithm performed, and how it was capable to optimize the path while trying to emulate a real physical process found in nature.
+
+For our algorithm there are a lot of variables, some of them were imposed, and others up to us, so lets make a list of the variables and their values, as well as why (if they are not imposed):
+\begin{itemize}
+\item[$\alpha$] = 1 $\longrightarrow$ imposed
+\item[$\beta$] = 5 $\longrightarrow$ imposed
+\item[$\rho$] = 0.1 $\longrightarrow$ imposed
+\item[$Q$] = $L_{nn}$ = solution determined by greedy algorithm $\longrightarrow$ imposed
+\item[$\tau_0$] = $\frac{1}{L_{nn}}$ $\longrightarrow$ imposed
+\item[$t_{max}$] = 5 $\longrightarrow$ not imposed. I choose this value because the algorithm wouldn't change the current best solution after the 5th iteration, for $m$ = $n^2$ 
+\item[$m$] = $n^2$ $\longrightarrow$ not imposed. I choose this value because it seemed to work well with 5 iterations, this way in the first iteration we maximize the search space we visited.\\\\
+\end{itemize}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=0.5\textwidth]{images/algorithm_as_circle.PNG}
+\caption{Found solution found by SA algorithm for unit circle. The energy mean for 10 runs was : 6.24}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=0.5\textwidth]{images/algorithm_as_cities.PNG}
+\caption{Found solution found by SA algorithm for cities.dat. The energy mean for 10 runs was : 27.51}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=0.5\textwidth]{images/algorithm_as_cities2.PNG}
+\caption{Found solution found by SA algorithm for cities.dat. The energy mean for 10 runs was : 2.79}
+\end{figure}
+
+As we can see, Ant system performed better than Simulated annealing in every problem. However, there is a cost to this improvement, it is time, lets compare both algorithms in time:\\
+\begin{center}
+Time in seconds taken by both algorithms to solve each problem :\\
+\begin{tabular}{|c|c|c|c|}
+\hline
+{\color[HTML]{000000} }                    & {\color[HTML]{000000} Unit Circle} & {\color[HTML]{000000} cities.dat} & {\color[HTML]{000000} cities2.dat} \\ \hline
+{\color[HTML]{000000} Simulated Annealing} & {\color[HTML]{000000} 1.19}        & {\color[HTML]{000000} 1.47}       & {\color[HTML]{000000} 27.66}       \\ \hline
+{\color[HTML]{000000} Ant System}          & {\color[HTML]{000000} 1.33}        & {\color[HTML]{000000} 2.60}       & {\color[HTML]{000000} 116.01}      \\ \hline
+\end{tabular}
+\end{center}
+We can easily see that there is a cost associated with the better results fond by Ant System .. \\\\
+We could obviously argue that if we change the parameter $m$ we would have a faster algorithm, but then it wouldn't be as good, and if it isn't as good, then there is less incentive to use it over Simulated Annealing.\\\\
+For the final part of this results section, we will generate random problems of size $n = \{20, 40, 60, 80, 100\}$, and run each problem 10 times, and compare it to a greedy implementation. However, as the parameter $m=n^2$, it will just be too large, and take too much time, so for the purpose of these simulations I will set $m=10*n$.
+
+\begin{center}
+Energy for each randomly generated problem, the AS result is the mean of 10 attempts at the same problem :\\
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+{\color[HTML]{000000} }           & {\color[HTML]{000000} 20}     & {\color[HTML]{000000} 40}     & {\color[HTML]{000000} 60}     & 80     & 100    \\ \hline
+{\color[HTML]{000000} Greedy}     & {\color[HTML]{000000} 100.42} & {\color[HTML]{000000} 120.81} & {\color[HTML]{000000} 143.66} & 199.74 & 205.69 \\ \hline
+{\color[HTML]{000000} Ant System} & {\color[HTML]{000000} 84.48}  & {\color[HTML]{000000} 104.55} & {\color[HTML]{000000} 133.22} & 155.94 & 174.65 \\ \hline
+\end{tabular}
+\end{center}
+Ant system performed better than Greedy, as expected, even with $m=10*n$. If we go back and look at the results of SA, we see that even with $m=10*n$ AS performed better than SA for the randomly generated problems. 
 \end{document}

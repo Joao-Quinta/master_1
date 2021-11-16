@@ -3,6 +3,7 @@ import random
 import copy
 import numpy as np
 import matplotlib.pyplot as plt
+import time
 
 
 def extractCities(file):
@@ -198,13 +199,18 @@ def main(n, file):
     path_nei = execute_transitions(path, transitions)
     energy_path_nei = [compute_energy(nei, x_cc, y_cc) for nei in path_nei]
     initial_temp = compute_initial_temperature(energy_path, energy_path_nei)
-    plot_cities_path(path, x_cc, y_cc)
+    #plot_cities_path(path, x_cc, y_cc)
     chosen_path = simulated_annealing(path, initial_temp, x_cc, y_cc, n)
-    plot_cities_path(chosen_path, x_cc, y_cc)
+    energy = compute_energy(chosen_path, x_cc, y_cc)
+    return chosen_path
+    #plot_cities_path(chosen_path, x_cc, y_cc)
 
 
 # greedy_implementation(16, 'cities2.dat')
-main(50, 'cities.dat')
+current_time = time.time()
+x = main(16, 'cities2s.dat')
+current_time = time.time() - current_time
+print(current_time)
 
 """
 n = 50

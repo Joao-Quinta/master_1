@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.24)  13 NOV 2021 15:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.24)  16 NOV 2021 11:06
 entering extended mode
 **./TP_1.tex
 (TP_1.tex
@@ -929,11 +929,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
 
-<images/Graph.PNG, id=19, 533.47305pt x 446.6286pt>
-File: images/Graph.PNG Graphic file (type png)
-<use images/Graph.PNG>
-Package pdftex.def Info: images/Graph.PNG  used on input line 99.
-(pdftex.def)             Requested size: 483.69687pt x 404.9538pt.
+<images/Graph_init.PNG, id=19, 2292.565pt x 1673.25125pt>
+File: images/Graph_init.PNG Graphic file (type png)
+<use images/Graph_init.PNG>
+Package pdftex.def Info: images/Graph_init.PNG  used on input line 99.
+(pdftex.def)             Requested size: 532.0695pt x 388.33754pt.
+
+Overfull \hbox (48.37263pt too wide) in paragraph at lines 99--100
+ [] 
+ []
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
@@ -944,18 +949,96 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.104 
-       [1 <./images/Graph.PNG>] [2] (TP_1.aux)
+       [1 <./images/Graph_init.PNG>]
+<images/Graph.PNG, id=30, 2540.49126pt x 1718.42pt>
+File: images/Graph.PNG Graphic file (type png)
+<use images/Graph.PNG>
+Package pdftex.def Info: images/Graph.PNG  used on input line 107.
+(pdftex.def)             Requested size: 532.0695pt x 359.88246pt.
+
+Overfull \hbox (48.37263pt too wide) in paragraph at lines 107--108
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--114
+
+ []
+
+<images/Graph_graphdb.PNG, id=31, 661.72218pt x 737.75626pt>
+File: images/Graph_graphdb.PNG Graphic file (type png)
+<use images/Graph_graphdb.PNG>
+Package pdftex.def Info: images/Graph_graphdb.PNG  used on input line 117.
+(pdftex.def)             Requested size: 386.95897pt x 431.42244pt.
+[2 <./images/Graph.PNG>] [3 <./images/Graph_graphdb.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+
+ []
+
+<images/restaurant_query.PNG, id=46, 514.17094pt x 246.1697pt>
+File: images/restaurant_query.PNG Graphic file (type png)
+<use images/restaurant_query.PNG>
+Package pdftex.def Info: images/restaurant_query.PNG  used on input line 130.
+(pdftex.def)             Requested size: 386.95897pt x 185.26912pt.
+<images/restaurant_query_res.PNG, id=48, 222.07968pt x 73.02281pt>
+File: images/restaurant_query_res.PNG Graphic file (type png)
+<use images/restaurant_query_res.PNG>
+Package pdftex.def Info: images/restaurant_query_res.PNG  used on input line 13
+6.
+(pdftex.def)             Requested size: 241.84843pt x 79.52306pt.
+[4 <./images/restaurant_query.PNG> <./images/restaurant_query_res.PNG>]
+<images/cinema_query.PNG, id=62, 507.39563pt x 112.16907pt>
+File: images/cinema_query.PNG Graphic file (type png)
+<use images/cinema_query.PNG>
+Package pdftex.def Info: images/cinema_query.PNG  used on input line 146.
+(pdftex.def)             Requested size: 338.58632pt x 74.85335pt.
+<images/cinema_query_res.PNG, id=64, 344.78813pt x 185.94469pt>
+File: images/cinema_query_res.PNG Graphic file (type png)
+<use images/cinema_query_res.PNG>
+Package pdftex.def Info: images/cinema_query_res.PNG  used on input line 152.
+(pdftex.def)             Requested size: 193.47578pt x 104.3411pt.
+<images/cinema2_query.PNG, id=66, 508.14844pt x 181.42781pt>
+File: images/cinema2_query.PNG Graphic file (type png)
+<use images/cinema2_query.PNG>
+Package pdftex.def Info: images/cinema2_query.PNG  used on input line 158.
+(pdftex.def)             Requested size: 338.58632pt x 120.89159pt.
+<images/cinema2_query_res.PNG, id=68, 320.69812pt x 186.6975pt>
+File: images/cinema2_query_res.PNG Graphic file (type png)
+<use images/cinema2_query_res.PNG>
+Package pdftex.def Info: images/cinema2_query_res.PNG  used on input line 163.
+(pdftex.def)             Requested size: 193.47578pt x 112.63469pt.
+
+[5 <./images/cinema_query.PNG> <./images/cinema_query_res.PNG> <./images/cinema
+2_query.PNG> <./images/cinema2_query_res.PNG>]
+<images/place_rue_query.PNG, id=87, 518.6878pt x 307.1475pt>
+File: images/place_rue_query.PNG Graphic file (type png)
+<use images/place_rue_query.PNG>
+Package pdftex.def Info: images/place_rue_query.PNG  used on input line 173.
+(pdftex.def)             Requested size: 386.95897pt x 229.15558pt.
+<images/place_rue_query_res.PNG, id=89, 222.07968pt x 142.28156pt>
+File: images/place_rue_query_res.PNG Graphic file (type png)
+<use images/place_rue_query_res.PNG>
+Package pdftex.def Info: images/place_rue_query_res.PNG  used on input line 179
+.
+(pdftex.def)             Requested size: 241.84843pt x 154.94704pt.
+ [6 <./images/place_rue_query.PNG> <./images/place_rue_query_res.PNG>] (TP_1.au
+x)
 Package rerunfilecheck Info: File `TP_1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 24298 strings out of 478927
- 443975 string characters out of 2853009
- 844565 words of memory out of 3000000
- 41719 multiletter control sequences out of 15000+600000
+ 24386 strings out of 478927
+ 446277 string characters out of 2853009
+ 844580 words of memory out of 3000000
+ 41779 multiletter control sequences out of 15000+600000
  411533 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,11n,117p,552b,617s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,12n,117p,552b,617s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1
 200.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
 ecbx1440.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dp
@@ -965,9 +1048,9 @@ ppen/ec/dpi600\ecti1200.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/ljfour
 /jknappen/ec/dpi600\ecbx2074.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/l
 jfour/jknappen/ec/dpi600\eccc1440.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts
 /pk/ljfour/jknappen/ec/dpi600\eccc1728.pk>
-Output written on TP_1.pdf (3 pages, 962280 bytes).
+Output written on TP_1.pdf (7 pages, 656511 bytes).
 PDF statistics:
- 253 PDF objects out of 1000 (max. 8388607)
- 9 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 358 PDF objects out of 1000 (max. 8388607)
+ 27 named destinations out of 1000 (max. 500000)
+ 121 words of extra memory for PDF output out of 10000 (max. 10000000)
 
