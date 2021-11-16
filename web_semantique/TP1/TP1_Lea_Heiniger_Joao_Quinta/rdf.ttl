@@ -1,0 +1,88 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dbp: <https://dbpedia.org/> .
+@prefix ca: <https://www.carouge.ch/> .
+@prefix osm: <https://www.openstreetmap.org/> .
+
+osm:Sainte-Croix
+    osm:religion "Catholique" .
+
+osm:Cinema_Bio
+    osm:website "http://www.cinema-bio.ch" ;
+    ca:email "secretaire@cinema-bio.ch" ;
+    ca:phone "022 301 54 43" ;
+    ca:fax "022 301 54 42" ;
+    osm:addr
+        [ osm:city dbp:Carouge ;
+         osm:country dbp:CH ;
+         osm:housenumber "47" ;
+         osm:postcode "1227" ;
+         osm:street  "Rue Saint-Joseph"
+        ] .
+
+osm:Café_du_Marché
+    osm:email "cafedumarchesarl@gmail.com" ;
+    osm:phone  "+41 (0)22 827 16 96" ;
+    osm:website "http://www.cafe-du-marche.ch" ;
+    osm:addr
+        [ osm:city dbp:Carouge ;
+         osm:country dbp:CH ;
+         osm:housenumber "4" ;
+         osm:postcode "1227" ;
+         osm:street "Place du Marché"
+        ] .
+
+osm:Mairie_de_Carouge
+    ca:email "mairie@carouge.ch" ;
+    ca:phone "+41 22 307 89 87" ;
+    ca:addr
+        [ ca:city dbp:Carouge ;
+         ca:housenumber "14" ;
+         ca:postcode "1227" ;
+         ca:street "Place du Marché"
+        ] .
+
+osm:Marché_de_Carouge
+    ca:horraires "Me 6h-14h, Je (de mars à novembre) 14h-21h, Sa 6h-14h" .
+
+osm:Brasserie_La_Bourse
+    osm:cuisine "régionale" ;
+    osm:fax "+41 22 300 42 92" ;
+    osm:phone "+41 22 342 04 66" ;
+    osm:website "https://www.la-bourse.ch" ;
+    osm:addr
+        [ osm:city dbp:Genève ;
+         osm:housenumber "7" ;
+         osm:postcode "1227" ;
+         osm:street "Place du Marché"
+        ] .
+
+osm:Bella_Mia
+  osm:cuisine "glaces" ;
+  osm:addr
+    [ osm:city dbp:Carouge ;
+     osm:housenumber "2" ;
+     osm:street "Place du Marché"
+    ] .
+
+osm:Carouge-Marché
+    osm:operator dbp:Geneva_Public_Transport ;
+    dbp:transport
+        [ dbp:Tram "18" ;
+         dbp:Tram "12" ;
+         dbp:bus "11" ;
+         dbp:bus "21"
+        ] .
+
+dbp:Geneva_Public_Transport
+    dbp:website "http://www.tpg.ch" .
+
+
+osm:Carouge_Place_du_marché
+    osm:place_of_worship osm:Sainte-Croix ;
+    osm:cinema osm:Cinema_Bio ;
+    osm:restaurant osm:Café_du_Marché ;
+    osm:townhall osm:Mairie_de_Carouge ;
+    osm:marketplace osm:Marché_de_Carouge ;
+    osm:restaurant osm:Brasserie_La_Bourse ;
+    osm:cafe osm:Bella_Mia ;
+    osm:stop_position osm:Carouge-Marché .

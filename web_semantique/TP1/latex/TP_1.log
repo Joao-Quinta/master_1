@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.24)  16 NOV 2021 11:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.24)  16 NOV 2021 14:51
 entering extended mode
 **./TP_1.tex
 (TP_1.tex
@@ -929,11 +929,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
 
-<images/Graph_init.PNG, id=19, 2292.565pt x 1673.25125pt>
+<images/Graph_init.PNG, id=19, 2297.58376pt x 1679.27374pt>
 File: images/Graph_init.PNG Graphic file (type png)
 <use images/Graph_init.PNG>
 Package pdftex.def Info: images/Graph_init.PNG  used on input line 99.
-(pdftex.def)             Requested size: 532.0695pt x 388.33754pt.
+(pdftex.def)             Requested size: 532.0695pt x 388.86407pt.
 
 Overfull \hbox (48.37263pt too wide) in paragraph at lines 99--100
  [] 
@@ -950,7 +950,7 @@ been already used, duplicate ignored
                    \relax 
 l.104 
        [1 <./images/Graph_init.PNG>]
-<images/Graph.PNG, id=30, 2540.49126pt x 1718.42pt>
+<images/Graph.PNG, id=31, 2540.49126pt x 1718.42pt>
 File: images/Graph.PNG Graphic file (type png)
 <use images/Graph.PNG>
 Package pdftex.def Info: images/Graph.PNG  used on input line 107.
@@ -965,7 +965,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--114
 
  []
 
-<images/Graph_graphdb.PNG, id=31, 661.72218pt x 737.75626pt>
+<images/Graph_graphdb.PNG, id=32, 661.72218pt x 737.75626pt>
 File: images/Graph_graphdb.PNG Graphic file (type png)
 <use images/Graph_graphdb.PNG>
 Package pdftex.def Info: images/Graph_graphdb.PNG  used on input line 117.
@@ -980,34 +980,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
-<images/restaurant_query.PNG, id=46, 514.17094pt x 246.1697pt>
+<images/restaurant_query.PNG, id=47, 514.17094pt x 246.1697pt>
 File: images/restaurant_query.PNG Graphic file (type png)
 <use images/restaurant_query.PNG>
 Package pdftex.def Info: images/restaurant_query.PNG  used on input line 130.
 (pdftex.def)             Requested size: 386.95897pt x 185.26912pt.
-<images/restaurant_query_res.PNG, id=48, 222.07968pt x 73.02281pt>
+<images/restaurant_query_res.PNG, id=49, 222.07968pt x 73.02281pt>
 File: images/restaurant_query_res.PNG Graphic file (type png)
 <use images/restaurant_query_res.PNG>
 Package pdftex.def Info: images/restaurant_query_res.PNG  used on input line 13
 6.
 (pdftex.def)             Requested size: 241.84843pt x 79.52306pt.
 [4 <./images/restaurant_query.PNG> <./images/restaurant_query_res.PNG>]
-<images/cinema_query.PNG, id=62, 507.39563pt x 112.16907pt>
+<images/cinema_query.PNG, id=63, 507.39563pt x 112.16907pt>
 File: images/cinema_query.PNG Graphic file (type png)
 <use images/cinema_query.PNG>
 Package pdftex.def Info: images/cinema_query.PNG  used on input line 146.
 (pdftex.def)             Requested size: 338.58632pt x 74.85335pt.
-<images/cinema_query_res.PNG, id=64, 344.78813pt x 185.94469pt>
+<images/cinema_query_res.PNG, id=65, 344.78813pt x 185.94469pt>
 File: images/cinema_query_res.PNG Graphic file (type png)
 <use images/cinema_query_res.PNG>
 Package pdftex.def Info: images/cinema_query_res.PNG  used on input line 152.
 (pdftex.def)             Requested size: 193.47578pt x 104.3411pt.
-<images/cinema2_query.PNG, id=66, 508.14844pt x 181.42781pt>
+<images/cinema2_query.PNG, id=67, 508.14844pt x 181.42781pt>
 File: images/cinema2_query.PNG Graphic file (type png)
 <use images/cinema2_query.PNG>
 Package pdftex.def Info: images/cinema2_query.PNG  used on input line 158.
 (pdftex.def)             Requested size: 338.58632pt x 120.89159pt.
-<images/cinema2_query_res.PNG, id=68, 320.69812pt x 186.6975pt>
+<images/cinema2_query_res.PNG, id=69, 320.69812pt x 186.6975pt>
 File: images/cinema2_query_res.PNG Graphic file (type png)
 <use images/cinema2_query_res.PNG>
 Package pdftex.def Info: images/cinema2_query_res.PNG  used on input line 163.
@@ -1015,12 +1015,12 @@ Package pdftex.def Info: images/cinema2_query_res.PNG  used on input line 163.
 
 [5 <./images/cinema_query.PNG> <./images/cinema_query_res.PNG> <./images/cinema
 2_query.PNG> <./images/cinema2_query_res.PNG>]
-<images/place_rue_query.PNG, id=87, 518.6878pt x 307.1475pt>
+<images/place_rue_query.PNG, id=88, 518.6878pt x 307.1475pt>
 File: images/place_rue_query.PNG Graphic file (type png)
 <use images/place_rue_query.PNG>
 Package pdftex.def Info: images/place_rue_query.PNG  used on input line 173.
 (pdftex.def)             Requested size: 386.95897pt x 229.15558pt.
-<images/place_rue_query_res.PNG, id=89, 222.07968pt x 142.28156pt>
+<images/place_rue_query_res.PNG, id=90, 222.07968pt x 142.28156pt>
 File: images/place_rue_query_res.PNG Graphic file (type png)
 <use images/place_rue_query_res.PNG>
 Package pdftex.def Info: images/place_rue_query_res.PNG  used on input line 179
@@ -1048,9 +1048,9 @@ ppen/ec/dpi600\ecti1200.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/ljfour
 /jknappen/ec/dpi600\ecbx2074.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts/pk/l
 jfour/jknappen/ec/dpi600\eccc1440.pk> <C:\Users\Joao\AppData\Local\MiKTeX\fonts
 /pk/ljfour/jknappen/ec/dpi600\eccc1728.pk>
-Output written on TP_1.pdf (7 pages, 656511 bytes).
+Output written on TP_1.pdf (7 pages, 749820 bytes).
 PDF statistics:
- 358 PDF objects out of 1000 (max. 8388607)
+ 359 PDF objects out of 1000 (max. 8388607)
  27 named destinations out of 1000 (max. 500000)
  121 words of extra memory for PDF output out of 10000 (max. 10000000)
 
