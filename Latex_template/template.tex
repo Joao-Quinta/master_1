@@ -1,0 +1,93 @@
+\documentclass[a4paper]{article}
+
+%%%%%%%% CREATE DOCUMENT STRUCTURE %%%%%%%%
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{subfig}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+%\usepackage{caption}
+\usepackage[justification=centering]{caption}
+\usepackage{subcaption}
+\usepackage{sectsty}
+\usepackage{float}
+\usepackage{titling} 
+\usepackage{blindtext}
+\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+
+%% definitions 
+\definecolor{darkgreen}{rgb}{0.0, 0.4, 0.0}
+
+%% Define your personal info here %%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\TPid{1}
+\newcommand\TPname{NB}
+\newcommand\Firstname{Joao Filipe}
+\newcommand\Familyname{Costa da Quinta}
+\newcommand\Email{Joao.Costa@etu.unige.ch}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%% Page header %%%%%%
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{TP \TPid: \TPname}
+\lhead{\Firstname \; \Familyname}
+\rfoot{Page \thepage}
+
+
+%%%%%%%% DOCUMENT %%%%%%%%
+\begin{document}
+
+%%%% Title Page
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 							% horizontal line and its thickness
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\center 
+ 
+% University
+\textsc{\LARGE Université de Genève}\\[1cm]
+
+% Document info
+\textsc{\Large Data Mining}\\[0.2cm]									% Course Code
+\HRule \\[0.8cm]
+{ \huge \bfseries TP \TPid : \TPname}\\[0.7cm]								% Assignment
+\HRule \\[2cm]
+\large
+\emph{Author:} \Firstname \; \Familyname\\[0.5cm]		
+\emph{E-mail:} {\color{blue}\Email}\\[7cm]		
+% Author info
+% Author info
+{\large \today}\\[2cm]
+\includegraphics[width=0.4\textwidth]{images/unige_csd.png}\\[1cm] 	% University logo
+\vfill 
+\end{titlepage}
+
+
+% ============================================
+% ----------------------------------
+\section*{Continuous Case}
+For the continuous problem, I had an accuracy of 94$\%$ it is quite high, with a bit more of training data, we would probably get a better accuracy. for our problem I feel like it is acceptable, however, if human life was at stake, maybe 94$\%$ wouldn't be high enough.\\\\
+I set the same axes$\_$lim for all three graphs:
+And I found that the graph was much easier to analyse this way, we can clearly see the training data is for the most part separated, just a bit of overlap, this overlap does bring down our accuracy rate, since some data points that are represented in the green color, were predicted as the orange color.\\\\
+We can also visualise each line that separates the classes.\\\\
+What was unexpected, is the second part of data that was predicted as green, this should have been most likely blue, this probably brings our accuracy down.\\\\
+Aside from this small mistake, all the fields are continuous, and the decision surfaces are quadratic.
+
+% ----------------------------------
+\section*{Discrete Case}
+For the discrete case, I had around 80$\%$, this is probably due to the fact that we suppose that the attributes are independent, when in fact they aren't.\\\\
+Adding another dimension of information would help too, the location at time of impact, would be a good argument to add, as it is harder to survive if you are in a bellow level, rather than next to the life boats.
+\end{document}
