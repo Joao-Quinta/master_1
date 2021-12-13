@@ -83,6 +83,7 @@ def exo_5(P, n):
     print()
 
     P_comul = functions.compute_P_comul(P)
+    print(P_comul)
 
     arr = [functions.rouletteMethod(P_comul) for _ in range(n)]
 
