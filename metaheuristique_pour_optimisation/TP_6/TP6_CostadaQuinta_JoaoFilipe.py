@@ -41,7 +41,7 @@ def map_value(v):
 def compute_fitness(individual):
     x = map_value(int(individual[:10], 2))
     y = map_value(int(individual[10:], 2))
-    return - np.abs((x/2) * np.sin(np.sqrt(np.abs(x)))) - np.abs(y * np.sin(np.power(np.abs(x/y), (1/30))))
+    return - np.abs((x / 2) * np.sin(np.sqrt(np.abs(x)))) - np.abs(y * np.sin(np.power(np.abs(x / y), (1 / 30))))
 
 
 # selection step, randomly selects individual from the population with weighted randomness based on fitness
@@ -57,15 +57,42 @@ def selection_random(population):
 def selection_tournament_5(population):  # TODO check if this works well
     new_gen_pop = []
     fit_population = [compute_fitness(population[i]) for i in range(len(population))]
+    print(fit_population)
     for l in range(len(population)):
+        print()
         index_of_selection = [balancedDice(len(population)) for _ in range(5)]
+        print("index of selection : ", index_of_selection)
         selection_of_5 = [fit_population[i] for i in index_of_selection]
+        print("selection of 5 : ", selection_of_5)
         new_gen_pop.append(population[index_of_selection[np.argmax(selection_of_5)]])
+        print(new_gen_pop)
     return new_gen_pop
 
 
-pop = generate_population(100)
-fit = [compute_fitness(pop[i]) for i in range(len(pop))]
-print(fit)
-print(np.max(fit))
+# crossing of population with probability 0.6
+def crossing(population):
+    i = 0
+    while i < len(population):
+        if random.random() < 0.6:
+            x1, x1_ = population[i][:5], population[i + 1][:5]
+            x2, x2_ = population[i][5:10], population[i + 1][5:10]
+            y1, y1_ = population[i][10:15], population[i + 1][10:15]
+            y2, y2_ = population[i][15:], population[i + 1][15:]
+            population[i] = x1 + x2_ + y1 + y2_
+            population[i + 1] = x1_ + x2 + y1_ + y2
+        i = i + 2
+    return population
 
+
+# computes mutations
+def mutation(population, p):
+    for i in range(len(population)):
+        individual = list(population[i])
+        for j in range(len(individual)):
+            if random.random() < p:
+                if individual[j] == '0':
+                    individual[j] = '1'
+                else:
+                    individual[j] = '0'
+        population[i] = ''.join(individual)
+    return population
