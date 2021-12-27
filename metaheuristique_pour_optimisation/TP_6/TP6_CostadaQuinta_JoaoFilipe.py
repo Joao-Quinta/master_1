@@ -63,7 +63,7 @@ def selection_tournament_5(population):
     for l in range(len(population)):
         index_of_selection = [balancedDice(len(population)) for _ in range(5)]
         selection_of_5 = [fit_population[i] for i in index_of_selection]
-        new_gen_pop.append(population[index_of_selection[np.argmax(selection_of_5)]])
+        new_gen_pop.append(population[index_of_selection[np.argmin(selection_of_5)]])
     return new_gen_pop
 
 
@@ -97,54 +97,14 @@ def mutation(population, p):
 
 
 # global function
-def genetic_algorithm(N, p, max_generation):
+def genetic_algorithm(N, p_m, max_generation):
     generation = 0
     population = generate_population(N)
     while generation < max_generation:
         generation = generation + 1
         population = selection_tournament_5(population)
-        # population = crossing(population)
-        population = mutation(population, p)
-    return population[np.argmax([compute_fitness(population[i]) for i in range(len(population))])]
+        population = crossing(population)
+        population = mutation(population, p_m)
+    return population[np.argmin([compute_fitness(population[i]) for i in range(len(population))])]
 
 
-x = [10, 100, 1000, 10000, 100000]
-for x_ in x:
-    r = genetic_algorithm(100, 0.01, x_)
-    print(r, " - > ", compute_fitness(r))
-
-"""
-WITH CROSSING : 
-
-p = 0.1
-
-00100110100000000000  - >  -11.966731164990291
-00000000010000000110  - >  -14.119453180124616
-00000000000000000000  - >  -8.518127505726877
-00000111100000000001  - >  -10.213980556320166
-00000000000000000001  - >  -9.313415632112324
-
-p = 0.01
-00000111100000000000  - >  -9.394785809777554
-00000111100000000000  - >  -9.394785809777554
-00111101010000000000  - >  -9.460929749396577
-00100110010000000000  - >  -8.915082864815007
-01111010100000000000  - >  -9.737136305702137
-
-WITHOUT CROSSING : 
-
-p = 0.1
-00010100010000000100  - >  -13.331906952554519
-00000000000000000000  - >  -8.518127505726877
-00000000000000000001  - >  -9.313415632112324
-00000000000000000000  - >  -8.518127505726877
-00000000000000000000  - >  -8.518127505726877
-
-p = 0.01
-00111101010000000000  - >  -9.460929749396577
-10100000110000000000  - >  -9.147215243893433
-00000000000000000000  - >  -8.518127505726877
-00000000000000000000  - >  -8.518127505726877
-00111101010000000000  - >  -9.460929749396577
-
-"""
