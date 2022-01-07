@@ -1,0 +1,137 @@
+\documentclass[a4paper]{article}
+%\documentclass[8pt]{report}
+%%%%%%%% CREATE DOCUMENT STRUCTURE %%%%%%%%
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%\usepackage{subfig}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+%\usepackage{caption}
+\usepackage[justification=centering]{caption}
+\usepackage{subcaption}
+\usepackage{sectsty}
+\usepackage{float}
+\usepackage{titling} 
+\usepackage{blindtext}
+\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+
+%% definitions 
+\definecolor{darkgreen}{rgb}{0.0, 0.4, 0.0}
+\definecolor{red}{rgb}{0.8, 0.0, 0.0}
+\definecolor{blue}{rgb}{0.01, 0.28, 1.0}
+\definecolor{purple}{rgb}{0.75, 0.58, 0.89}
+\definecolor{brown}{rgb}{0.48, 0.25, 0.0}
+%% Define your personal info here %%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\TPid{7}
+\newcommand\TPname{Genetic Programming}
+\newcommand\Firstname{Joao Filipe}
+\newcommand\Familyname{Costa da Quinta}
+\newcommand\Email{Joao.Costa@etu.unige.ch}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%% Page header %%%%%%
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{TP \TPid: \TPname}
+\lhead{\Firstname \Familyname}
+\rfoot{Page \thepage}
+
+
+%%%%%%%% DOCUMENT %%%%%%%%
+\begin{document}
+
+%%%% Title Page
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 							% horizontal line and its thickness
+
+\center 
+ 
+% University
+\textsc{\LARGE Université de Genève}\\[1cm]
+
+% Document info
+\textsc{\Large Metaheuristics for optimization}\\[0.2cm]									% Course Code
+\HRule \\[0.8cm]
+{ \huge \bfseries TP \TPid : \TPname}\\[0.7cm]								% Assignment
+\HRule \\[2cm]
+\large
+\emph{Author:} \Firstname \; \Familyname\\[0.5cm]		
+\emph{E-mail:} {\color{blue}\Email}\\[7cm]		
+% Author info
+% Author info
+{\large \today}\\[2cm]
+\includegraphics[width=0.4\textwidth]{images/unige_csd.png}\\[1cm] 	% University logo
+\vfill 
+\end{titlepage}
+
+
+% ============================================
+% ----------------------------------
+\newpage
+\section{Introduction}
+During this TP we will be working with an algorithm that tries to simulate genetic evolution. In biology a population adapts to an environment by pure luck. This luck is due to the crossing of genomes, and by mutations in this genome. This is a very long process. Genetic algorithms try and apply the same logics and methods, but faster!
+\section{Problem to optimize}
+During this TP we will try to put together a simple function, that is the most optimal to a given dataset.\\
+This dataset is made up of 16 values. Each value is an array of 5 binary values. The first 4 binary values represent the data itself, and the 5th value represents the expected output.\\
+Let's say that $[1,0,1,0,1]$ is a value of the dataset, then the first 4 values $1,0,1,0$ are the input to the function, and the 5th value $1$ is the expected output.\\
+This function will be represented by and array of given length, and will only allow certain simple operations to take place.\\
+the results of each operation will be saved in a stack.\\
+The operations are the following:
+\begin{itemize}
+\item[$"X_i"$] pushes to ith bit of the data to the stack
+\item[$"AND"$] consumes the 2 last values of the stack, and performs AND logic operation on the consumed values. Then pushes the result onto the stack
+\item[$"OR"$] consumes the 2 last values of the stack, and performs OR logic operation on the consumed values. Then pushes the result onto the stack
+\item[$"XOR"$] consumes the 2 last values of the stack, and performs XOR logic operation on the consumed values. Then pushes the result onto the stack
+\item[$"NOT"$] consumes the last value of the stack, and performs NOT logic operation on the consumed value. Then pushes the result onto the stack
+\end{itemize}
+
+\section{Implementation of the algorithm}
+First we need to create an individual, or a function, this is done randomly, however we have to be careful as we have to make sure the function is doable, for instance if the first operation of a function is $"AND"$ it wont be possible, first we need to push vales from data into the stack to be able to perform the operation $"AND"$.\\
+Let's set the size of the program to 5 operations, then the following program is valid:\\
+$$Program := ["X1", "X2", "AND", "X3", "XOR"]$$
+We push the value $X_1$ then the value $X_2$, we perform the operation $"AND"$ on the last 2 values pushed to the stack, and push the result of the operation, we then push $"X3"$, and finish by performing $"XOR"$ in the 2 last values, and push the result. We have to make sure that the stack now contains only 1 value, if it contains more than one, then the program isn't valid.
+\subsection{Selection}
+The goal is to choose the best individuals that get to 'live on', and the worst ones we let them 'die'. There are many ways of doing this. The way we choose to do this in this TP is the k-Tournament, this is a really easy step to selection method to understand. From the whole population at generation t, we chose k individuals at random (all have the same probability of being chosen), from the individuals, we keep the one with the best fitness. We do this N times, so that the number of individuals is constant through the generations. For this TP k = 2.
+\subsection{Crossing and Mutation}
+These functions were given to us.\\
+Crossing cuts an individual in half, and mixes it with the other half of another individual.\\
+Where as Mutation just changes an operation by another.\\
+I would say that both of these are bad ways of doing it, simply because these new individuals might not represent an executable program. Which means that the population of a new generation might have individuals that are simply not useful.\\\\
+Personally, I would have skipped the crossing step, and kept the mutation step, by allowing only specific modifications, mutations that are interchangeable, for instance we can change any $"X_i"$ by any other $"X_j"$ where $j != i$, whilst keeping the validity of a program. (operations $"AND"$, $"OR"$, $"XOR"$ are also interchangeable).
+
+
+\subsection{Algorithm}
+\begin{itemize}
+\item[(1)] Generate random population of size N
+\item[(2)] For $generation\_max$ do the following steps
+\item[(3)] Select Individuals, as show in section 2.1
+\item[(4)] Compute crossing, as show in section 2.2 
+\item[(5)] Do mutations, as show in section 2.2
+\item[(6)] After doing this for $generation\_max$, return best fit individual.
+\end{itemize}
+\newpage
+\section{Results}
+The general algorithm works.\\\\
+For our tests: N=1000, $P_c$ = 0.6, $P_m = $ 0.1, $max\_generation = $ 100.\\\\
+First I tried with a program of length 5. For a program of length 5, the best result was 13 of fitness consistently. With 100 or 500 iterations.\\\\
+Then I attempted an longer program, for instance of length 10, the results were better. With 10 attempts the average was of fitness 15.1, the best programs reaching the maximum of 16 fitness.\\
+This program has the perfect fitness for our dataset:\\
+$$['X4', 'X1', 'X2', 'AND', 'X2', 'X3', 'XOR', 'OR', 'NOT', 'AND']$$
+
+\end{document}

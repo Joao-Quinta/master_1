@@ -53,3 +53,5 @@ def rouletteMethod(P_comul):
         # we look for the first value larger than the random value we got
         if P_comul[i] > val:
             return i
+
+
