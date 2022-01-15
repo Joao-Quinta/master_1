@@ -1,0 +1,320 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:Ontology1418809531601="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#first -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#first">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#rest -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#rest">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#EmptyList -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#EmptyList">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadList"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#Road -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#Road">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadList"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadList -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadList">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#EmptyList"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#first"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#Road"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#rest"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadList"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadListWithR2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadListWithR2">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#rest"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadListWithR2"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#first"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#r2"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadList"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadListWithR2AndR3 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadListWithR2AndR3">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadListWithR2"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadListWithR3"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadList"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadListWithR2First -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadListWithR2First">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#first"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#r2"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadList"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadListWithR3 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadListWithR3">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#rest"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadListWithR3"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#first"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#r3"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadList"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadListWithR3InThirld -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadListWithR3InThirld">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#rest"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#rest"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#first"/>
+                                <owl:hasValue rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#r3"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadList"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#empty -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#empty">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#EmptyList"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadList"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#r1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#r1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#Road"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#r2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#r2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#Road"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#r3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#r3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#Road"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#roadlist_r1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#roadlist_r1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadList"/>
+        <first rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#r1"/>
+        <rest rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#empty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#roadlist_r1r2r3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#roadlist_r1r2r3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadList"/>
+        <first rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#r1"/>
+        <rest rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#roadlist_r2r3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#roadlist_r2r1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#roadlist_r2r1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadList"/>
+        <first rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#r2"/>
+        <rest rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#roadlist_r1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#roadlist_r2r3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#roadlist_r2r3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadList"/>
+        <first rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#r2"/>
+        <rest rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#roadlist_r3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#roadlist_r3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#roadlist_r3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#RoadList"/>
+        <first rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#r3"/>
+        <rest rdf:resource="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#empty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#r1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#r2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#r3"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#roadlist_r1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#roadlist_r1r2r3"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#roadlist_r2r1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#roadlist_r2r3"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/11/Ontology1418809531601.owl#roadlist_r3"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

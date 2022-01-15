@@ -1,0 +1,130 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+
+@prefix : <http://cui.unige.ch/> . 
+
+
+# Schema for courses description
+
+:Course a rdfs:Class .
+:Semester a rdfs:Class .
+:Person a rdfs:Class .
+:Teacher a rdfs:Class .
+:Teacher rdfs:subClassOf :Person .
+:Room a rdfs:Class .
+:Exam a rdfs:Class .
+:Program a rdfs:Class .
+:MasterProgram a rdfs:Class .
+:MasterProgram rdfs:subClassOf :Program .
+
+:name a rdf:Property .
+:code a rdf:Property .
+:period a rdf:Property .
+:teacher a rdf:Property .
+:localization a rdf:Property .
+:site a rdf:Property .
+:building a rdf:Property .
+:floor a rdf:Property .
+:hours-per-week a rdf:Property .
+:keyword a rdf:Property .
+:exam a rdf:Property .
+:exam-type a rdf:Property .
+:has-part a rdf:Property .
+:course a rdf:Property .
+:is-optional a rdf:Property .
+:credits a rdf:Property .
+
+
+# Restrictions
+
+:name rdfs:range xsd:string .
+:code rdfs:range xsd:string .
+:period rdfs:domain :Course ; rdfs:range :Semester .
+:teacher rdfs:domain :Course ; rdfs:range :Teacher .
+:localization rdfs:range :Room .
+:hours-per-week rdfs:range xsd:positiveInteger .
+:keyword rdfs:range xsd:string .
+:exam rdfs:domain :Course ; :rdfs:range :Exam .
+:is-optional rdfs:range xsd:boolean .
+:credits rdfs:range xsd:float .
+
+
+# Description of general resources (not related to a specific course)
+
+:swt-course a :Course .
+:ihm-course a :Course .
+:kos-course a :Course .
+:gilles-falquet a :Person .
+:claudine-metral a :Person .
+:room-316 a :Room .
+:room-101 a :Room .
+:room-301 a :Room .
+:kr-exam a :Exam .
+:master-cui a :MasterProgram .
+
+
+# Description of SWT course
+
+:swt-course rdf:type :Course .
+
+:swt-course :name "Semantic web technologies"@en .
+:swt-course :name "Technologies du web sémantique"@fr .
+:swt-course :code "D400009" .
+:swt-course :period :fall-semester .
+
+:swt-course :teacher :gilles-falquet, :claudine-metral .
+
+:swt-course :localization :battelle-316 .
+:battelle-316 :site "Battelle"; :building "A"; :floor "2"^^xsd:integer .
+
+:swt-course :hours-per-week 4 ;
+            :keyword "RDF", "RDFS", "SPARQL", "OWL";
+            :exam [:exam-type "semester work", "written exam"] .
+
+:master-cui a :MasterProgram ; 
+                     :name "Maîtrise universitaire en sciences informatiques" ;
+                     :has-part _:xxx . 
+_:xxx :course :swt-course ; 
+      :is-optional "false"^^xsd:boolean ;
+      :credits 4 . 
+
+:master-syinf a :MasterProgram ; 
+                     :name "Maîtrise universitaire en systèmes et services numériques" ;
+                     :has-part _:yyy . 
+		[:course :swt-course ; 
+      		:is-optional "true"^^xsd:boolean ;
+      		:credits 6] . 
+  
+    
+# Description of HMI course       
+
+:hmi-course rdf:type :Course .
+:hmi-course :name "Interfaces personne-machine"@fr .
+:hmi-course :name "Human-machine interfaces"@en .
+:hmi-course :period :spring-semester .
+:hmi-course :teacher :gilles-falquet .
+:hmi-course :teacher :patrick-roth .
+:hmi-course :localization :battelle-404 ; :exam :hmi-exam.
+:hmi-exam :exam-type "written exam". 
+
+
+# Description of KOS course      
+
+:kos-course rdf:type :Course .
+:kos-course :name "Knowledge organization systems"@en .
+:kos-course :period :spring-semester .
+:kos-course :keyword "OWL" .
+:kos-course :teacher :gilles-falquet .
+:kos-course :teacher :claudine-metral .
+:kos-course :localization :battelle-316 .
+:kos-course :exam [:exam-type "semester work"; :deadline "2022-06-29"^^xsd:date] .
+
+:master-cui :has-part _:yyy . 
+_:yyy :course :kos-course ; 
+      :is-optional "true"^^xsd:boolean ;
+      :credits 5 . 
+
+
+
+

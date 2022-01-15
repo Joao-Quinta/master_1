@@ -1,0 +1,1109 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-7"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-7">
+    <Prefix name="" IRI="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-7"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#CableCar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Difficulty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hiker"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hotel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Location"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Restaurant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Season"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SkillLevel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Trail"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TrailType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#availeableForSeason"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#canUse"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#connected"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#difficulty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#location"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#locationEnd"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#locationStart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#skillLevel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#trailType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Albert"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Beatrice"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bella-Tola"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chandolin"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Charles"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dimitri"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Eglantine"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Fang"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Frederique"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gillou"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sentier_des_lacs"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#St-Luc"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Summer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tignoussa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Weisshorn"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Winter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#avearage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#beginner"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#black"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#blue"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cableCar_A"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cableCar_B"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#good"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#hotelBella-Tola"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#hotelBoutique"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#hotelLeBeausite"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#hotelWeisshorn"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#onFoot"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#onSnowshoes"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#red"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#restaurantCafeDeLaPoste"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#restaurantHotelWeisshorn"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#restaurantLeChalet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#restaurantTignoussa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#trail_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#trail_10"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#trail_11"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#trail_2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#trail_3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#trail_4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#trail_5"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#trail_6"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#trail_7"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#trail_8"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#trail_9"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#CableCar"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#availeableForSeason"/>
+                <Class IRI="#Season"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#availeableForSeason"/>
+                <Class IRI="#Season"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CableCar"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#locationEnd"/>
+                <Class IRI="#Location"/>
+            </ObjectAllValuesFrom>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#locationEnd"/>
+                <Class IRI="#Location"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CableCar"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#locationStart"/>
+                <Class IRI="#Location"/>
+            </ObjectAllValuesFrom>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#locationStart"/>
+                <Class IRI="#Location"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CableCar"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#canUse"/>
+            <Class IRI="#Difficulty"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hiker"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#skillLevel"/>
+                <Class IRI="#SkillLevel"/>
+            </ObjectAllValuesFrom>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#skillLevel"/>
+                <Class IRI="#SkillLevel"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hotel"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#location"/>
+                <Class IRI="#Location"/>
+            </ObjectAllValuesFrom>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#location"/>
+                <Class IRI="#Location"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Location"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#connected"/>
+                <Class IRI="#Location"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#connected"/>
+                <Class IRI="#Location"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Restaurant"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#location"/>
+                <Class IRI="#Location"/>
+            </ObjectAllValuesFrom>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#location"/>
+                <Class IRI="#Location"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trail"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#availeableForSeason"/>
+                <Class IRI="#Season"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#availeableForSeason"/>
+                <Class IRI="#Season"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trail"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#trailType"/>
+                <Class IRI="#TrailType"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#trailType"/>
+                <Class IRI="#TrailType"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trail"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#difficulty"/>
+                <Class IRI="#Difficulty"/>
+            </ObjectAllValuesFrom>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#difficulty"/>
+                <Class IRI="#Difficulty"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trail"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#locationEnd"/>
+                <Class IRI="#Location"/>
+            </ObjectAllValuesFrom>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#locationEnd"/>
+                <Class IRI="#Location"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trail"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#locationStart"/>
+                <Class IRI="#Location"/>
+            </ObjectAllValuesFrom>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#locationStart"/>
+                <Class IRI="#Location"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#CableCar"/>
+        <Class IRI="#Trail"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Hotel"/>
+        <Class IRI="#Restaurant"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Hiker"/>
+        <NamedIndividual IRI="#Albert"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hiker"/>
+        <NamedIndividual IRI="#Beatrice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Location"/>
+        <NamedIndividual IRI="#Bella-Tola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Location"/>
+        <NamedIndividual IRI="#Chandolin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hiker"/>
+        <NamedIndividual IRI="#Charles"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hiker"/>
+        <NamedIndividual IRI="#Dimitri"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hiker"/>
+        <NamedIndividual IRI="#Eglantine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Location"/>
+        <NamedIndividual IRI="#Fang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hiker"/>
+        <NamedIndividual IRI="#Frederique"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Location"/>
+        <NamedIndividual IRI="#Gillou"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Location"/>
+        <NamedIndividual IRI="#Sentier_des_lacs"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Location"/>
+        <NamedIndividual IRI="#St-Luc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Season"/>
+        <NamedIndividual IRI="#Summer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Location"/>
+        <NamedIndividual IRI="#Tignoussa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Location"/>
+        <NamedIndividual IRI="#Weisshorn"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Season"/>
+        <NamedIndividual IRI="#Winter"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SkillLevel"/>
+        <NamedIndividual IRI="#avearage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SkillLevel"/>
+        <NamedIndividual IRI="#beginner"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Difficulty"/>
+        <NamedIndividual IRI="#black"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#skillLevel"/>
+                <Class IRI="#SkillLevel"/>
+            </ObjectAllValuesFrom>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#skillLevel"/>
+                <Class IRI="#SkillLevel"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+        <NamedIndividual IRI="#black"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Difficulty"/>
+        <NamedIndividual IRI="#blue"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#skillLevel"/>
+            <Class IRI="#SkillLevel"/>
+        </ObjectAllValuesFrom>
+        <NamedIndividual IRI="#blue"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CableCar"/>
+        <NamedIndividual IRI="#cableCar_A"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CableCar"/>
+        <NamedIndividual IRI="#cableCar_B"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SkillLevel"/>
+        <NamedIndividual IRI="#good"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hotel"/>
+        <NamedIndividual IRI="#hotelBella-Tola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hotel"/>
+        <NamedIndividual IRI="#hotelBoutique"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hotel"/>
+        <NamedIndividual IRI="#hotelLeBeausite"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hotel"/>
+        <NamedIndividual IRI="#hotelWeisshorn"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TrailType"/>
+        <NamedIndividual IRI="#onFoot"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TrailType"/>
+        <NamedIndividual IRI="#onSnowshoes"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#availeableForSeason"/>
+                <Class IRI="#Season"/>
+            </ObjectAllValuesFrom>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#availeableForSeason"/>
+                <Class IRI="#Season"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+        <NamedIndividual IRI="#onSnowshoes"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Difficulty"/>
+        <NamedIndividual IRI="#red"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#skillLevel"/>
+                <Class IRI="#SkillLevel"/>
+            </ObjectAllValuesFrom>
+            <ObjectExactCardinality cardinality="2">
+                <ObjectProperty IRI="#skillLevel"/>
+                <Class IRI="#SkillLevel"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+        <NamedIndividual IRI="#red"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Restaurant"/>
+        <NamedIndividual IRI="#restaurantCafeDeLaPoste"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Restaurant"/>
+        <NamedIndividual IRI="#restaurantHotelWeisshorn"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Restaurant"/>
+        <NamedIndividual IRI="#restaurantLeChalet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Restaurant"/>
+        <NamedIndividual IRI="#restaurantTignoussa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trail"/>
+        <NamedIndividual IRI="#trail_1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trail"/>
+        <NamedIndividual IRI="#trail_10"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trail"/>
+        <NamedIndividual IRI="#trail_11"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trail"/>
+        <NamedIndividual IRI="#trail_2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trail"/>
+        <NamedIndividual IRI="#trail_3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trail"/>
+        <NamedIndividual IRI="#trail_4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trail"/>
+        <NamedIndividual IRI="#trail_5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trail"/>
+        <NamedIndividual IRI="#trail_6"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trail"/>
+        <NamedIndividual IRI="#trail_7"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trail"/>
+        <NamedIndividual IRI="#trail_8"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Trail"/>
+        <NamedIndividual IRI="#trail_9"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#skillLevel"/>
+        <NamedIndividual IRI="#Albert"/>
+        <NamedIndividual IRI="#avearage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#skillLevel"/>
+        <NamedIndividual IRI="#Beatrice"/>
+        <NamedIndividual IRI="#good"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connected"/>
+        <NamedIndividual IRI="#Bella-Tola"/>
+        <NamedIndividual IRI="#St-Luc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connected"/>
+        <NamedIndividual IRI="#Chandolin"/>
+        <NamedIndividual IRI="#Chandolin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connected"/>
+        <NamedIndividual IRI="#Chandolin"/>
+        <NamedIndividual IRI="#St-Luc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#skillLevel"/>
+        <NamedIndividual IRI="#Charles"/>
+        <NamedIndividual IRI="#beginner"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#skillLevel"/>
+        <NamedIndividual IRI="#Dimitri"/>
+        <NamedIndividual IRI="#good"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#skillLevel"/>
+        <NamedIndividual IRI="#Eglantine"/>
+        <NamedIndividual IRI="#beginner"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connected"/>
+        <NamedIndividual IRI="#Fang"/>
+        <NamedIndividual IRI="#St-Luc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#skillLevel"/>
+        <NamedIndividual IRI="#Frederique"/>
+        <NamedIndividual IRI="#avearage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connected"/>
+        <NamedIndividual IRI="#Gillou"/>
+        <NamedIndividual IRI="#St-Luc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connected"/>
+        <NamedIndividual IRI="#Sentier_des_lacs"/>
+        <NamedIndividual IRI="#Tignoussa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connected"/>
+        <NamedIndividual IRI="#St-Luc"/>
+        <NamedIndividual IRI="#Bella-Tola"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connected"/>
+        <NamedIndividual IRI="#St-Luc"/>
+        <NamedIndividual IRI="#Chandolin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connected"/>
+        <NamedIndividual IRI="#St-Luc"/>
+        <NamedIndividual IRI="#Fang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connected"/>
+        <NamedIndividual IRI="#St-Luc"/>
+        <NamedIndividual IRI="#Gillou"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connected"/>
+        <NamedIndividual IRI="#St-Luc"/>
+        <NamedIndividual IRI="#St-Luc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connected"/>
+        <NamedIndividual IRI="#St-Luc"/>
+        <NamedIndividual IRI="#Tignoussa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connected"/>
+        <NamedIndividual IRI="#St-Luc"/>
+        <NamedIndividual IRI="#Weisshorn"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connected"/>
+        <NamedIndividual IRI="#Tignoussa"/>
+        <NamedIndividual IRI="#Sentier_des_lacs"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connected"/>
+        <NamedIndividual IRI="#Tignoussa"/>
+        <NamedIndividual IRI="#St-Luc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connected"/>
+        <NamedIndividual IRI="#Tignoussa"/>
+        <NamedIndividual IRI="#Weisshorn"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connected"/>
+        <NamedIndividual IRI="#Weisshorn"/>
+        <NamedIndividual IRI="#St-Luc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connected"/>
+        <NamedIndividual IRI="#Weisshorn"/>
+        <NamedIndividual IRI="#Tignoussa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availeableForSeason"/>
+        <NamedIndividual IRI="#cableCar_A"/>
+        <NamedIndividual IRI="#Summer"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availeableForSeason"/>
+        <NamedIndividual IRI="#cableCar_A"/>
+        <NamedIndividual IRI="#Winter"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationEnd"/>
+        <NamedIndividual IRI="#cableCar_A"/>
+        <NamedIndividual IRI="#Tignoussa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationStart"/>
+        <NamedIndividual IRI="#cableCar_A"/>
+        <NamedIndividual IRI="#St-Luc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availeableForSeason"/>
+        <NamedIndividual IRI="#cableCar_B"/>
+        <NamedIndividual IRI="#Winter"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationEnd"/>
+        <NamedIndividual IRI="#cableCar_B"/>
+        <NamedIndividual IRI="#Bella-Tola"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationStart"/>
+        <NamedIndividual IRI="#cableCar_B"/>
+        <NamedIndividual IRI="#Tignoussa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#location"/>
+        <NamedIndividual IRI="#hotelBella-Tola"/>
+        <NamedIndividual IRI="#St-Luc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#location"/>
+        <NamedIndividual IRI="#hotelBoutique"/>
+        <NamedIndividual IRI="#Chandolin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#location"/>
+        <NamedIndividual IRI="#hotelLeBeausite"/>
+        <NamedIndividual IRI="#St-Luc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#location"/>
+        <NamedIndividual IRI="#hotelWeisshorn"/>
+        <NamedIndividual IRI="#Weisshorn"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#location"/>
+        <NamedIndividual IRI="#restaurantCafeDeLaPoste"/>
+        <NamedIndividual IRI="#St-Luc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#location"/>
+        <NamedIndividual IRI="#restaurantHotelWeisshorn"/>
+        <NamedIndividual IRI="#Weisshorn"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#location"/>
+        <NamedIndividual IRI="#restaurantLeChalet"/>
+        <NamedIndividual IRI="#Chandolin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#location"/>
+        <NamedIndividual IRI="#restaurantTignoussa"/>
+        <NamedIndividual IRI="#Tignoussa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availeableForSeason"/>
+        <NamedIndividual IRI="#trail_1"/>
+        <NamedIndividual IRI="#Summer"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#difficulty"/>
+        <NamedIndividual IRI="#trail_1"/>
+        <NamedIndividual IRI="#blue"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationEnd"/>
+        <NamedIndividual IRI="#trail_1"/>
+        <NamedIndividual IRI="#St-Luc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationStart"/>
+        <NamedIndividual IRI="#trail_1"/>
+        <NamedIndividual IRI="#St-Luc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#trailType"/>
+        <NamedIndividual IRI="#trail_1"/>
+        <NamedIndividual IRI="#onFoot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availeableForSeason"/>
+        <NamedIndividual IRI="#trail_10"/>
+        <NamedIndividual IRI="#Winter"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#difficulty"/>
+        <NamedIndividual IRI="#trail_10"/>
+        <NamedIndividual IRI="#black"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationEnd"/>
+        <NamedIndividual IRI="#trail_10"/>
+        <NamedIndividual IRI="#Weisshorn"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationStart"/>
+        <NamedIndividual IRI="#trail_10"/>
+        <NamedIndividual IRI="#St-Luc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#trailType"/>
+        <NamedIndividual IRI="#trail_10"/>
+        <NamedIndividual IRI="#onSnowshoes"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availeableForSeason"/>
+        <NamedIndividual IRI="#trail_11"/>
+        <NamedIndividual IRI="#Winter"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#difficulty"/>
+        <NamedIndividual IRI="#trail_11"/>
+        <NamedIndividual IRI="#black"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationEnd"/>
+        <NamedIndividual IRI="#trail_11"/>
+        <NamedIndividual IRI="#Bella-Tola"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationStart"/>
+        <NamedIndividual IRI="#trail_11"/>
+        <NamedIndividual IRI="#St-Luc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#trailType"/>
+        <NamedIndividual IRI="#trail_11"/>
+        <NamedIndividual IRI="#onFoot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availeableForSeason"/>
+        <NamedIndividual IRI="#trail_2"/>
+        <NamedIndividual IRI="#Summer"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availeableForSeason"/>
+        <NamedIndividual IRI="#trail_2"/>
+        <NamedIndividual IRI="#Winter"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#difficulty"/>
+        <NamedIndividual IRI="#trail_2"/>
+        <NamedIndividual IRI="#blue"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationEnd"/>
+        <NamedIndividual IRI="#trail_2"/>
+        <NamedIndividual IRI="#Chandolin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationStart"/>
+        <NamedIndividual IRI="#trail_2"/>
+        <NamedIndividual IRI="#St-Luc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#trailType"/>
+        <NamedIndividual IRI="#trail_2"/>
+        <NamedIndividual IRI="#onFoot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availeableForSeason"/>
+        <NamedIndividual IRI="#trail_3"/>
+        <NamedIndividual IRI="#Summer"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#difficulty"/>
+        <NamedIndividual IRI="#trail_3"/>
+        <NamedIndividual IRI="#red"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationEnd"/>
+        <NamedIndividual IRI="#trail_3"/>
+        <NamedIndividual IRI="#Fang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationStart"/>
+        <NamedIndividual IRI="#trail_3"/>
+        <NamedIndividual IRI="#St-Luc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#trailType"/>
+        <NamedIndividual IRI="#trail_3"/>
+        <NamedIndividual IRI="#onFoot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availeableForSeason"/>
+        <NamedIndividual IRI="#trail_4"/>
+        <NamedIndividual IRI="#Summer"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availeableForSeason"/>
+        <NamedIndividual IRI="#trail_4"/>
+        <NamedIndividual IRI="#Winter"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#difficulty"/>
+        <NamedIndividual IRI="#trail_4"/>
+        <NamedIndividual IRI="#red"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationEnd"/>
+        <NamedIndividual IRI="#trail_4"/>
+        <NamedIndividual IRI="#Tignoussa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationStart"/>
+        <NamedIndividual IRI="#trail_4"/>
+        <NamedIndividual IRI="#St-Luc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#trailType"/>
+        <NamedIndividual IRI="#trail_4"/>
+        <NamedIndividual IRI="#onFoot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#trailType"/>
+        <NamedIndividual IRI="#trail_4"/>
+        <NamedIndividual IRI="#onSnowshoes"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availeableForSeason"/>
+        <NamedIndividual IRI="#trail_5"/>
+        <NamedIndividual IRI="#Summer"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#difficulty"/>
+        <NamedIndividual IRI="#trail_5"/>
+        <NamedIndividual IRI="#red"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationEnd"/>
+        <NamedIndividual IRI="#trail_5"/>
+        <NamedIndividual IRI="#Gillou"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationStart"/>
+        <NamedIndividual IRI="#trail_5"/>
+        <NamedIndividual IRI="#St-Luc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#trailType"/>
+        <NamedIndividual IRI="#trail_5"/>
+        <NamedIndividual IRI="#onFoot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availeableForSeason"/>
+        <NamedIndividual IRI="#trail_6"/>
+        <NamedIndividual IRI="#Summer"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availeableForSeason"/>
+        <NamedIndividual IRI="#trail_6"/>
+        <NamedIndividual IRI="#Winter"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#difficulty"/>
+        <NamedIndividual IRI="#trail_6"/>
+        <NamedIndividual IRI="#blue"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationEnd"/>
+        <NamedIndividual IRI="#trail_6"/>
+        <NamedIndividual IRI="#Chandolin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationStart"/>
+        <NamedIndividual IRI="#trail_6"/>
+        <NamedIndividual IRI="#St-Luc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#trailType"/>
+        <NamedIndividual IRI="#trail_6"/>
+        <NamedIndividual IRI="#onFoot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#trailType"/>
+        <NamedIndividual IRI="#trail_6"/>
+        <NamedIndividual IRI="#onSnowshoes"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availeableForSeason"/>
+        <NamedIndividual IRI="#trail_7"/>
+        <NamedIndividual IRI="#Summer"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#difficulty"/>
+        <NamedIndividual IRI="#trail_7"/>
+        <NamedIndividual IRI="#blue"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationEnd"/>
+        <NamedIndividual IRI="#trail_7"/>
+        <NamedIndividual IRI="#Chandolin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationStart"/>
+        <NamedIndividual IRI="#trail_7"/>
+        <NamedIndividual IRI="#Chandolin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#trailType"/>
+        <NamedIndividual IRI="#trail_7"/>
+        <NamedIndividual IRI="#onFoot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availeableForSeason"/>
+        <NamedIndividual IRI="#trail_8"/>
+        <NamedIndividual IRI="#Summer"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availeableForSeason"/>
+        <NamedIndividual IRI="#trail_8"/>
+        <NamedIndividual IRI="#Winter"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#difficulty"/>
+        <NamedIndividual IRI="#trail_8"/>
+        <NamedIndividual IRI="#red"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationEnd"/>
+        <NamedIndividual IRI="#trail_8"/>
+        <NamedIndividual IRI="#Weisshorn"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationStart"/>
+        <NamedIndividual IRI="#trail_8"/>
+        <NamedIndividual IRI="#Tignoussa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#trailType"/>
+        <NamedIndividual IRI="#trail_8"/>
+        <NamedIndividual IRI="#onFoot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availeableForSeason"/>
+        <NamedIndividual IRI="#trail_9"/>
+        <NamedIndividual IRI="#Summer"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#difficulty"/>
+        <NamedIndividual IRI="#trail_9"/>
+        <NamedIndividual IRI="#black"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationEnd"/>
+        <NamedIndividual IRI="#trail_9"/>
+        <NamedIndividual IRI="#Sentier_des_lacs"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locationStart"/>
+        <NamedIndividual IRI="#trail_9"/>
+        <NamedIndividual IRI="#Tignoussa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#trailType"/>
+        <NamedIndividual IRI="#trail_9"/>
+        <NamedIndividual IRI="#onFoot"/>
+    </ObjectPropertyAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

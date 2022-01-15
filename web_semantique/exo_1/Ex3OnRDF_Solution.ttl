@@ -1,0 +1,19 @@
+Solutions
+
+1. Spreadsheet to RDF
+
+for each row i
+  for each column j
+     if the cell i,j is not empty
+        create the triples
+          :s :cell :c-i-j .
+          :c-i-j :row "i" ; :column "j" ; :value the content of cell i,j
+
+The output should look like
+
+:s rdf:type :Spreadsheet .
+:s :cell :c-1-1 .
+   :c-1-1 :row "1"; :col "1"; :value <<value in cell 1,1>> .
+:s :cell :c-1-2 .
+   :c-1-2 :row "1"; :col "2"; :value <<value in cell 1, 2>> .
+   ...

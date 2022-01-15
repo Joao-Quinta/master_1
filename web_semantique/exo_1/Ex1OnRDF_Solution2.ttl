@@ -1,0 +1,24 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+
+@prefix : <http://cui.unige.ch/> . 
+
+:p1 a :PoliticalParty .
+:p2 a :PoliticalParty .
+
+:c1 :candidateFor :p1 .
+:c2 :candidateFor :p1 .
+:c3 :candidateFor :p1 .
+:c4 :candidateFor :p1 .
+
+:d1 :candidateFor :p2 .
+:d2 :candidateFor :p2 .
+:d3 :candidateFor :p2 .
+
+(:c3 :c1) :electedFor :p1 .
+
+() :electedFor :p2 .
+
+:c1 a :ParliamentMember .
+:c3 a :ParliamentMember .

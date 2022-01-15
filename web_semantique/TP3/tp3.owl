@@ -1,0 +1,1752 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#"
+     xml:base="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:untitled-ontology-16="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#canUse -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#canUse"/>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#connected -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#connected"/>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#connectedByBlue -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#connectedByBlue"/>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#crossTown -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#crossTown"/>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#location -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#location"/>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#locationEnd -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#locationEnd"/>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#locationStart -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#locationStart">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#restaurantConnections -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#restaurantConnections"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#circuitSize -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#circuitSize"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#AllTrails -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#AllTrails">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#QueryClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#AvearageHiker -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#AvearageHiker">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Hiker"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#canUse"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Blue"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#canUse"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Red"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#BeginnerHiker -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#BeginnerHiker">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Hiker"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#canUse"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Blue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#BeginnerLocationsWithHotel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#BeginnerLocationsWithHotel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#QueryClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Black -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Black">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Trail"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Blue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Blue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Trail"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Circuit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Circuit"/>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#GoodHiker -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#GoodHiker">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Hiker"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#canUse"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Black"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#canUse"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Blue"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#canUse"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Red"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#GoodOnlyLocationsWithHotel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#GoodOnlyLocationsWithHotel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#QueryClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Hiker -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Hiker"/>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Hotel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Hotel">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#location"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#location"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#HotelToRestaurantByBeginner -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#HotelToRestaurantByBeginner">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#QueryClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#connected"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#connected"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#PlacesWithRestaurantAfterAnyNumberTrail -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#PlacesWithRestaurantAfterAnyNumberTrail">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#QueryClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#PlacesWithRestaurantAfterOneTrail -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#PlacesWithRestaurantAfterOneTrail">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#QueryClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#QueryClass -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#QueryClass"/>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Red -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Red">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Trail"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Restaurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Restaurant">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#location"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#location"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#RestaurantsInTrailsOfTwo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#RestaurantsInTrailsOfTwo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#QueryClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#RestaurantsToRestaurants -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#RestaurantsToRestaurants">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#QueryClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Trail -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Trail">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#locationEnd"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#locationEnd"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#locationStart"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#locationStart"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#query_1 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#query_1">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#QueryClass"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#A -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#A">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#B"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#C"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#G"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#B -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#B">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#A"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#C"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#E"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#G"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#C -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#C">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#A"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#B"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#D -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#D">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#E"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#K"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#E -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#E">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#B"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#D"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#F -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#F">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#G"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#H"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#G -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#G">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#A"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#B"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#F"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#I"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#H -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#H">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#F"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#T"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#I -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#I">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#G"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#J"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#J -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#J">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#I"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#K"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#K -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#K">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#D"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#J"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#T -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#T">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#H"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#T1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#T1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#T1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Location"/>
+        <connected rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#T"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#cir1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#cir1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Circuit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#cir2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#cir2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Circuit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#cir3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#cir3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Circuit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#cir4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#cir4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Circuit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#cir5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#cir5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Circuit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#dimitri -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#dimitri">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#AvearageHiker"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#empltyList -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#empltyList"/>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#gewndoline -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#gewndoline">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#BeginnerHiker"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#gillou -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#gillou">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#GoodHiker"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#hotelB -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#hotelB">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Hotel"/>
+        <location rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#B"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#hotelG -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#hotelG">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Hotel"/>
+        <location rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#G"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#hotelH -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#hotelH">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Hotel"/>
+        <location rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#H"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#restoA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#restoA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Restaurant"/>
+        <location rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#A"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#restoD -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#restoD">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Restaurant"/>
+        <location rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#D"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#restoI1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#restoI1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Restaurant"/>
+        <location rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#I"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#restoI2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#restoI2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Restaurant"/>
+        <location rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#I"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#restoJ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#restoJ">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Restaurant"/>
+        <location rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#J"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#restoK -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#restoK">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Restaurant"/>
+        <location rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#K"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Red"/>
+        <locationEnd rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#B"/>
+        <locationStart rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#C"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr10">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Black"/>
+        <locationEnd rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#A"/>
+        <locationStart rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#C"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr11 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr11">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Red"/>
+        <locationEnd rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#G"/>
+        <locationStart rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#I"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr12 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr12">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Blue"/>
+        <locationEnd rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#B"/>
+        <locationStart rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#A"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr13 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr13">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Black"/>
+        <locationEnd rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#I"/>
+        <locationStart rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#J"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr16 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr16">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Red"/>
+        <locationEnd rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#J"/>
+        <locationStart rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#K"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Blue"/>
+        <locationEnd rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#E"/>
+        <locationStart rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#D"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Black"/>
+        <locationEnd rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#D"/>
+        <locationStart rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#E"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Blue"/>
+        <locationEnd rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#D"/>
+        <locationStart rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#K"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Red"/>
+        <locationEnd rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#G"/>
+        <locationStart rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#F"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr6">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Black"/>
+        <locationEnd rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#F"/>
+        <locationStart rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#H"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr7">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Blue"/>
+        <locationEnd rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#G"/>
+        <locationStart rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#B"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr8 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr8">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Red"/>
+        <locationEnd rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#A"/>
+        <locationStart rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#G"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr9 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#tr9">
+        <rdf:type rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Red"/>
+        <locationEnd rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#E"/>
+        <locationStart rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#B"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl:var#x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#z">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#t">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Blue"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#locationEnd"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#locationStart"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#connectedByBlue"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#connectedByBlue"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#PlacesWithRestaurantAfterAnyNumberTrail"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#connected"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#PlacesWithRestaurantAfterAnyNumberTrail"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#PlacesWithRestaurantAfterOneTrail"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#connected"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#PlacesWithRestaurantAfterAnyNumberTrail"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#PlacesWithRestaurantAfterAnyNumberTrail"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#connected"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Restaurant"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#location"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#x"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Restaurant"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#t"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#location"/>
+                                                        <swrl:argument1 rdf:resource="urn:swrl:var#t"/>
+                                                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#restaurantConnections"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#restaurantConnections"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Restaurant"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Restaurant"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#location"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#location"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                                <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#restaurantConnections"/>
+                                                        <swrl:argument1 rdf:resource="urn:swrl:var#t"/>
+                                                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#RestaurantsToRestaurants"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#RestaurantsToRestaurants"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Restaurant"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#location"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#connected"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#RestaurantsInTrailsOfTwo"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Restaurant"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#location"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#query_1"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Trail"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#AllTrails"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#connected"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#query_1"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#PlacesWithRestaurantAfterOneTrail"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#BeginnerLocationsWithHotel"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#connectedByBlue"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Restaurant"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#location"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#HotelToRestaurantByBeginner"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#HotelToRestaurantByBeginner"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#connectedByBlue"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#BeginnerLocationsWithHotel"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#HotelToRestaurantByBeginner"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Black"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#locationEnd"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Hotel"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#location"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#GoodOnlyLocationsWithHotel"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Black"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#locationStart"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Hotel"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#location"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#GoodOnlyLocationsWithHotel"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Blue"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#locationEnd"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Hotel"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#location"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#BeginnerLocationsWithHotel"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Blue"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#locationStart"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#Hotel"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#location"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-16#BeginnerLocationsWithHotel"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

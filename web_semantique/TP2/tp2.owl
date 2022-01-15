@@ -1,0 +1,282 @@
+Prefix(:=<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3>
+
+Declaration(Class(:CableCars))
+Declaration(Class(:Hiker))
+Declaration(Class(:Hotel))
+Declaration(Class(:Restaurant))
+Declaration(Class(:Trail))
+Declaration(DataProperty(:hasDifficultyLevel))
+Declaration(DataProperty(:hasEnd))
+Declaration(DataProperty(:hasLevel))
+Declaration(DataProperty(:hasLocation))
+Declaration(DataProperty(:hasSeason))
+Declaration(DataProperty(:hasSkill))
+Declaration(DataProperty(:hasStart))
+Declaration(DataProperty(:hasType))
+Declaration(NamedIndividual(:A))
+Declaration(NamedIndividual(:Albert))
+Declaration(NamedIndividual(:B))
+Declaration(NamedIndividual(:Béatrice))
+Declaration(NamedIndividual(:Charles))
+Declaration(NamedIndividual(:Dimitri))
+Declaration(NamedIndividual(:Eglantine))
+Declaration(NamedIndividual(:Frédérique))
+Declaration(NamedIndividual(:boutiqueHotel))
+Declaration(NamedIndividual(:cabaneBella-Tola))
+Declaration(NamedIndividual(:caféDeLaPoste))
+Declaration(NamedIndividual(:hotelBella-Tola))
+Declaration(NamedIndividual(:hotelLeBeausite))
+Declaration(NamedIndividual(:hotelWeisshorn))
+Declaration(NamedIndividual(:leChalet))
+Declaration(NamedIndividual(:restaurantHotelWeisshorn))
+Declaration(NamedIndividual(:restaurantTignoussa))
+Declaration(NamedIndividual(<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#1>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#10>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#11>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#2>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#3>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#4>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#4bis>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#5>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#6>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#6bis>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#7>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#8>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#9>))
+Declaration(Datatype(:trailDifficulty))
+
+
+############################
+#   Classes
+############################
+
+# Class: :Hiker (:Hiker)
+
+EquivalentClasses(:Hiker DataExactCardinality(1 :hasSkill xsd:string))
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: :A (:A)
+
+ClassAssertion(:CableCars :A)
+DataPropertyAssertion(:hasEnd :A "Tignoussa"^^xsd:string)
+DataPropertyAssertion(:hasSeason :A "Summer"^^xsd:string)
+DataPropertyAssertion(:hasSeason :A "Winter"^^xsd:string)
+DataPropertyAssertion(:hasStart :A "St-Luc"^^xsd:string)
+
+# Individual: :Albert (:Albert)
+
+ClassAssertion(:Hiker :Albert)
+DataPropertyAssertion(:hasSkill :Albert "Avearage"^^xsd:string)
+
+# Individual: :B (:B)
+
+ClassAssertion(:CableCars :B)
+DataPropertyAssertion(:hasEnd :B "Bella-Tola"^^xsd:string)
+DataPropertyAssertion(:hasSeason :B "Winter"^^xsd:string)
+DataPropertyAssertion(:hasStart :B "Tignoussa"^^xsd:string)
+
+# Individual: :Béatrice (:Béatrice)
+
+ClassAssertion(:Hiker :Béatrice)
+DataPropertyAssertion(:hasSkill :Béatrice "Good"^^xsd:string)
+
+# Individual: :Charles (:Charles)
+
+ClassAssertion(:Hiker :Charles)
+DataPropertyAssertion(:hasLevel :Charles "Beginner"^^xsd:string)
+
+# Individual: :Dimitri (:Dimitri)
+
+ClassAssertion(:Hiker :Dimitri)
+DataPropertyAssertion(:hasSkill :Dimitri "Good"^^xsd:string)
+
+# Individual: :Eglantine (:Eglantine)
+
+ClassAssertion(:Hiker :Eglantine)
+DataPropertyAssertion(:hasSkill :Eglantine "Beginner"^^xsd:string)
+
+# Individual: :Frédérique (:Frédérique)
+
+ClassAssertion(:Hiker :Frédérique)
+DataPropertyAssertion(:hasSkill :Frédérique "Average"^^xsd:string)
+
+# Individual: :boutiqueHotel (:boutiqueHotel)
+
+ClassAssertion(:Hotel :boutiqueHotel)
+DataPropertyAssertion(:hasLocation :boutiqueHotel "Chandolin"^^xsd:string)
+
+# Individual: :cabaneBella-Tola (:cabaneBella-Tola)
+
+ClassAssertion(:Restaurant :cabaneBella-Tola)
+DataPropertyAssertion(:hasLocation :cabaneBella-Tola "Bella-Tola"^^xsd:string)
+
+# Individual: :caféDeLaPoste (:caféDeLaPoste)
+
+ClassAssertion(:Restaurant :caféDeLaPoste)
+DataPropertyAssertion(:hasLocation :caféDeLaPoste "St-Luc"^^xsd:string)
+
+# Individual: :hotelBella-Tola (:hotelBella-Tola)
+
+ClassAssertion(:Hotel :hotelBella-Tola)
+DataPropertyAssertion(:hasLocation :hotelBella-Tola "St-Luc"^^xsd:string)
+
+# Individual: :hotelLeBeausite (:hotelLeBeausite)
+
+ClassAssertion(:Hotel :hotelLeBeausite)
+DataPropertyAssertion(:hasLocation :hotelLeBeausite "St-Luc"^^xsd:string)
+
+# Individual: :hotelWeisshorn (:hotelWeisshorn)
+
+ClassAssertion(:Hotel :hotelWeisshorn)
+DataPropertyAssertion(:hasLocation :hotelWeisshorn "Weisshorn"^^xsd:string)
+
+# Individual: :leChalet (:leChalet)
+
+ClassAssertion(:Restaurant :leChalet)
+DataPropertyAssertion(:hasLocation :leChalet "Chandolin"^^xsd:string)
+
+# Individual: :restaurantHotelWeisshorn (:restaurantHotelWeisshorn)
+
+ClassAssertion(:Restaurant :restaurantHotelWeisshorn)
+DataPropertyAssertion(:hasLocation :restaurantHotelWeisshorn "Weisshorn"^^xsd:string)
+
+# Individual: :restaurantTignoussa (:restaurantTignoussa)
+
+ClassAssertion(:Restaurant :restaurantTignoussa)
+DataPropertyAssertion(:hasLocation :restaurantTignoussa "Tignoussa"^^xsd:string)
+
+# Individual: <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#1> (<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#1>)
+
+ClassAssertion(:Trail <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#1>)
+DataPropertyAssertion(:hasDifficultyLevel <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#1> "blue"^^xsd:string)
+DataPropertyAssertion(:hasEnd <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#1> "St-Luc"^^xsd:string)
+DataPropertyAssertion(:hasSeason <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#1> "Summer"^^xsd:string)
+DataPropertyAssertion(:hasStart <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#1> "St-Luc"^^xsd:string)
+DataPropertyAssertion(:hasType <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#1> "onFoot"^^xsd:string)
+
+# Individual: <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#10> (<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#10>)
+
+ClassAssertion(:Trail <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#10>)
+DataPropertyAssertion(:hasDifficultyLevel <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#10> "black"^^xsd:string)
+DataPropertyAssertion(:hasEnd <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#10> "Weisshorn"^^xsd:string)
+DataPropertyAssertion(:hasSeason <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#10> "Winter"^^xsd:string)
+DataPropertyAssertion(:hasStart <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#10> "St-Luc"^^xsd:string)
+DataPropertyAssertion(:hasType <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#10> "onSnowshoes"^^xsd:string)
+
+# Individual: <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#11> (<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#11>)
+
+ClassAssertion(:Trail <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#11>)
+DataPropertyAssertion(:hasDifficultyLevel <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#11> "black"^^xsd:string)
+DataPropertyAssertion(:hasEnd <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#11> "Bella-Tola"^^xsd:string)
+DataPropertyAssertion(:hasSeason <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#11> "Winter"^^xsd:string)
+DataPropertyAssertion(:hasStart <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#11> "St-Luc"^^xsd:string)
+DataPropertyAssertion(:hasType <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#11> "onFoot"^^xsd:string)
+
+# Individual: <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#2> (<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#2>)
+
+ClassAssertion(:Trail <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#2>)
+DataPropertyAssertion(:hasDifficultyLevel <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#2> "blue"^^xsd:string)
+DataPropertyAssertion(:hasEnd <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#2> "Chandolin"^^xsd:string)
+DataPropertyAssertion(:hasSeason <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#2> "Summer"^^xsd:string)
+DataPropertyAssertion(:hasSeason <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#2> "Winter"^^xsd:string)
+DataPropertyAssertion(:hasStart <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#2> "St-Luc"^^xsd:string)
+DataPropertyAssertion(:hasType <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#2> "onFoot"^^xsd:string)
+
+# Individual: <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#3> (<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#3>)
+
+ClassAssertion(:Trail <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#3>)
+DataPropertyAssertion(:hasDifficultyLevel <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#3> "red"^^xsd:string)
+DataPropertyAssertion(:hasEnd <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#3> "Fang"^^xsd:string)
+DataPropertyAssertion(:hasStart <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#3> "St-Luc"^^xsd:string)
+DataPropertyAssertion(:hasType <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#3> "Summer"^^xsd:string)
+DataPropertyAssertion(:hasType <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#3> "red"^^xsd:string)
+
+# Individual: <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#4> (<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#4>)
+
+ClassAssertion(:Trail <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#4>)
+SameIndividual(<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#4> <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#4bis>)
+DataPropertyAssertion(:hasDifficultyLevel <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#4> "red"^^xsd:string)
+DataPropertyAssertion(:hasEnd <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#4> "Tignoussa"^^xsd:string)
+DataPropertyAssertion(:hasSeason <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#4> "Summer"^^xsd:string)
+DataPropertyAssertion(:hasStart <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#4> "St-Luc"^^xsd:string)
+DataPropertyAssertion(:hasType <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#4> "onFoot"^^xsd:string)
+
+# Individual: <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#4bis> (<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#4bis>)
+
+ClassAssertion(:Trail <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#4bis>)
+DataPropertyAssertion(:hasDifficultyLevel <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#4bis> "red"^^xsd:string)
+DataPropertyAssertion(:hasEnd <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#4bis> "Tignoussa"^^xsd:string)
+DataPropertyAssertion(:hasSeason <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#4bis> "Winter"^^xsd:string)
+DataPropertyAssertion(:hasStart <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#4bis> "St-Luc"^^xsd:string)
+DataPropertyAssertion(:hasType <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#4bis> "onSnowshoes"^^xsd:string)
+
+# Individual: <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#5> (<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#5>)
+
+ClassAssertion(:Trail <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#5>)
+DataPropertyAssertion(:hasDifficultyLevel <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#5> "red"^^xsd:string)
+DataPropertyAssertion(:hasEnd <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#5> "Gillou"^^xsd:string)
+DataPropertyAssertion(:hasSeason <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#5> "Summer"^^xsd:string)
+DataPropertyAssertion(:hasStart <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#5> "St-Luc"^^xsd:string)
+DataPropertyAssertion(:hasType <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#5> "onFoot"^^xsd:string)
+
+# Individual: <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#6> (<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#6>)
+
+ClassAssertion(:Trail <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#6>)
+SameIndividual(<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#6> <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#6bis>)
+DataPropertyAssertion(:hasDifficultyLevel <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#6> "blue"^^xsd:string)
+DataPropertyAssertion(:hasEnd <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#6> "Chandolin"^^xsd:string)
+DataPropertyAssertion(:hasSeason <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#6> "Summer"^^xsd:string)
+DataPropertyAssertion(:hasStart <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#6> "St-Luc"^^xsd:string)
+DataPropertyAssertion(:hasType <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#6> "onFoot"^^xsd:string)
+
+# Individual: <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#6bis> (<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#6bis>)
+
+ClassAssertion(:Trail <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#6bis>)
+DataPropertyAssertion(:hasDifficultyLevel <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#6bis> "blue"^^xsd:string)
+DataPropertyAssertion(:hasEnd <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#6bis> "Chandolin"^^xsd:string)
+DataPropertyAssertion(:hasSeason <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#6bis> "Winter"^^xsd:string)
+DataPropertyAssertion(:hasStart <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#6bis> "St-Luc"^^xsd:string)
+DataPropertyAssertion(:hasType <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#6bis> "onSnowshoes"^^xsd:string)
+
+# Individual: <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#7> (<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#7>)
+
+ClassAssertion(:Trail <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#7>)
+DataPropertyAssertion(:hasDifficultyLevel <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#7> "blue"^^xsd:string)
+DataPropertyAssertion(:hasEnd <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#7> "Chandolin"^^xsd:string)
+DataPropertyAssertion(:hasSeason <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#7> "Summer"^^xsd:string)
+DataPropertyAssertion(:hasStart <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#7> "Chandolin"^^xsd:string)
+DataPropertyAssertion(:hasType <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#7> "onFoot"^^xsd:string)
+
+# Individual: <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#8> (<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#8>)
+
+ClassAssertion(:Trail <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#8>)
+DataPropertyAssertion(:hasDifficultyLevel <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#8> "red"^^xsd:string)
+DataPropertyAssertion(:hasEnd <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#8> "Weisshorn"^^xsd:string)
+DataPropertyAssertion(:hasSeason <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#8> "Summer"^^xsd:string)
+DataPropertyAssertion(:hasSeason <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#8> "Winter"^^xsd:string)
+DataPropertyAssertion(:hasStart <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#8> "Tignoussa"^^xsd:string)
+DataPropertyAssertion(:hasType <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#8> "onFoot"^^xsd:string)
+
+# Individual: <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#9> (<http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#9>)
+
+ClassAssertion(:Trail <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#9>)
+DataPropertyAssertion(:hasDifficultyLevel <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#9> "black"^^xsd:string)
+DataPropertyAssertion(:hasEnd <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#9> "Sentier des lacs"^^xsd:string)
+DataPropertyAssertion(:hasSeason <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#9> "Summer"^^xsd:string)
+DataPropertyAssertion(:hasStart <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#9> "Tignoussa"^^xsd:string)
+DataPropertyAssertion(:hasType <http://www.semanticweb.org/joao/ontologies/2022/0/untitled-ontology-3#9> "onFoot"^^xsd:string)
+
+
+)

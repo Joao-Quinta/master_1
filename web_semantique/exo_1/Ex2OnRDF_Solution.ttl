@@ -1,0 +1,23 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+
+@prefix : <http://cui.unige.ch/> . 
+
+:Geneva :populationIn2010 453779 .
+:Geneva :population [:year 2010; :value 453779] .
+
+:s :pInThisLocation :o .
+:s :p [:what :o; :where :location] .
+
+:IBM :foundation [:year 1911; :accordingTo :wikipedia] .
+:wikipedia :says [:event :foundation; :ofWhat :IBM; :when 1911] .
+
+:X rdf:type rdf:Statement .
+:wikipedia :says :X .
+:X rdf:subject :IBM .
+:X rdf:predicate :foundation .
+:X rdf:object 1911 .
+
+:s :pWithConfidenceLevel90percent :o .
+:s :p [:what :o; :confidenceLevel 0.9] .

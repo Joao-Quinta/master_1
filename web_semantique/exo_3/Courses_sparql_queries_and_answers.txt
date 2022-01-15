@@ -1,0 +1,149 @@
+                         Semantic web technologies
+
+NB: on suppose que le fichier interrogé a été chargé sur la plateforme GraphDB
+et que le préfixe suivant a été défini :
+
+PREFIX : <http://cui.unige.ch/> 
+
+--------------------------------------------------------------------------------
+
+Quels sont les cours avec Gilles Falquet comme enseignant?
+What are the courses with Gilles Falquet as teacher?
+
+SELECT ?c
+WHERE {
+	?c :teacher :gilles-falquet .
+} 
+
+--------------------------------------------------------------------------------
+
+Quels sont les cours avec Gilles Falquet et Claudine Métral comme enseignants?
+What are the courses with Gilles Falquet and Claudine Métral as teacher?
+
+SELECT ?c
+WHERE {
+	?c :teacher :gilles-falquet .
+	?c :teacher :claudine-metral .
+} 
+
+--------------------------------------------------------------------------------
+
+Quels sont les cours avec Gilles Falquet ou Claudine Métral comme enseignant?
+What are the courses with Gilles Falquet or Claudine Métral as teacher?
+
+SELECT ?c
+WHERE {
+	{?c :teacher :gilles-falquet . } UNION
+	{?c :teacher :claudine-metral . }
+} 
+
+--------------------------------------------------------------------------------
+
+Quels sont les cours avec Gilles Falquet ou Claudine Métral comme enseignant 
+(sans doublons)?
+What are the courses with Gilles Falquet or Claudine Métral as teacher 
+(without duplicate)?
+
+SELECT DISTINCT ?c
+WHERE {
+	{?c :teacher :gilles-falquet . } UNION
+	{?c :teacher :claudine-metral . }
+}
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+Quelles sont les questions représentées par les requêtes SPARQL ci-dessous?
+What are the queries whose SPARQL representation is given below?
+
+Quels sont les réponses attendues?
+What are the expected answers?
+
+--------------------------------------------------------------------------------
+
+SELECT ?c
+WHERE {
+	?c a :Course .   
+	?c :keyword "RDF" .
+}
+
+What are the courses having "RDF" as keyword?
+-> :swt-course
+
+--------------------------------------------------------------------------------
+
+SELECT DISTINCT ?c
+WHERE {
+	?c a :Course .   
+	?c :keyword ?k .
+	FILTER ( ?k != "RDF" )
+}
+
+What are the courses having at least one keyword different from "RDF"?
+-> :swt-course
+   :kos-course
+
+--------------------------------------------------------------------------------
+
+SELECT DISTINCT ?c
+WHERE {
+   ?c a :Course .   
+   FILTER NOT EXISTS {
+        ?c :keyword "RDF" }
+}
+
+What are the courses not having the keyword "RDF"?
+-> :hmi-course
+   :kos-course
+
+--------------------------------------------------------------------------------
+
+SELECT DISTINCT ?c
+WHERE {
+   ?c a :Course .   
+   MINUS {
+        ?c :keyword "RDF" }
+}
+
+What are the courses not having the keyword "RDF"?
+-> :hmi-course
+   :kos-course
+
+--------------------------------------------------------------------------------
+
+SELECT ?m
+WHERE {
+   ?m a :MasterProgram .
+   ?m :has-part ?x .
+   ?x :course ?c .
+   ?x :credits 4 .
+}
+
+What are the masters having 4-credit courses ?
+-> :master-cui
+
+--------------------------------------------------------------------------------
+
+SELECT ?m
+WHERE {
+   ?m a :MasterProgram .
+   ?m :has-part [:course ?c; credits 4] .
+}
+
+What are the masters having 4-credit courses ?
+-> :master-cui
+
+--------------------------------------------------------------------------------
+
+SELECT ?m
+WHERE {
+   ?m a :MasterProgram .
+   ?m :has-part/:course/:period :fall-semester .
+}
+
+What are the masters having courses that take place in fall semester?
+-> :master-cui
+     :master-syinf
+
+--------------------------------------------------------------------------------
