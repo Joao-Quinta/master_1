@@ -1,0 +1,91 @@
+\documentclass[14pt]
+{article}
+
+%basiques
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+%math
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% images
+\usepackage{graphicx}
+
+%mise en page
+\usepackage{fancyhdr}
+\usepackage{fancybox}
+\usepackage{geometry}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\geometry{hmargin=4cm}
+
+\begin{document}
+% Entete
+\pagestyle{fancy}
+\lhead{Joao Filipe Costa da Quinta\\Léa Heiniger}
+\rhead{18.01.2022\\}
+\chead{\textbf{Technologies du web sémantique}}
+
+\bigskip
+\begin{center}
+	\section*{\textbf{{\LARGE TP3 : Ontological Hiking}}}
+\end{center}
+\bigskip\bigskip\bigskip
+\paragraph*{\\} 
+In this project we had to create the OWL-2 ontology of a tourist area with hiking trails.
+
+\section{Queries}
+
+We have 8 queries to express with SWRL rules :\\
+\begin{enumerate}
+\item The places that have at least one restaurant  \\
+\textbf{Rule}: Restaurant(?x), location(?x, ?y) -> query\_1(?y)\\
+\textbf{Query result}: $\{$A, D, I, J, K$\}$\\
+\textbf{Explanation}: We go through every restaurant, we check the location of each Restaurant via location() property, and every location is put in the query\_1 class.\\
+ 
+\item The places from which one can reach a restaurant by following one trail \\
+\textbf{Rule}: connected(?x, ?y), query\_1(?x) -> query\_2(?y)\\
+\textbf{Query result}: $\{$B, C, D, E, G, I, J, K$\}$\\
+\textbf{Explanation}: We go through every location that has a restaurant, by using the result from query\_1, and check which locations are connected to the location in query\_1, and every connected location is put in the query\_2 class.\\
+
+\item The places from which one can reach a restaurant by following any number of trails \\
+\textbf{Rule}: connected(?x, ?y), query\_2(?x) -> query\_3(?x), query\_3(?y)\\
+\textbf{Rule}: query\_3(?x), connected(?x, ?y) -> query\_3(?y)\\
+\textbf{Query result}: $\{$A, B, C, D, E, G, H, I, J, K$\}$\\
+\textbf{Explanation}: We first start by going through the locations that have a Restaurant at distance of 1 trail, then add to query\_3 class that same Location, as well as the locations it is connected to. Finally we do a recursion of every possible Location connected to a Location already in query\_3.\\
+
+\item The places that have a hotel and from which a beginner hiker can reach a restaurant by following any number of trails \\
+\textbf{Rule}: Blue(?x), locationEnd(?x, ?y), locationStart(?x, ?z) -> connectedByBlue(?y, ?z), connectedByBlue(?z, ?y)\\
+\textbf{Rule}: Blue(?x), locationStart(?x, ?y), Hotel(?z), location(?z, ?y) -> BeginnerLocationsWithHotel(?y)\\
+\textbf{Rule}: Blue(?x), locationEnd(?x, ?y), Hotel(?z), location(?z, ?y) -> BeginnerLocationsWithHotel(?y)\\
+\textbf{Rule}: BeginnerLocationsWithHotel(?x), location(?z, ?y), Restaurant(?z), connectedByBlue(?x, ?y) -> query\_4(?x)\\
+\textbf{Rule}: query\_4(?x), BeginnerLocationsWithHotel(?y), connectedByBlue(?x, ?y) -> query\_4(?y)\\
+\textbf{Query result}: $\{$B, G$\}$\\
+\textbf{Explanation}: First we create the property connectedByBlue() that says 2 locations have a blue trail connecting them. Secondly, we look for every location that has a hotel, and that has a blue trail connected to them. Then, by starting from the locations that have hotels and are connected to blue trails, we check that at the location upon which the blue trail arrives, there is a Restaurant, if there is one, we had this original location to query\_4 class. Finally we add a final rule that does the recursion.\\
+
+\item The restaurants that are on a circuit made of at least two trails \\
+\textbf{Rule}: Restaurant(?x), location(?x, ?y), connected(?y, ?z), connected(?y, ?t) -> query\_5(?x)\\
+\textbf{Query result}: $\{$restoA, restoD, restoI1, restoI2, restoJ, restoK$\}$\\
+\textbf{Explanation}: We go through every Restaurant and its location, and we check if that location is connected to 2 different locations, if it is, then the original location is added to query\_5 result.\\
+
+\item The restaurants from which one can reach another restaurant by following a path that only passes though places that have restaurants \\
+\textbf{Rule}: connected(?x, ?y), Restaurant(?z), location(?z, ?x), Restaurant(?t), location(?t, ?y) -> restaurantConnections(?x, ?y), restaurantConnections(?y, ?x)\\
+\textbf{Rule}: Restaurant(?y), Restaurant(?x), location(?x, ?t), location(?y, ?z), restaurantConnections(?t, ?z) -> query\_6(?y), query\_6(?x)\\
+\textbf{Query result}: $\{$restoD, restoI1, restoI2, restoJ, restoK$\}$\\
+\textbf{Explanation}: We Start by adding a new property, restaurantConnections() that is visible if 2 locations are connected, and both have restaurants. Then we simply check if 2 different restaurants that are at two different locations, are connected by this new property, if they are, we add them, both to query\_6 result.\\
+
+\item The hotels that can be reached from place p only by good hikers \\
+\textbf{Rule}: Black(?x), locationStart(?x, ?y), Hotel(?z), location(?z, ?y) -> query\_7(?y)\\
+\textbf{Rule}: Black(?x), locationEnd(?x, ?y), Hotel(?z), location(?z, ?y) -> query\_7(?y)\\
+\textbf{Query result}: $\{$H$\}$\\
+\textbf{Explanation}: The only black trail that has a Hotel is H, however, we cant do a rule with a variable in mind, so this answer isn't really the right one.\\
+
+\item The hotels that can be reached from place p1 by following two different routes of length 2 \\
+\end{enumerate}
+
+
+
+\end{document}
